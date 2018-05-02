@@ -26,12 +26,6 @@ public class PresetConfigurations {
 
     //Systems
     private Systems centerSystem;
-    private Systems northSystem;
-    private Systems northEastSystem;
-    private Systems southEast;
-    private Systems south;
-    private Systems southWest;
-    private Systems northWest;
 
     //Galaxy
     private Galaxy galaxy;
@@ -57,12 +51,12 @@ public class PresetConfigurations {
 
         // Systems
         centerSystem = new Systems("Center", mecRex);
-        northSystem = new Systems("North", vegaSystem);
-        northEastSystem = new Systems("North-East");
-        southEast = new Systems("South-East", indus);
-        south = new Systems("South", rigelSystem);
-        southWest = new Systems("South-West");
-        northWest = new Systems("North-West", mirage);
+        Systems northSystem = new Systems("North", vegaSystem);
+        Systems northEastSystem = new Systems("North-East");
+        Systems southEast = new Systems("South-East", indus);
+        Systems south = new Systems("South", rigelSystem);
+        Systems southWest = new Systems("South-West");
+        Systems northWest = new Systems("North-West", mirage);
 
         // Insert ships into systems
         centerSystem.newSpaceship(new Dreadnought(playerBlue));

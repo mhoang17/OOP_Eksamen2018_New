@@ -7,7 +7,8 @@ import java.util.List;
 
 public class Galaxy {
 
-    private List<Systems> systems = new ArrayList<>();
+    // Field
+    private List<Systems> systems;
 
     // Constructor
     public Galaxy(List<Systems> systems) {
