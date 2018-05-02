@@ -1,8 +1,8 @@
-import elements.Galaxy;
-import elements.Planet;
-import elements.Systems;
-import elements.VerifyGalaxy;
+import elements.*;
 import elements.spaceship.Spaceship;
+import elements.spaceship.spaceshipsClasses.Carrier;
+import elements.spaceship.spaceshipsClasses.Cruiser;
+import elements.spaceship.spaceshipsClasses.Dreadnought;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,10 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+
+        //Players
+        Player playerBlue = new Player("Crassus", "The Emirates of Hacan", "Blue");
+        Player playerRed = new Player("Pompey", "Federation of Sol", "Red");
 
         List<Planet> mecRex = new ArrayList();
         List<Planet> vegaSystem = new ArrayList<>();
@@ -40,6 +44,14 @@ public class Main {
         Galaxy galaxy = new Galaxy(systems);
 
         VerifyGalaxy verify = new VerifyGalaxy(galaxy);
+
+        systemOne.newSpaceship(new Cruiser(playerRed));
+        systemOne.newSpaceship(new Carrier(playerRed));
+        systemTwo.newSpaceship(new Dreadnought(playerRed));
+
+        PlayerSpaceships redSpaceships = new PlayerSpaceships();
+
+        redSpaceships.playerSpaceships(galaxy, playerRed);
 
     }
 }

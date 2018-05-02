@@ -39,6 +39,6 @@ public class Player {
 
     @Override
     public String toString() {
-        return "elements.Player: " + this.name + ", " + this.race + ", " + this.colour;
+        return "Player: " + this.name + ", " + this.race + ", " + this.colour;
     }
 }

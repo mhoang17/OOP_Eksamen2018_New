@@ -1,6 +1,8 @@
 package elements.spaceship;
 
 import elements.Player;
+import elements.spaceship.spaceshipsClasses.Carrier;
+import elements.spaceship.spaceshipsClasses.Cruiser;
 
 public class Spaceship{
 
@@ -12,9 +14,13 @@ public class Spaceship{
         this.player = player;
     }
 
+    public String getType() {
+        return type;
+    }
+
     @Override
     public String toString() {
-        return "Player " + this.player.getColour() + ": " + this.type;
+        return this.player.getColour() + ": " + this.type;
     }
 
 }
