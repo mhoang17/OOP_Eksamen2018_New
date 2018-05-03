@@ -8,12 +8,27 @@ import java.util.List;
 public class Galaxy {
 
     // Field
-    private List<Systems> systems;
+    private List<Systems> systems = new ArrayList<>();
+    private List<Player> players = new ArrayList<>();
 
     // Constructor
-    public Galaxy(List<Systems> systems) {
+    public Galaxy() {}
 
-        this.systems = systems;
+    // Add system
+    public void addSystems(Systems system){
+
+        systems.add(system);
+    }
+
+    // Add players
+    public void addPlayer(Player player){
+
+        players.add(player);
+    }
+
+    // Get players
+    public List<Player> getPlayers() {
+        return players;
     }
 
     // Get systems

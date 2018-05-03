@@ -30,7 +30,7 @@ public class PresetConfigurations {
     //Galaxy
     private Galaxy galaxy;
 
-    public void presetConfigurations() {
+    public PresetConfigurations() {
 
         // Mecatol Rex
         mecRex.add(new Planet("Mecatol Rex", 3));
@@ -68,17 +68,15 @@ public class PresetConfigurations {
         northSystem.newSpaceship(new Carrier(playerRed));
 
         // Insert systems to galaxy
-        List systems = new ArrayList();
-        systems.add(centerSystem);
-        systems.add(northSystem);
-        systems.add(northEastSystem);
-        systems.add(southEast);
-        systems.add(south);
-        systems.add(southWest);
-        systems.add(northWest);
+        galaxy = new Galaxy();
 
-        // Make galaxy
-        galaxy = new Galaxy(systems);
+        galaxy.addSystems(centerSystem);
+        galaxy.addSystems(northSystem);
+        galaxy.addSystems(northEastSystem);
+        galaxy.addSystems(southEast);
+        galaxy.addSystems(south);
+        galaxy.addSystems(southWest);
+        galaxy.addSystems(northWest);
     }
 
     public Player getPlayerBlue() {

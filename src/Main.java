@@ -4,6 +4,7 @@ import elements.spaceship.spaceshipsClasses.Carrier;
 import elements.spaceship.spaceshipsClasses.Cruiser;
 import elements.spaceship.spaceshipsClasses.Dreadnought;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,22 +38,28 @@ public class Main {
         Systems systemTwo = new Systems("North", vegaSystem);
         Systems systemThree = new Systems("North-East", rigelSystem);
 
-        List systems = new ArrayList();
-        systems.add(systemOne);
-        systems.add(systemTwo);
-        systems.add(systemThree);
-
         systemOne.newSpaceship(new Cruiser(playerRed));
         systemOne.newSpaceship(new Carrier(playerRed));
         systemTwo.newSpaceship(new Dreadnought(playerRed));
 
-        Galaxy galaxy = new Galaxy(systems);
+        Galaxy galaxy = new Galaxy();
+
+        galaxy.addSystems(systemOne);
+        galaxy.addSystems(systemTwo);
+        galaxy.addSystems(systemThree);
+
+        galaxy.addPlayer(playerBlue);
+        galaxy.addPlayer(playerRed);
 
         VerifyGalaxy verify = new VerifyGalaxy(galaxy);
 
-        PlayerSpaceships redSpaceships = new PlayerSpaceships();
+        PlayerSpaceships redSpaceships = new PlayerSpaceships(galaxy, playerRed);
 
-        redSpaceships.playerSpaceships(galaxy, playerRed);
+        try {
+            WriteControlledPlanet redPlayerControl = new WriteControlledPlanet(galaxy);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }

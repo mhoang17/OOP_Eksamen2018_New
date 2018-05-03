@@ -24,8 +24,6 @@ class PresetConfigurationsTest {
         playerOne = new Player("Crassus", "The Emirates of Hacan", "Blue");
         mecRex.add(new Planet("Mecatol Rex", 3));
         dreadnought = new Dreadnought(playerOne);
-
-        test.presetConfigurations();
     }
 
    @Test

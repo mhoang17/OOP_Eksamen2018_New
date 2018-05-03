@@ -2,13 +2,16 @@ package elements;
 
 public class Planet {
 
+    // Fields
     private String name;
     private int resourceProduction;
 
+    // Constructor
     public Planet(String name, int resourceProduction) {
         this.name = name;
         this.resourceProduction = resourceProduction;
 
+        // If resource value isn't valid
         if(resourceProduction < 0 || resourceProduction > 6){
             throw new IllegalResourceProductionValue();
         }
@@ -21,7 +24,6 @@ public class Planet {
     public int getResourceProduction() {
         return resourceProduction;
     }
-
 
     // Compares the names, but not the resource points
     @Override
@@ -38,6 +40,7 @@ public class Planet {
         return getName().equals(planet.getName());
     }
 
+    // When made to string, it only returns the name
     @Override
     public String toString() {
         return this.name;

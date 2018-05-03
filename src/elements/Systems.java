@@ -51,6 +51,7 @@ public class Systems {
         return position;
     }
 
+    // Compares the list of planets
     @Override
     public boolean equals(Object o) {
         if (this == o) {
