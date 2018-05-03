@@ -3,20 +3,29 @@ package elements;
 import elements.spaceship.Spaceship;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
 
 public class WriteControlledPlanet {
 
-    private List<Player> players;
-
     public WriteControlledPlanet(Galaxy galaxy) throws IOException{
 
-        BufferedWriter writer = new BufferedWriter(new FileWriter("PlanetaryControl.txt"));
+        // Create file
+        String outputName = "PlanetaryControl.txt";
+        File outputFile = new File(outputName);
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter(outputName));
+
+        // If file doesn't exist
+        if(!outputFile.exists()){
+
+            System.out.println("File doesn't exist.");
+        }
 
         for(Player player : galaxy.getPlayers()){
 
+            //Write player to file
             writer.write(player.toString() + "\n");
 
             for(Systems system : galaxy.getSystems()){
@@ -25,6 +34,7 @@ public class WriteControlledPlanet {
 
                 for(Spaceship spaceship : system.getSpaceships()){
 
+                    // Check if spaceship in system belongs to current player
                     if(spaceship.getOwner().toString().equals(player.toString())){
 
                         count++;
@@ -42,6 +52,7 @@ public class WriteControlledPlanet {
             writer.write("\n");
         }
 
+        // Stop writing to file
         writer.close();
     }
 }

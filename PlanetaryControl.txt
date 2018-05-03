@@ -1,6 +1,6 @@
 Player: Crassus, The Emirates of Hacan, Blue
+[Industrex]
+[Mirage]
 
 Player: Pompey, Federation of Sol, Red
-[Mecatol Rex]
-[Vega Minor, Vega Major]
 

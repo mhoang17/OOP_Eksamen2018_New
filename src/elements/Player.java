@@ -19,12 +19,6 @@ public class Player {
         this.colour = colour;
     }
 
-    //Planets under control
-    public void planetsUnderControl(Planet planet){
-
-        planetsControl.add(planet);
-    }
-
     public String getColour() {
         return colour;
     }

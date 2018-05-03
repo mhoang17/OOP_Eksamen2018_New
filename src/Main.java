@@ -16,6 +16,16 @@ public class Main {
         Player playerBlue = new Player("Crassus", "The Emirates of Hacan", "Blue");
         Player playerRed = new Player("Pompey", "Federation of Sol", "Red");
 
+        List<Player> playerList = new ArrayList<>();
+        playerList.add(playerBlue);
+        playerList.add(playerRed);
+
+        RandomGalaxy test = new RandomGalaxy(playerList);
+
+        /*//Players
+        Player playerBlue = new Player("Crassus", "The Emirates of Hacan", "Blue");
+        Player playerRed = new Player("Pompey", "Federation of Sol", "Red");
+
         List<Planet> mecRex = new ArrayList();
         List<Planet> vegaSystem = new ArrayList<>();
         List<Planet> rigelSystem = new ArrayList<>();
@@ -59,7 +69,7 @@ public class Main {
             WriteControlledPlanet redPlayerControl = new WriteControlledPlanet(galaxy);
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
 
     }
 }

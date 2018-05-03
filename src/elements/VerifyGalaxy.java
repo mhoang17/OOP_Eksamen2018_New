@@ -27,12 +27,15 @@ public class VerifyGalaxy {
 
     private void legalCenterPlanet(){
 
+        // Make Mecatol Rex planet
         Planet mecRex = new Planet("Mecatol Rex", 3);
 
         for(Systems system : galaxy.getSystems()){
 
+            // Check if system is center
             if(system.getPosition().equals("Center")){
 
+                // If center system has more than one planet or if the planet is not Mecatol Rex
                 if(system.getPlanets().size() != MAX_CENTER_SIZE || !system.getPlanets().get(0).equals(mecRex)){
 
                     throw new IllegalCenterSystem();
@@ -80,6 +83,7 @@ public class VerifyGalaxy {
                 planetIter.previous();
             }
 
+            // Next element
             planetIter.next();
         }
     }
@@ -109,6 +113,7 @@ public class VerifyGalaxy {
         compass.add("South-East");
         compass.add("North-East");
 
+        // Only systems other than center has a south
         if(!system.getPosition().equals("Center")){
 
             for(int i = 0; i < compass.size(); i++){

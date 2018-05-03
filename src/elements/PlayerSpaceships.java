@@ -18,6 +18,7 @@ public class PlayerSpaceships{
             }
         }
 
+        // Sort after combat value
         ownedSpaceships.sort(Comparator.comparing(Spaceship::getCombatValue));
 
         // TODO: sort if equal

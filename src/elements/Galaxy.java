@@ -14,6 +14,10 @@ public class Galaxy {
     // Constructor
     public Galaxy() {}
 
+    public Galaxy(List<Systems> systems){
+        this.systems = systems;
+    }
+
     // Add system
     public void addSystems(Systems system){
 
