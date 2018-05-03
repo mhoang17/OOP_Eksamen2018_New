@@ -51,19 +51,19 @@ public class Systems {
         return spaceships;
     }
 
-    // Compares the list of planets
+    // Compares the planets
     @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
-        if (o == null || !(o instanceof List)) {
+        if (o == null || !(o instanceof Systems)) {
             return false;
         }
 
-        List<Planet> planet = (ArrayList) o;
+        Systems system = (Systems) o;
 
-        return getPlanets().equals(planet);
+        return getPlanets().equals(system.getPlanets());
     }
 
     @Override

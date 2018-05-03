@@ -17,8 +17,8 @@ import java.util.Random;
 public class RandomGalaxy {
 
     // Constants
-    final static int ADD_SPACESHIP = 2;
-    final static int NO_SPACESHIP = 1;
+    private final static int ADD_SPACESHIP = 2;
+    private final static int NO_SPACESHIP = 1;
 
     //Planets
     private List<Planet> mecRex = new ArrayList();
@@ -35,7 +35,7 @@ public class RandomGalaxy {
     private List<Spaceship> spaceshipList = new ArrayList<>();
     private List<String> compass = new ArrayList<>();
     private List<Spaceship> spaceshipTypes = new ArrayList<>();
-    private List<Player> players = new ArrayList<>();
+    private List<Player> players;
 
     public RandomGalaxy(List<Player> players) {
 

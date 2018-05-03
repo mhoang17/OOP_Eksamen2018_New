@@ -6,10 +6,10 @@ public class Spaceship implements Unit{
 
     private String type;
     private Player player;
-    int resourceCost;
-    int combatValue;
-    int movementSpeed;
-    int capacity;
+    private int resourceCost;
+    private int combatValue;
+    private int movementSpeed;
+    private int capacity;
 
     public Spaceship(String type, Player player, int resourceCost, int combatValue, int movementSpeed, int capacity) {
         this.type = type;

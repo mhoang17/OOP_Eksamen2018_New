@@ -5,8 +5,8 @@ import java.util.*;
 public class VerifyGalaxy {
 
     // Constants
-    final static int MAX_CENTER_SIZE = 1;
-    final static int MAX_SYSTEM_SIZE = 3;
+    private final static int MAX_CENTER_SIZE = 1;
+    private final static int MAX_SYSTEM_SIZE = 3;
 
     // Field
     private Galaxy galaxy;
@@ -125,10 +125,10 @@ public class VerifyGalaxy {
                 }
             }
         }
-        else {
+        /*else {
 
             throw new IsCenterSystem();
-        }
+        }*/
 
         // If index exceeds size of compass list
         if (southSystemIndx > compass.size()){
