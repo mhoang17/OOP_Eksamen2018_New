@@ -22,6 +22,8 @@ public class Planet {
         return resourceProduction;
     }
 
+
+    // Compares the names, but not the resource points
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -38,6 +40,6 @@ public class Planet {
 
     @Override
     public String toString() {
-        return "Name: " + this.name + ", Resource Production: " + this.resourceProduction;
+        return this.name;
     }
 }

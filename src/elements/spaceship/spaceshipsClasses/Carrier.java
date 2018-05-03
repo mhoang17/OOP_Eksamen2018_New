@@ -9,7 +9,7 @@ public class Carrier extends Spaceship implements Unit {
     private Player player;
 
     public Carrier(Player player) {
-        super("Carrier", player);
+        super("Carrier", player, 3, 9, 1, 6);
         this.player = player;
     }
 

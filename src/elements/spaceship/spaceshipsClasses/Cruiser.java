@@ -9,7 +9,7 @@ public class Cruiser extends Spaceship implements Unit {
     private Player player;
 
     public Cruiser(Player player) {
-        super("Cruiser", player);
+        super("Cruiser", player, 2, 7, 2, 0);
         this.player = player;
     }
 

@@ -27,11 +27,11 @@ public class Galaxy {
 
         List planets = new ArrayList();
 
-        for(int i = 0; i < systems.size(); i++){
+        for(Systems system : systems){
 
-            for(int j = 0; j < systems.get(i).getPlanets().size(); j++){
+            for(Planet planet : system.getPlanets()){
 
-                planets.add(systems.get(i).getPlanets().get(j));
+                planets.add(planet);
             }
         }
         return planets;
@@ -42,11 +42,11 @@ public class Galaxy {
 
         List spaceships = new ArrayList();
 
-        for(int i = 0; i < systems.size(); i++){
+        for(Systems system : systems){
 
-            for(int j = 0; j < systems.get(i).getSpaceships().size(); j++){
+            for(Spaceship spaceship : system.getSpaceships()){
 
-                spaceships.add(systems.get(i).getSpaceships().get(j));
+                spaceships.add(spaceship);
             }
         }
 

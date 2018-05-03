@@ -9,7 +9,7 @@ public class Destroyer extends Spaceship implements Unit {
     private Player player;
 
     public Destroyer(Player player) {
-        super("Destroyer", player);
+        super("Destroyer", player,1,9,2,0);
         this.player = player;
     }
 

@@ -8,7 +8,7 @@ import elements.spaceship.spaceshipsClasses.Dreadnought;
 
 import java.util.*;
 
-public class PlayerSpaceships {
+public class PlayerSpaceships{
 
     private List<Spaceship> ownedSpaceships = new ArrayList();
     private List spaceshipValues = new ArrayList();
@@ -22,11 +22,12 @@ public class PlayerSpaceships {
 
         for (int i = 0; i < galaxy.getSpaceship().size(); i++){
 
-            if(galaxy.getSpaceship().get(i).toString().toUpperCase().contains(player.getColour().toUpperCase())){
+            if(galaxy.getSpaceship().get(i).getOwner().contains(player.toString())){
 
                 ownedSpaceships.add(galaxy.getSpaceship().get(i));
             }
         }
 
+        ownedSpaceships.sort(Comparator.comparing(Spaceship::getCombatValue));
     }
 }

@@ -31,6 +31,7 @@ public class Main {
 
         rigelSystem.add(new Planet("Rigel I", 1));
         rigelSystem.add(new Planet("Rigel II", 4));
+        //rigelSystem.add(vegaMin);
 
         Systems systemOne = new Systems("Center", mecRex);
         Systems systemTwo = new Systems("North", vegaSystem);
@@ -41,13 +42,13 @@ public class Main {
         systems.add(systemTwo);
         systems.add(systemThree);
 
-        Galaxy galaxy = new Galaxy(systems);
-
-        VerifyGalaxy verify = new VerifyGalaxy(galaxy);
-
         systemOne.newSpaceship(new Cruiser(playerRed));
         systemOne.newSpaceship(new Carrier(playerRed));
         systemTwo.newSpaceship(new Dreadnought(playerRed));
+
+        Galaxy galaxy = new Galaxy(systems);
+
+        VerifyGalaxy verify = new VerifyGalaxy(galaxy);
 
         PlayerSpaceships redSpaceships = new PlayerSpaceships();
 

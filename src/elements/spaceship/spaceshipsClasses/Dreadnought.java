@@ -9,7 +9,7 @@ public class Dreadnought extends Spaceship implements Unit {
     Player player;
 
     public Dreadnought(Player player) {
-        super("Dreadnought", player);
+        super("Dreadnought", player,5,5,1,0);
         this.player = player;
     }
 

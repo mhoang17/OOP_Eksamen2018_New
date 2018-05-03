@@ -1,10 +1,12 @@
 package elements;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class VerifyGalaxy {
+
+    // Constants
+    final static int MAX_CENTER_SIZE = 1;
+    final static int MAX_SYSTEM_SIZE = 3;
 
     // Field
     private Galaxy galaxy;
@@ -30,13 +32,11 @@ public class VerifyGalaxy {
 
         Planet mecRex = new Planet("Mecatol Rex", 3);
 
-        for(int i = 0; i < galaxy.getSystems().size(); i++){
+        for(Systems system : galaxy.getSystems()){
 
-            if(galaxy.getSystems().get(i).getPosition().equals("Center")){
+            if(system.getPosition().equals("Center")){
 
-                Planet centerPlanet = galaxy.getSystems().get(i).getPlanets().get(0);
-
-                if (!centerPlanet.equals(mecRex) || galaxy.getSystems().get(i).getPlanets().size() != 1){
+                if(system.getPlanets().size() != MAX_CENTER_SIZE || !system.getPlanets().get(0).equals(mecRex)){
 
                     throw new IllegalCenterSystem();
                 }
@@ -46,7 +46,47 @@ public class VerifyGalaxy {
 
     private void legalPlanet(){
 
-        for(int i = 0; i < galaxy.getSystems().size(); i++){
+        // List of planet names
+        List<String> planetList = new ArrayList();
+
+        // Insert planet names from galaxy into planetList
+        for (Planet planet : galaxy.getPlanets()){
+
+            planetList.add(planet.toString());
+        }
+
+        // Sort planetList in alphabetical order
+        Collections.sort(planetList);
+
+        // List iterator
+        ListIterator planetIter = planetList.listIterator();
+
+        // Check previous to current
+        while(planetIter.hasNext()){
+
+            // If index is 0, it has no previous element and gives and error
+            if(planetIter.nextIndex() != 0){
+
+                String prevPlanet = (String) planetIter.previous();
+
+                // Have to go up twice in order to reach the next element
+                planetIter.next();
+                String nextPlanet = (String) planetIter.next();
+
+                // If next planet is the previous one
+                if(nextPlanet.equals(prevPlanet)){
+
+                    throw new IllegalPlanetOccurrence();
+                }
+
+                // Has to go to the previous because outside it goes to the next element
+                planetIter.previous();
+            }
+
+            planetIter.next();
+        }
+
+        /*for(int i = 0; i < galaxy.getSystems().size(); i++){
 
             for (int j = 0; j < i; j++){
 
@@ -63,15 +103,15 @@ public class VerifyGalaxy {
                     }
                 }
             }
-        }
+        }*/
     }
 
     private void legalSystemSize(){
 
-        for (int i = 0; i < galaxy.getSystems().size(); i++){
+        for (Systems system : galaxy.getSystems()){
 
             // Check if size is more than 3
-            if(galaxy.getSystems().get(i).getPlanets().size() > 3){
+            if(system.getPlanets().size() > MAX_SYSTEM_SIZE){
 
                 throw new IllegalPlanetSizeSystem();
             }
@@ -88,7 +128,7 @@ public class VerifyGalaxy {
                 String systemOne = galaxy.getSystems().get(i).getPosition();
                 String systemTwo = galaxy.getSystems().get(j).getPosition();
 
-                // Check if a planet occurs more than once
+                // Check if a position has been taken
                 if(systemOne.equals(systemTwo)){
 
                     throw new IllegalPosition();

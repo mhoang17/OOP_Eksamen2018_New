@@ -24,16 +24,16 @@ public class Systems {
     }
 
     // Add new spaceship to system
-    public void newSpaceship(Spaceship spaceship){
+    public void newSpaceship(Spaceship spaceship) {
         spaceships.add(spaceship);
     }
 
-    public void removeSpaceship(Spaceship spaceship){
+    public void removeSpaceship(Spaceship spaceship) {
         spaceships.remove(spaceship);
     }
 
     // Move existing spaceship from one system to another
-    public void moveSpaceship(Spaceship spaceship, Systems newSystem){
+    public void moveSpaceship(Spaceship spaceship, Systems newSystem) {
         newSystem.spaceships.add(spaceship);
         spaceships.remove(spaceship);
     }
@@ -62,5 +62,10 @@ public class Systems {
         List<Planet> planet = (ArrayList) o;
 
         return getPlanets().equals(planet);
+    }
+
+    @Override
+    public String toString() {
+        return this.position + ": " + this.planets;
     }
 }
