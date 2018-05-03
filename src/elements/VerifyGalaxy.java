@@ -23,9 +23,6 @@ public class VerifyGalaxy {
 
         // If system has more than 3 planets
         legalSystemSize();
-
-        // If two systems has the same position
-        legalPosition();
     }
 
     private void legalCenterPlanet(){
@@ -85,25 +82,6 @@ public class VerifyGalaxy {
 
             planetIter.next();
         }
-
-        /*for(int i = 0; i < galaxy.getSystems().size(); i++){
-
-            for (int j = 0; j < i; j++){
-
-                //SystemOne: The first checked system which SystemTwo is compared to
-                List systemOne = galaxy.getSystems().get(i).getPlanets();
-                List systemTwo = galaxy.getSystems().get(j).getPlanets();
-
-                for(int k = 0; k < systemTwo.size(); k++){
-
-                    // Check if a planet occurs more than once
-                    if(systemOne.contains(systemTwo.get(k))){
-
-                        throw new IllegalPlanetOccurrence();
-                    }
-                }
-            }
-        }*/
     }
 
     private void legalSystemSize(){
@@ -114,26 +92,6 @@ public class VerifyGalaxy {
             if(system.getPlanets().size() > MAX_SYSTEM_SIZE){
 
                 throw new IllegalPlanetSizeSystem();
-            }
-        }
-    }
-
-    private void legalPosition(){
-
-        for(int i = 0; i < galaxy.getSystems().size(); i++){
-
-            for (int j = 0; j < i; j++){
-
-                //SystemOne: The first checked system which SystemTwo is compared to
-                String systemOne = galaxy.getSystems().get(i).getPosition();
-                String systemTwo = galaxy.getSystems().get(j).getPosition();
-
-                // Check if a position has been taken
-                if(systemOne.equals(systemTwo)){
-
-                    throw new IllegalPosition();
-                }
-
             }
         }
     }
@@ -151,30 +109,29 @@ public class VerifyGalaxy {
         compass.add("South-East");
         compass.add("North-East");
 
-        for (int i = 0; i < galaxy.getSystems().size(); i++){
+        if(!system.getPosition().equals("Center")){
 
-            if(!system.getPosition().equals("Center")){
+            for(int i = 0; i < compass.size(); i++){
 
-                for(int j = 0; j < compass.size(); j++){
+                //Uppercase in case a typo has happened
+                if(system.getPosition().toUpperCase().equals(compass.get(i).toUpperCase())){
 
-                    //Uppercase in case a typo has happened
-                    if(system.getPosition().toUpperCase().equals(compass.get(j).toUpperCase())){
-
-                        southSystemIndx = j + 3;
-                    }
+                    southSystemIndx = i + 3;
                 }
             }
-            else {
+        }
+        else {
 
-                throw new IsCenterSystem();
-            }
+            throw new IsCenterSystem();
         }
 
+        // If index exceeds size of compass list
         if (southSystemIndx > compass.size()){
 
             southSystemIndx -= compass.size();
         }
 
+        // Finds the south position
         String southSystem = compass.get(southSystemIndx);
 
         return southSystem;

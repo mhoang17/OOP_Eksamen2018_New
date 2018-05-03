@@ -20,14 +20,16 @@ public class PlayerSpaceships{
         Destroyer destroyer = new Destroyer(player);
         Dreadnought dreadnought = new Dreadnought(player);
 
-        for (int i = 0; i < galaxy.getSpaceship().size(); i++){
+        for(Spaceship spaceship : galaxy.getSpaceship()){
 
-            if(galaxy.getSpaceship().get(i).getOwner().contains(player.toString())){
+            if(spaceship.getOwner().contains(player.toString())){
 
-                ownedSpaceships.add(galaxy.getSpaceship().get(i));
+                ownedSpaceships.add(spaceship);
             }
         }
 
         ownedSpaceships.sort(Comparator.comparing(Spaceship::getCombatValue));
+
+        // TODO: sort if equal
     }
 }

@@ -28,6 +28,7 @@ public class Systems {
         spaceships.add(spaceship);
     }
 
+    // Remove spaceship
     public void removeSpaceship(Spaceship spaceship) {
         spaceships.remove(spaceship);
     }
