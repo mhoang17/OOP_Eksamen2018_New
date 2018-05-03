@@ -20,9 +20,8 @@ public class Spaceship implements Unit{
         this.capacity = capacity;
     }
 
-    @Override
-    public String toString() {
-        return this.player.getColour() + ": " + this.type;
+    public String getType() {
+        return type;
     }
 
     @Override
@@ -48,5 +47,24 @@ public class Spaceship implements Unit{
     @Override
     public String getOwner() {
         return player.toString();
+    }
+
+    @Override
+    public String toString() {
+        return this.player.getColour() + ": " + this.type;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || !(o instanceof Spaceship)) {
+            return false;
+        }
+
+        Spaceship spaceship = (Spaceship) o;
+
+        return getOwner().equals(spaceship.getOwner()) && getType().equals(spaceship.getType());
     }
 }

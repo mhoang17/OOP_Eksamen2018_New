@@ -79,8 +79,13 @@ public class PresetConfigurations {
         galaxy.addSystems(northWest);
     }
 
+    // Getters for testing
     public Player getPlayerBlue() {
         return playerBlue;
+    }
+
+    public Player getPlayerRed() {
+        return playerRed;
     }
 
     public Systems getCenterSystem() {

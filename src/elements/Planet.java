@@ -37,7 +37,7 @@ public class Planet {
 
         Planet planet = (Planet) o;
 
-        return getName().equals(planet.getName());
+        return getName().equals(planet.getName()) && getResourceProduction() == planet.getResourceProduction();
     }
 
     // When made to string, it only returns the name

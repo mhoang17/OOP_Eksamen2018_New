@@ -10,13 +10,20 @@ public class Player {
     private String name;
     private String race;
     private String colour;
-    private List<Planet> planetsControl = new ArrayList();
 
     // Constructor
     public Player(String name, String race, String colour) {
         this.name = name;
         this.race = race;
         this.colour = colour;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getRace() {
+        return race;
     }
 
     public String getColour() {
@@ -35,7 +42,9 @@ public class Player {
 
         Player player = (Player) o;
 
-        return getColour().equals(player.getColour());
+        return  getName().equals(player.getName()) &&
+                getRace().equals(player.getRace()) &&
+                getColour().equals(player.getColour());
     }
 
     // Hashcode for colour

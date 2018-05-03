@@ -1,10 +1,5 @@
 import elements.*;
-import elements.spaceship.Spaceship;
-import elements.spaceship.spaceshipsClasses.Carrier;
-import elements.spaceship.spaceshipsClasses.Cruiser;
-import elements.spaceship.spaceshipsClasses.Dreadnought;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 

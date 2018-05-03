@@ -39,16 +39,16 @@ public class Systems {
         spaceships.remove(spaceship);
     }
 
+    public String getPosition() {
+        return position;
+    }
+
     public List<Planet> getPlanets() {
         return planets;
     }
 
     public List<Spaceship> getSpaceships() {
         return spaceships;
-    }
-
-    public String getPosition() {
-        return position;
     }
 
     // Compares the list of planets
