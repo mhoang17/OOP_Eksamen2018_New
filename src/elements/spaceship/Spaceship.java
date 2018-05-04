@@ -46,7 +46,7 @@ public class Spaceship implements Unit{
 
     @Override
     public String getOwner() {
-        return player.toString();
+        return player.getColour();
     }
 
     @Override

@@ -9,7 +9,7 @@ public class Combat {
     private final static int MIN_DICE_VAL = 0;
     private final static int MAX_DICE_VAL = 9;
 
-    List<Spaceship> spaceships = new ArrayList<>();
+    private List<Integer> counter = new ArrayList();
 
     public Combat(Galaxy galaxy) {
 
@@ -21,6 +21,25 @@ public class Combat {
 
             if(createCombat){
 
+                List<Spaceship> playerShips = new ArrayList<>();
+                List<Spaceship> playerOne = new ArrayList();
+                List<Spaceship> playerTwo = new ArrayList();
+
+                for(Player player : galaxy.getPlayers()){
+
+                    int count = 0;
+
+                    for(Spaceship spaceship : system.getSpaceships()){
+
+                        if(spaceship.getOwner().equals(player.getColour())){
+
+                            playerShips.add(spaceship);
+                            count++;
+                        }
+                    }
+
+                    counter.add(count);
+                }
             }
         }
     }
