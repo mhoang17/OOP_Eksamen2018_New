@@ -14,7 +14,7 @@ public class VerifyGalaxy {
     // Constants
     private final static int MAX_CENTER_SIZE = 1;
     private final static int MAX_SYSTEM_SIZE = 3;
-    private final static int LEGAL_OCCURENCE = 1;
+    private final static int LEGAL_OCCURRENCE = 1;
 
     // Field
     private Galaxy galaxy;
@@ -54,19 +54,11 @@ public class VerifyGalaxy {
 
     private void legalPlanet(){
 
-        // TODO: see if you can make a method where you don't need a foreach loop
-        List<Integer> hashCodeList = new ArrayList<>();
-
-        for(Planet planet : galaxy.getPlanets()){
-
-            hashCodeList.add(planet.hashCode());
-        }
-
         for (Planet planet : galaxy.getPlanets()){
 
-            int freq = Collections.frequency(hashCodeList, planet.hashCode());
+            int freq = Collections.frequency(galaxy.getPlanets(), planet);
 
-            if(freq > LEGAL_OCCURENCE){
+            if(freq > LEGAL_OCCURRENCE){
 
                 throw new IllegalPlanetOccurrence();
             }
