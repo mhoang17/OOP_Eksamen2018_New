@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        /*//Players
+        //Players
         Player playerBlue = new Player("Crassus", "The Emirates of Hacan", "Blue");
         Player playerRed = new Player("Pompey", "Federation of Sol", "Red");
 
@@ -16,9 +16,9 @@ public class Main {
         playerList.add(playerBlue);
         playerList.add(playerRed);
 
-        RandomGalaxy test = new RandomGalaxy(playerList);*/
+        RandomGalaxy test = new RandomGalaxy(playerList);
 
-        PresetConfigurations test = new PresetConfigurations();
+        //PresetConfigurations test = new PresetConfigurations();
 
     }
 }

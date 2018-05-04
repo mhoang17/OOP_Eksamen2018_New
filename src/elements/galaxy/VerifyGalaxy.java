@@ -14,6 +14,7 @@ public class VerifyGalaxy {
     // Constants
     private final static int MAX_CENTER_SIZE = 1;
     private final static int MAX_SYSTEM_SIZE = 3;
+    private final static int LEGAL_OCCURENCE = 1;
 
     // Field
     private Galaxy galaxy;
@@ -51,48 +52,24 @@ public class VerifyGalaxy {
         }
     }
 
-    // TODO: make it to hashmap
     private void legalPlanet(){
 
-        // List of planet names
-        List<String> planetList = new ArrayList();
+        // TODO: see if you can make a method where you don't need a foreach loop
+        List<Integer> hashCodeList = new ArrayList<>();
 
-        // Insert planet names from galaxy into planetList
-        for (Planet planet : galaxy.getPlanets()){
+        for(Planet planet : galaxy.getPlanets()){
 
-            planetList.add(planet.toString());
+            hashCodeList.add(planet.hashCode());
         }
 
-        // Sort planetList in alphabetical order
-        Collections.sort(planetList);
+        for (Planet planet : galaxy.getPlanets()){
 
-        // List iterator
-        ListIterator planetIter = planetList.listIterator();
+            int freq = Collections.frequency(hashCodeList, planet.hashCode());
 
-        // Check previous to current
-        while(planetIter.hasNext()){
+            if(freq > LEGAL_OCCURENCE){
 
-            // If index is 0, it has no previous element and gives and error
-            if(planetIter.nextIndex() != 0){
-
-                String prevPlanet = (String) planetIter.previous();
-
-                // Have to go up twice in order to reach the next element
-                planetIter.next();
-                String nextPlanet = (String) planetIter.next();
-
-                // If next planet is the previous one
-                if(nextPlanet.equals(prevPlanet)){
-
-                    throw new IllegalPlanetOccurrence();
-                }
-
-                // Has to go to the previous because outside it goes to the next element
-                planetIter.previous();
+                throw new IllegalPlanetOccurrence();
             }
-
-            // Next element
-            planetIter.next();
         }
     }
 

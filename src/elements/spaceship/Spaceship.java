@@ -5,6 +5,8 @@ package elements.spaceship;
 
 import elements.player.Player;
 
+import java.util.Objects;
+
 public class Spaceship implements Unit{
 
     private String type;

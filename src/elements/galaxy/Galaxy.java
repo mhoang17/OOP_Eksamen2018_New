@@ -16,6 +16,7 @@ public class Galaxy {
     // Field
     private List<Systems> systems = new ArrayList<>();
     private List<Player> players = new ArrayList<>();
+    private List<Integer> hashCodeList = new ArrayList<>();
 
     // Constructor
     public Galaxy() {}
@@ -77,4 +78,5 @@ public class Galaxy {
 
         return spaceships;
     }
+
 }

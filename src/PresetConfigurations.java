@@ -3,6 +3,7 @@
 
 import elements.WriteControlledPlanet;
 import elements.galaxy.Galaxy;
+import elements.galaxy.VerifyGalaxy;
 import elements.planet.Planet;
 import elements.player.Player;
 import elements.systems.Systems;
@@ -84,6 +85,8 @@ public class PresetConfigurations {
         galaxy.addSystems(south);
         galaxy.addSystems(southWest);
         galaxy.addSystems(northWest);
+
+        VerifyGalaxy verifyGalaxy = new VerifyGalaxy(galaxy);
 
         try {
             WriteControlledPlanet write = new WriteControlledPlanet(galaxy);

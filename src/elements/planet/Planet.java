@@ -5,6 +5,8 @@ package elements.planet;
 
 import elements.IllegalResourceProductionValue;
 
+import java.util.Objects;
+
 public class Planet {
 
     // Fields
@@ -43,6 +45,11 @@ public class Planet {
         Planet planet = (Planet) o;
 
         return getName().equals(planet.getName()) && getResourceProduction() == planet.getResourceProduction();
+    }
+
+    public int hashCode(){
+
+        return Objects.hashCode(name);
     }
 
     // When made to string, it only returns the name

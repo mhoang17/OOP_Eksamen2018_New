@@ -29,7 +29,7 @@ public class Combat {
 
         storeShips();
 
-        combatSystem();
+        findWinner();
     }
 
     public void storeShips(){
@@ -55,38 +55,27 @@ public class Combat {
 
         boolean combat = false;
 
-        ListIterator shipIter = system.getSpaceships().listIterator();
+        List<Integer> hashCodeList = new ArrayList<>();
+        int numOfShips = system.getSpaceships().size();
 
-        // Check if all spaceships belongs to one owner only
-        while(shipIter.hasNext()){
+        hashCodeList.add(playerBlue.hashCode());
+        hashCodeList.add(playerRed.hashCode());
 
-            // First index doesn't have previous
-            if(shipIter.nextIndex() != 0){
+        for(Spaceship spaceship : system.getSpaceships()){
 
-                Spaceship prevSpaceship = (Spaceship) shipIter.previous();
+            int freq = Collections.frequency(hashCodeList,spaceship.getOwner().hashCode());
 
-                shipIter.next();
-                Spaceship nextSpaceship = (Spaceship) shipIter.next();
+            // If all spaceships in system doesn't belong to one player
+            if(freq != numOfShips){
 
-                // If a ship doesn't belong to the same owner
-                // create combat
-                if(!nextSpaceship.getOwner().equals(prevSpaceship.getOwner())){
-
-                    System.out.println("COMBAT!");
-                    combat = true;
-                    break;
-                }
-
-                shipIter.previous();
+                combat = true;
             }
-
-            shipIter.next();
         }
 
         return combat;
     }
 
-    public Player combatSystem() {
+    public Player findWinner() {
 
         // Combat system begins
         boolean createCombat = detectCombat(system);
@@ -148,7 +137,7 @@ public class Combat {
 
         while(shipIter.hasNext()){
 
-            // If player blue didn't hit or has used all the hits
+            // If player blue didn't hit or has used all their hits
             if(enemyHit == NO_HITS){
 
                 break;
@@ -157,9 +146,5 @@ public class Combat {
             spaceships.remove(0);
             enemyHit--;
         }
-    }
-
-    public Player getWinner() {
-        return winner;
     }
 }

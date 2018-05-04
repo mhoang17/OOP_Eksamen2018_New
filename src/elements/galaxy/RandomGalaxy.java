@@ -70,9 +70,9 @@ public class RandomGalaxy {
 
             Combat doCombat = new Combat(system, galaxy.getPlayers().get(0), galaxy.getPlayers().get(1));
 
-            if(doCombat.getWinner() != null){
+            if(doCombat.findWinner() != null){
 
-                System.out.println("Winner: " + doCombat.getWinner().getName());
+                System.out.println("Winner: " + doCombat.findWinner().getName());
             }
         }
     }
