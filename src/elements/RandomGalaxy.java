@@ -57,14 +57,17 @@ public class RandomGalaxy {
 
         VerifyGalaxy verifyGalaxy = new VerifyGalaxy(galaxy);
 
-        Combat combat = new Combat(galaxy);
+        for(Systems system : galaxy.getSystems()) {
 
+            Combat combat = new Combat(system, players.get(0), players.get(1));
+
+            if(combat.getWinner() != null){
+
+                System.out.println(combat.getWinner());
+            }
+        }
 
         // Write to file (MADE FOR FUN)
-        for(Player player : players){
-
-            galaxy.addPlayer(player);
-        }
 
         try {
             WriteControlledPlanet write = new WriteControlledPlanet(galaxy);
@@ -101,6 +104,7 @@ public class RandomGalaxy {
         Systems centerSystem = new Systems("Center", mecRex);
         systemList.add(centerSystem);
 
+        // Create one layer of systems
         for(String direction : compass){
 
             int maxIntSize = collectedPlanetList.size() - 1;

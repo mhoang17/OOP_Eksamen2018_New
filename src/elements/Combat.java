@@ -8,97 +8,42 @@ public class Combat {
 
     private final static int MIN_DICE_VAL = 0;
     private final static int MAX_DICE_VAL = 9;
+    private final static int NO_HITS = 0;
 
-    public Combat(Galaxy galaxy) {
+    private Systems system;
+    private Player playerBlue;
+    private Player playerRed;
+    private Player winner;
+    private List<Spaceship> blueShips = new ArrayList();
+    private List<Spaceship> redShips = new ArrayList();
 
-        // TODO: Optimize
-        Player playerBlue = galaxy.getPlayers().get(0);
-        Player playerRed = galaxy.getPlayers().get(1);
+    public Combat(Systems system, Player playerBlue, Player playerRed) {
+        this.system = system;
+        this.playerBlue = playerBlue;
+        this.playerRed = playerRed;
 
-        for(Systems system : galaxy.getSystems()) {
+        storeShips();
 
-            // Store owned ships in system for each player
-            List<Spaceship> playerBlueShips = new ArrayList();
-            List<Spaceship> playerRedShips = new ArrayList();
+        combatSystem();
+    }
 
-            for (Spaceship spaceship : system.getSpaceships()) {
+    public void storeShips(){
 
-                if(spaceship.getOwner().equals(playerBlue.toString())){
+        // Store owned ships in system for each player
+        for (Spaceship spaceship : system.getSpaceships()) {
 
-                    playerBlueShips.add(spaceship);
-                }
-                else {
-                    playerRedShips.add(spaceship);
-                }
+            if(spaceship.getOwner().equals(playerBlue.toString())){
+
+                blueShips.add(spaceship);
             }
-
-            // Sort list so the ship with lowest resource cost is first
-            playerBlueShips.sort(Comparator.comparing(Spaceship::getResourceCost));
-            playerRedShips.sort(Comparator.comparing(Spaceship::getResourceCost));
-
-            boolean createCombat = detectCombat(system);
-
-            if(createCombat) {
-
-                while(createCombat){
-
-                    int playerBlueHit = doCombat(playerBlueShips);
-                    int playerRedHit = doCombat(playerRedShips);
-
-                    // Remove the number of ships after hit
-                    // Optimize
-                    if(playerBlueHit < playerRedShips.size()){
-
-                        for(int i = 0; i < playerBlueHit; i++){
-
-                            playerRedShips.remove(i);
-                        }
-                    }
-                    else{
-
-                        playerBlueHit = playerRedShips.size();
-
-                        for(int i = 0; i < playerBlueHit; i++){
-
-                            playerRedShips.remove(i);
-                        }
-                    }
-
-                    if(playerRedHit < playerBlueShips.size()){
-
-                        for (int i = 0; i < playerRedHit; i++){
-
-                            playerBlueShips.remove(i);
-                        }
-                    }
-                    else {
-
-                        playerRedHit = playerBlueShips.size();
-
-                        for (int i = 0; i < playerRedHit; i++){
-
-                            playerBlueShips.remove(i);
-                        }
-                    }
-
-                    if(playerBlueShips.size() == 0 && playerRedShips.size() == 0){
-
-                        System.out.println("IT'S A TIE!");
-                        createCombat = false;
-                    }
-                    else if(playerBlueShips.size() == 0){
-
-                        System.out.println(playerRed.getName().toUpperCase() + " WINS!");
-                        createCombat = false;
-                    }
-                    else if(playerRedShips.size() == 0){
-
-                        System.out.println(playerBlue.getName().toUpperCase() + " WINS!");
-                        createCombat = false;
-                    }
-                }
+            else {
+                redShips.add(spaceship);
             }
         }
+
+        // Sort list so the ship with lowest resource cost is first
+        blueShips.sort(Comparator.comparing(Spaceship::getResourceCost));
+        redShips.sort(Comparator.comparing(Spaceship::getResourceCost));
     }
 
     public boolean detectCombat(Systems system){
@@ -122,6 +67,7 @@ public class Combat {
                 // create combat
                 if(!nextSpaceship.getOwner().equals(prevSpaceship.getOwner())){
 
+                    System.out.println("COMBAT!");
                     combat = true;
                     break;
                 }
@@ -133,6 +79,44 @@ public class Combat {
         }
 
         return combat;
+    }
+
+    public Player combatSystem() {
+
+        // Combat system begins
+        boolean createCombat = detectCombat(system);
+
+        if(createCombat) {
+
+            while(createCombat){
+
+                //Create spaceship war!
+                int playerBlueHit = doCombat(blueShips);
+                int playerRedHit = doCombat(redShips);
+
+                destroyShip(redShips, playerBlueHit);
+                destroyShip(blueShips, playerRedHit);
+
+                if(blueShips.size() == 0 && redShips.size() == 0){
+
+                    createCombat = false;
+                }
+                // If all blue ships are destroyed
+                else if(blueShips.size() == 0){
+
+                    winner = playerRed;
+                    createCombat = false;
+                }
+                // If all red ships are destroyed
+                else if(redShips.size() == 0){
+
+                    winner = playerBlue;
+                    createCombat = false;
+                }
+            }
+        }
+
+        return winner;
     }
 
     public int doCombat(List<Spaceship> spaceshipsOne){
@@ -151,5 +135,26 @@ public class Combat {
         }
 
         return hit;
+    }
+
+    public void destroyShip(List<Spaceship> spaceships, int enemyHit){
+
+        Iterator shipIter = spaceships.iterator();
+
+        while(shipIter.hasNext()){
+
+            // If player blue didn't hit or has used all the hits
+            if(enemyHit == NO_HITS){
+
+                break;
+            }
+
+            spaceships.remove(0);
+            enemyHit--;
+        }
+    }
+
+    public Player getWinner() {
+        return winner;
     }
 }

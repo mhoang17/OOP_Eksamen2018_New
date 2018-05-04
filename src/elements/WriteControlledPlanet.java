@@ -15,6 +15,7 @@ public class WriteControlledPlanet {
         String outputName = "PlanetaryControl.txt";
         File outputFile = new File(outputName);
 
+        //This method, the file will always be overwritten
         BufferedWriter writer = new BufferedWriter(new FileWriter(outputName));
 
         // If file doesn't exist
