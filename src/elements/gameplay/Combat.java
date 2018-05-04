@@ -37,7 +37,7 @@ public class Combat {
         // Store owned ships in system for each player
         for (Spaceship spaceship : system.getSpaceships()) {
 
-            if(spaceship.getOwner().equals(playerBlue.toString())){
+            if(spaceship.getOwner().equals(playerBlue)){
 
                 blueShips.add(spaceship);
             }

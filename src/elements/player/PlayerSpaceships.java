@@ -16,7 +16,7 @@ public class PlayerSpaceships{
 
         for(Spaceship spaceship : galaxy.getSpaceship()){
 
-            if(spaceship.getOwner().contains(player.toString())){
+            if(spaceship.getOwner().equals(player)){
 
                 ownedSpaceships.add(spaceship);
             }

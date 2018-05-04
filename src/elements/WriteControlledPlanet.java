@@ -14,9 +14,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-class WriteControlledPlanet {
+public class WriteControlledPlanet {
 
-    WriteControlledPlanet(Galaxy galaxy) throws IOException{
+    public WriteControlledPlanet(Galaxy galaxy) throws IOException{
 
         // Create file
         String outputName = "PlanetaryControl.txt";
@@ -43,7 +43,7 @@ class WriteControlledPlanet {
                 for(Spaceship spaceship : system.getSpaceships()){
 
                     // Check if spaceship in system belongs to current player
-                    if(spaceship.getOwner().equals(player.toString())){
+                    if(spaceship.getOwner().equals(player)){
 
                         count++;
                     }

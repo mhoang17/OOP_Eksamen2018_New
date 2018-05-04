@@ -59,12 +59,12 @@ public class RandomGalaxy {
 
         Galaxy galaxy = new Galaxy(systemList);
 
+        VerifyGalaxy verifyGalaxy = new VerifyGalaxy(galaxy);
+
         for (Player player : players){
 
             galaxy.addPlayer(player);
         }
-
-        VerifyGalaxy verifyGalaxy = new VerifyGalaxy(galaxy);
 
         for(Systems system : galaxy.getSystems()){
 

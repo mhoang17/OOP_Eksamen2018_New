@@ -1,6 +1,7 @@
 // Maria-Theresa Oanh Hoang
 // AAU mail: mhoang17@student.aau.dk
 
+import elements.WriteControlledPlanet;
 import elements.galaxy.Galaxy;
 import elements.planet.Planet;
 import elements.player.Player;
@@ -10,6 +11,7 @@ import elements.spaceship.spaceshipsClasses.Cruiser;
 import elements.spaceship.spaceshipsClasses.Destroyer;
 import elements.spaceship.spaceshipsClasses.Dreadnought;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,6 +74,9 @@ public class PresetConfigurations {
         // Insert systems to galaxy
         galaxy = new Galaxy();
 
+        galaxy.addPlayer(playerBlue);
+        galaxy.addPlayer(playerRed);
+
         galaxy.addSystems(centerSystem);
         galaxy.addSystems(northSystem);
         galaxy.addSystems(northEastSystem);
@@ -79,6 +84,12 @@ public class PresetConfigurations {
         galaxy.addSystems(south);
         galaxy.addSystems(southWest);
         galaxy.addSystems(northWest);
+
+        try {
+            WriteControlledPlanet write = new WriteControlledPlanet(galaxy);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     // Getters for testing
