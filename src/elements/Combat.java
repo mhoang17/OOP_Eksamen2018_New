@@ -9,36 +9,93 @@ public class Combat {
     private final static int MIN_DICE_VAL = 0;
     private final static int MAX_DICE_VAL = 9;
 
-    private List<Integer> counter = new ArrayList();
-
     public Combat(Galaxy galaxy) {
 
-        Random rand = new Random();
+        // TODO: Optimize
+        Player playerBlue = galaxy.getPlayers().get(0);
+        Player playerRed = galaxy.getPlayers().get(1);
 
-        for(Systems system : galaxy.getSystems()){
+        for(Systems system : galaxy.getSystems()) {
+
+            // Store owned ships in system for each player
+            List<Spaceship> playerBlueShips = new ArrayList();
+            List<Spaceship> playerRedShips = new ArrayList();
+
+            for (Spaceship spaceship : system.getSpaceships()) {
+
+                if(spaceship.getOwner().equals(playerBlue.toString())){
+
+                    playerBlueShips.add(spaceship);
+                }
+                else {
+                    playerRedShips.add(spaceship);
+                }
+            }
+
+            // Sort list so the ship with lowest resource cost is first
+            playerBlueShips.sort(Comparator.comparing(Spaceship::getResourceCost));
+            playerRedShips.sort(Comparator.comparing(Spaceship::getResourceCost));
 
             boolean createCombat = detectCombat(system);
 
-            if(createCombat){
+            if(createCombat) {
 
-                List<Spaceship> playerShips = new ArrayList<>();
-                List<Spaceship> playerOne = new ArrayList();
-                List<Spaceship> playerTwo = new ArrayList();
+                while(createCombat){
 
-                for(Player player : galaxy.getPlayers()){
+                    int playerBlueHit = doCombat(playerBlueShips);
+                    int playerRedHit = doCombat(playerRedShips);
 
-                    int count = 0;
+                    // Remove the number of ships after hit
+                    // Optimize
+                    if(playerBlueHit < playerRedShips.size()){
 
-                    for(Spaceship spaceship : system.getSpaceships()){
+                        for(int i = 0; i < playerBlueHit; i++){
 
-                        if(spaceship.getOwner().equals(player.getColour())){
+                            playerRedShips.remove(i);
+                        }
+                    }
+                    else{
 
-                            playerShips.add(spaceship);
-                            count++;
+                        playerBlueHit = playerRedShips.size();
+
+                        for(int i = 0; i < playerBlueHit; i++){
+
+                            playerRedShips.remove(i);
                         }
                     }
 
-                    counter.add(count);
+                    if(playerRedHit < playerBlueShips.size()){
+
+                        for (int i = 0; i < playerRedHit; i++){
+
+                            playerBlueShips.remove(i);
+                        }
+                    }
+                    else {
+
+                        playerRedHit = playerBlueShips.size();
+
+                        for (int i = 0; i < playerRedHit; i++){
+
+                            playerBlueShips.remove(i);
+                        }
+                    }
+
+                    if(playerBlueShips.size() == 0 && playerRedShips.size() == 0){
+
+                        System.out.println("IT'S A TIE!");
+                        createCombat = false;
+                    }
+                    else if(playerBlueShips.size() == 0){
+
+                        System.out.println(playerRed.getName().toUpperCase() + " WINS!");
+                        createCombat = false;
+                    }
+                    else if(playerRedShips.size() == 0){
+
+                        System.out.println(playerBlue.getName().toUpperCase() + " WINS!");
+                        createCombat = false;
+                    }
                 }
             }
         }
@@ -65,7 +122,6 @@ public class Combat {
                 // create combat
                 if(!nextSpaceship.getOwner().equals(prevSpaceship.getOwner())){
 
-                    System.out.println("Combat!");
                     combat = true;
                     break;
                 }
@@ -77,5 +133,23 @@ public class Combat {
         }
 
         return combat;
+    }
+
+    public int doCombat(List<Spaceship> spaceshipsOne){
+
+        Random rand = new Random();
+        int hit = 0;
+
+        for(Spaceship spaceship : spaceshipsOne){
+
+            int dice = rand.nextInt((MAX_DICE_VAL - MIN_DICE_VAL + 1) + MIN_DICE_VAL);
+
+            if(dice >= spaceship.getCombatValue()){
+
+                hit++;
+            }
+        }
+
+        return hit;
     }
 }

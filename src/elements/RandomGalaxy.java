@@ -52,16 +52,12 @@ public class RandomGalaxy {
         addMoreSpaceships();
 
         Galaxy galaxy = new Galaxy(systemList);
+        galaxy.addPlayer(players.get(0));
+        galaxy.addPlayer(players.get(1));
 
         VerifyGalaxy verifyGalaxy = new VerifyGalaxy(galaxy);
 
         Combat combat = new Combat(galaxy);
-
-
-
-
-
-
 
 
         // Write to file (MADE FOR FUN)
