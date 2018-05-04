@@ -1,6 +1,5 @@
 package elements;
 
-import elements.*;
 import elements.spaceship.Spaceship;
 import elements.spaceship.spaceshipsClasses.Carrier;
 import elements.spaceship.spaceshipsClasses.Cruiser;
@@ -32,7 +31,6 @@ public class RandomGalaxy {
 
     //Lists
     private List<Systems> systemList = new ArrayList<>();
-    private List<Spaceship> spaceshipList = new ArrayList<>();
     private List<String> compass = new ArrayList<>();
     private List<Spaceship> spaceshipTypes = new ArrayList<>();
     private List<Player> players;
@@ -40,17 +38,31 @@ public class RandomGalaxy {
     public RandomGalaxy(List<Player> players) {
 
         this.players = players;
+
+        // Set lists
+        setSystemList();
+        setCompass();
+        setSpaceshipTypes();
+
+        // Create random galaxy
         randomSystems();
         randomSpaceships();
 
+        // If only spaceships occurs in one system
+        addMoreSpaceships();
+
         Galaxy galaxy = new Galaxy(systemList);
 
-        // If only one ship is in galaxy
-        // TODO: check if at least two systems has spaceships in them
-        if(galaxy.getSpaceship().size() < 2){
+        VerifyGalaxy verifyGalaxy = new VerifyGalaxy(galaxy);
 
-            randomSpaceships();
-        }
+        Combat combat = new Combat(galaxy);
+
+
+
+
+
+
+
 
         // Write to file (MADE FOR FUN)
         for(Player player : players){
@@ -65,29 +77,37 @@ public class RandomGalaxy {
         }
     }
 
+    public void addMoreSpaceships(){
+
+        int count = 0;
+
+        for(Systems system : systemList){
+
+            // If system contains at least one spaceship
+            if(system.getSpaceships().size() > 0){
+
+                count++;
+            }
+        }
+
+        // If count is less than one
+        // then there's only spaceships in one system or none in galaxy
+        if(count <= 1){
+
+            randomSpaceships();
+        }
+    }
+
     public void randomSystems(){
 
-        // Mecatol Rex
+        // Create Center system with Mecatol Rex
         mecRex.add(new Planet("Mecatol Rex", 3));
         Systems centerSystem = new Systems("Center", mecRex);
-
-        setSystemList();
-        setCompass();
-
         systemList.add(centerSystem);
 
-        //TODO: make iterator
-        // Create random systems
         for(String direction : compass){
 
             int maxIntSize = collectedPlanetList.size() - 1;
-
-            // If maxInt size is 0, maxIntSize in the next iteration is negative
-            // TODO: make this iterable
-            if(maxIntSize == 0){
-
-                break;
-            }
 
             Random rand = new Random();
             int randInt = rand.nextInt(maxIntSize + 1);
@@ -99,18 +119,15 @@ public class RandomGalaxy {
                 systemList.add(system);
                 collectedPlanetList.remove(randInt);
             }
-            // Empty system
+            // If system should be empty
             else{
                 Systems system = new Systems(direction);
                 systemList.add(system);
-                collectedPlanetList.remove(randInt);
             }
         }
     }
 
     public void randomSpaceships(){
-
-        setSpaceshipTypes();
 
         for(Systems system : systemList){
 
@@ -164,7 +181,6 @@ public class RandomGalaxy {
         collectedPlanetList.add(rigelSystem);
         collectedPlanetList.add(indus);
         collectedPlanetList.add(mirage);
-        collectedPlanetList.add(null);
         collectedPlanetList.add(null);
     }
 
