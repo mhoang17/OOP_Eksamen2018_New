@@ -1,6 +1,11 @@
-package elements;
+// Maria-Theresa Oanh Hoang
+// AAU mail: mhoang17@student.aau.dk
 
+package elements.gameplay;
+
+import elements.player.Player;
 import elements.spaceship.Spaceship;
+import elements.systems.Systems;
 
 import java.util.*;
 

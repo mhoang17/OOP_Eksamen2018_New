@@ -1,12 +1,18 @@
-package elements;
+// Maria-Theresa Oanh Hoang
+// AAU mail: mhoang17@student.aau.dk
 
+package elements.galaxy;
+
+import elements.gameplay.Combat;
+import elements.planet.Planet;
+import elements.player.Player;
 import elements.spaceship.Spaceship;
 import elements.spaceship.spaceshipsClasses.Carrier;
 import elements.spaceship.spaceshipsClasses.Cruiser;
 import elements.spaceship.spaceshipsClasses.Destroyer;
 import elements.spaceship.spaceshipsClasses.Dreadnought;
+import elements.systems.Systems;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -52,31 +58,26 @@ public class RandomGalaxy {
         addMoreSpaceships();
 
         Galaxy galaxy = new Galaxy(systemList);
-        galaxy.addPlayer(players.get(0));
-        galaxy.addPlayer(players.get(1));
+
+        for (Player player : players){
+
+            galaxy.addPlayer(player);
+        }
 
         VerifyGalaxy verifyGalaxy = new VerifyGalaxy(galaxy);
 
-        for(Systems system : galaxy.getSystems()) {
+        for(Systems system : galaxy.getSystems()){
 
-            Combat combat = new Combat(system, players.get(0), players.get(1));
+            Combat doCombat = new Combat(system, galaxy.getPlayers().get(0), galaxy.getPlayers().get(1));
 
-            if(combat.getWinner() != null){
+            if(doCombat.getWinner() != null){
 
-                System.out.println(combat.getWinner());
+                System.out.println("Winner: " + doCombat.getWinner().getName());
             }
-        }
-
-        // Write to file (MADE FOR FUN)
-
-        try {
-            WriteControlledPlanet write = new WriteControlledPlanet(galaxy);
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
-    public void addMoreSpaceships(){
+    private void addMoreSpaceships(){
 
         int count = 0;
 
@@ -97,7 +98,7 @@ public class RandomGalaxy {
         }
     }
 
-    public void randomSystems(){
+    private void randomSystems(){
 
         // Create Center system with Mecatol Rex
         mecRex.add(new Planet("Mecatol Rex", 3));
@@ -127,7 +128,7 @@ public class RandomGalaxy {
         }
     }
 
-    public void randomSpaceships(){
+    private void randomSpaceships(){
 
         for(Systems system : systemList){
 
@@ -161,7 +162,7 @@ public class RandomGalaxy {
 
     }
 
-    public void setSystemList(){
+    private void setSystemList(){
 
         // Vaga planets
         vegaSystem.add(new Planet("Vega Minor", 3));
@@ -184,7 +185,7 @@ public class RandomGalaxy {
         collectedPlanetList.add(null);
     }
 
-    public void setSpaceshipTypes() {
+    private void setSpaceshipTypes() {
 
         for(Player player : players){
 
@@ -195,7 +196,7 @@ public class RandomGalaxy {
         }
     }
 
-    public void setCompass(){
+    private void setCompass(){
 
         compass.add("North");
         compass.add("North-West");

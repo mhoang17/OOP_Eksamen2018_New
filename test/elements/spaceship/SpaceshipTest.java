@@ -1,6 +1,6 @@
 package elements.spaceship;
 
-import elements.Player;
+import elements.player.Player;
 import elements.spaceship.spaceshipsClasses.Carrier;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

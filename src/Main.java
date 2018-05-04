@@ -1,4 +1,5 @@
-import elements.*;
+import elements.galaxy.RandomGalaxy;
+import elements.player.Player;
 
 import java.util.ArrayList;
 import java.util.List;

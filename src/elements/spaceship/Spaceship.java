@@ -1,6 +1,9 @@
+// Maria-Theresa Oanh Hoang
+// AAU mail: mhoang17@student.aau.dk
+
 package elements.spaceship;
 
-import elements.Player;
+import elements.player.Player;
 
 public class Spaceship implements Unit{
 

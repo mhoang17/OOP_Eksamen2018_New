@@ -1,5 +1,11 @@
-package elements;
+// Maria-Theresa Oanh Hoang
+// AAU mail: mhoang17@student.aau.dk
 
+package elements.galaxy;
+
+import elements.planet.Planet;
+import elements.player.Player;
+import elements.systems.Systems;
 import elements.spaceship.Spaceship;
 
 import java.util.ArrayList;

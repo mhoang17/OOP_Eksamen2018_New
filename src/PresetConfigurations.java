@@ -1,7 +1,10 @@
-import elements.Galaxy;
-import elements.Planet;
-import elements.Player;
-import elements.Systems;
+// Maria-Theresa Oanh Hoang
+// AAU mail: mhoang17@student.aau.dk
+
+import elements.galaxy.Galaxy;
+import elements.planet.Planet;
+import elements.player.Player;
+import elements.systems.Systems;
 import elements.spaceship.spaceshipsClasses.Carrier;
 import elements.spaceship.spaceshipsClasses.Cruiser;
 import elements.spaceship.spaceshipsClasses.Destroyer;
@@ -9,7 +12,6 @@ import elements.spaceship.spaceshipsClasses.Dreadnought;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class PresetConfigurations {
 

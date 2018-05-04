@@ -1,4 +1,7 @@
-package elements;
+// Maria-Theresa Oanh Hoang
+// AAU mail: mhoang17@student.aau.dk
+
+package elements.player;
 
 import java.util.Objects;
 

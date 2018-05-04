@@ -1,15 +1,22 @@
+// Maria-Theresa Oanh Hoang
+// AAU mail: mhoang17@student.aau.dk
+
 package elements;
 
+import elements.galaxy.Galaxy;
+import elements.planet.Planet;
+import elements.player.Player;
 import elements.spaceship.Spaceship;
+import elements.systems.Systems;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class WriteControlledPlanet {
+class WriteControlledPlanet {
 
-    public WriteControlledPlanet(Galaxy galaxy) throws IOException{
+    WriteControlledPlanet(Galaxy galaxy) throws IOException{
 
         // Create file
         String outputName = "PlanetaryControl.txt";
@@ -36,15 +43,18 @@ public class WriteControlledPlanet {
                 for(Spaceship spaceship : system.getSpaceships()){
 
                     // Check if spaceship in system belongs to current player
-                    if(spaceship.getOwner().toString().equals(player.toString())){
+                    if(spaceship.getOwner().equals(player.toString())){
 
                         count++;
                     }
 
                     // If counter is equal to size, then all ships in the system belongs to the player
-                    if(count == system.getSpaceships().size()){
+                    for(Planet planet : system.getPlanets()){
 
-                        writer.write(system.getPlanets().toString() + "\n");
+                        if(count == system.getSpaceships().size()){
+
+                            writer.write(planet.toString() + "\n");
+                        }
                     }
                 }
             }

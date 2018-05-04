@@ -1,4 +1,11 @@
-package elements;
+// Maria-Theresa Oanh Hoang
+// AAU mail: mhoang17@student.aau.dk
+
+package elements.galaxy;
+
+import elements.*;
+import elements.planet.Planet;
+import elements.systems.Systems;
 
 import java.util.*;
 
@@ -44,6 +51,7 @@ public class VerifyGalaxy {
         }
     }
 
+    // TODO: make it to hashmap
     private void legalPlanet(){
 
         // List of planet names

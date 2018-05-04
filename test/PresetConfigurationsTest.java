@@ -1,5 +1,5 @@
-import elements.Planet;
-import elements.Player;
+import elements.planet.Planet;
+import elements.player.Player;
 import elements.spaceship.Spaceship;
 import elements.spaceship.spaceshipsClasses.Dreadnought;
 import org.junit.jupiter.api.BeforeEach;
