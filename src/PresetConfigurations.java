@@ -24,13 +24,6 @@ public class PresetConfigurations {
     private Player playerBlue = new Player("Crassus", "The Emirates of Hacan", "Blue");
     private Player playerRed = new Player("Pompey", "Federation of Sol", "Red");
 
-    //Planets
-    private List<Planet> mecRex = new ArrayList();
-    private List<Planet> vegaSystem = new ArrayList<>();
-    private List<Planet> indus = new ArrayList<>();
-    private List<Planet> rigelSystem = new ArrayList<>();
-    private List<Planet> mirage = new ArrayList<>();
-
     //Systems
     private Systems centerSystem;
 
@@ -40,20 +33,25 @@ public class PresetConfigurations {
     public PresetConfigurations() {
 
         // Mecatol Rex
+        List<Planet> mecRex = new ArrayList();
         mecRex.add(new Planet("Mecatol Rex", 3));
 
         // Vaga planets
+        List<Planet> vegaSystem = new ArrayList<>();
         vegaSystem.add(new Planet("Vega Minor", 3));
         vegaSystem.add(new Planet("Vega Major", 6));
 
         // Industrex
+        List<Planet> indus = new ArrayList<>();
         indus.add(new Planet("Industrex", 6));
 
         // Rigel planets
+        List<Planet> rigelSystem = new ArrayList<>();
         rigelSystem.add(new Planet("Rigel I", 1));
         rigelSystem.add(new Planet("Rigel II", 4));
 
         //Mirage
+        List<Planet> mirage = new ArrayList<>();
         mirage.add(new Planet("Mirage", 2));
 
         // Systems
@@ -88,9 +86,7 @@ public class PresetConfigurations {
         galaxy.addSystems(southWest);
         galaxy.addSystems(northWest);
 
-        VerifyGalaxy verifyGalaxy = new VerifyGalaxy(galaxy);
-
-        PlayerSpaceships blueShips = new PlayerSpaceships(galaxy, playerBlue);
+        /*VerifyGalaxy verifyGalaxy = new VerifyGalaxy(galaxy);
 
         Combat combat = new Combat(centerSystem, playerBlue, playerRed);
 
@@ -98,7 +94,7 @@ public class PresetConfigurations {
             WriteControlledPlanet write = new WriteControlledPlanet(galaxy);
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     // Getters for testing

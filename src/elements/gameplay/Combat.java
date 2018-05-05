@@ -70,7 +70,6 @@ public class Combat {
         // If all spaceships in system doesn't belong to one player
         if(freqBlue != numOfShips && freqRed != numOfShips){
 
-            System.out.println("COMBAT!");
             combat = true;
         }
 

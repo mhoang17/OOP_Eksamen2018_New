@@ -12,9 +12,9 @@ public class PlayerSpaceships{
 
     private List<Spaceship> ownedSpaceships = new ArrayList();
 
-    public PlayerSpaceships(Galaxy galaxy, Player player){
+    public PlayerSpaceships(List<Spaceship> spaceships, Player player){
 
-        for(Spaceship spaceship : galaxy.getSpaceship()){
+        for(Spaceship spaceship : spaceships){
 
             if(spaceship.getOwner().equals(player)){
 
