@@ -55,21 +55,23 @@ public class Combat {
 
         boolean combat = false;
 
-        List<Integer> hashCodeList = new ArrayList<>();
+        List<Player> ownerList = new ArrayList<>();
         int numOfShips = system.getSpaceships().size();
 
-        hashCodeList.add(playerBlue.hashCode());
-        hashCodeList.add(playerRed.hashCode());
+        for (Spaceship spaceship : system.getSpaceships()){
 
-        for(Spaceship spaceship : system.getSpaceships()){
+            ownerList.add(spaceship.getOwner());
+        }
 
-            int freq = Collections.frequency(hashCodeList,spaceship.getOwner().hashCode());
+        // Check if player owns a ship
+        int freqBlue = Collections.frequency(ownerList, playerBlue);
+        int freqRed = Collections.frequency(ownerList, playerRed);
 
-            // If all spaceships in system doesn't belong to one player
-            if(freq != numOfShips){
+        // If all spaceships in system doesn't belong to one player
+        if(freqBlue != numOfShips && freqRed != numOfShips){
 
-                combat = true;
-            }
+            System.out.println("COMBAT!");
+            combat = true;
         }
 
         return combat;

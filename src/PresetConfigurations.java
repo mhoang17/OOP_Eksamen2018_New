@@ -4,6 +4,7 @@
 import elements.WriteControlledPlanet;
 import elements.galaxy.Galaxy;
 import elements.galaxy.VerifyGalaxy;
+import elements.gameplay.Combat;
 import elements.planet.Planet;
 import elements.player.Player;
 import elements.systems.Systems;
@@ -87,6 +88,8 @@ public class PresetConfigurations {
         galaxy.addSystems(northWest);
 
         VerifyGalaxy verifyGalaxy = new VerifyGalaxy(galaxy);
+
+        Combat combat = new Combat(centerSystem, playerBlue, playerRed);
 
         try {
             WriteControlledPlanet write = new WriteControlledPlanet(galaxy);
