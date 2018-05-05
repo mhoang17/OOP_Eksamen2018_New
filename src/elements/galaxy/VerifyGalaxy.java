@@ -46,7 +46,7 @@ public class VerifyGalaxy {
                 // If center system has more than one planet or if the planet is not Mecatol Rex
                 if(system.getPlanets().size() != MAX_CENTER_SIZE || !system.getPlanets().get(0).equals(mecRex)){
 
-                    throw new IllegalCenterSystem();
+                    throw new IllegalSystem("Center system doesn't contain Mecatol Rex as the only planet.");
                 }
             }
         }
@@ -58,9 +58,10 @@ public class VerifyGalaxy {
 
             int freq = Collections.frequency(galaxy.getPlanets(), planet);
 
+            // If freq is over 1, then a planet occurs more than once in galaxy
             if(freq > LEGAL_OCCURRENCE){
 
-                throw new IllegalPlanetOccurrence();
+                throw new IllegalSystem(planet.getName() + " occurs more than once.");
             }
         }
     }
@@ -72,7 +73,7 @@ public class VerifyGalaxy {
             // Check if size is more than 3
             if(system.getPlanets().size() > MAX_SYSTEM_SIZE){
 
-                throw new IllegalPlanetSizeSystem();
+                throw new IllegalSystem(system.toString() + " has more than three planets.");
             }
         }
     }
@@ -102,10 +103,6 @@ public class VerifyGalaxy {
                 }
             }
         }
-        /*else {
-
-            throw new IsCenterSystem();
-        }*/
 
         // If index exceeds size of compass list
         if (southSystemIndx > compass.size()){

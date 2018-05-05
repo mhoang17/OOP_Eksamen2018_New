@@ -50,7 +50,7 @@ public class Player {
 
     // Hashcode for colour
     public int hashCode() {
-        return Objects.hashCode(colour);
+        return Objects.hash(name, race, colour);
     }
 
     // String

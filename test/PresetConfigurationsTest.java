@@ -50,7 +50,7 @@ class PresetConfigurationsTest {
     }
 
     @Test
-    // Test that all systems are in the galaxy
+    // Test that all system inserted are in the galaxy
     void galaxySize(){
 
         assertEquals(test.getGalaxy().getSystems().size(), NUMBER_OF_SYSTEMS);

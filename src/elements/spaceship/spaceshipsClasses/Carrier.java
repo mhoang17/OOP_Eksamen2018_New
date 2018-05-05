@@ -12,4 +12,5 @@ public class Carrier extends Spaceship{
     public Carrier(Player player) {
         super("Carrier", player, 3, 9, 1, 6);
     }
+
 }

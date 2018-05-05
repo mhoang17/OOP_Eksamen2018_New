@@ -13,6 +13,9 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class WriteControlledPlanet {
 
@@ -25,12 +28,6 @@ public class WriteControlledPlanet {
         //This method, the file will always be overwritten
         BufferedWriter writer = new BufferedWriter(new FileWriter(outputName));
 
-        // If file doesn't exist
-        if(!outputFile.exists()){
-
-            System.out.println("File doesn't exist.");
-        }
-
         for(Player player : galaxy.getPlayers()){
 
             //Write player to file
@@ -38,20 +35,25 @@ public class WriteControlledPlanet {
 
             for(Systems system : galaxy.getSystems()){
 
-                int count = 0;
+                int numOfShips = system.getSpaceships().size();
 
-                for(Spaceship spaceship : system.getSpaceships()){
+                if(numOfShips != 0){
 
-                    // Check if spaceship in system belongs to current player
-                    if(spaceship.getOwner().equals(player)){
+                    List<Player> ownerList = new ArrayList<>();
 
-                        count++;
+                    for (Spaceship spaceship : system.getSpaceships()){
+
+                        ownerList.add(spaceship.getOwner());
                     }
 
-                    // If counter is equal to size, then all ships in the system belongs to the player
-                    for(Planet planet : system.getPlanets()){
+                    // Check if player owns a ship
+                    int freq = Collections.frequency(ownerList, player);
 
-                        if(count == system.getSpaceships().size()){
+                    // If all spaceships in system belongs to one player
+                    // and there's ships in system
+                    if(freq == numOfShips){
+
+                        for(Planet planet : system.getPlanets()){
 
                             writer.write(planet.toString() + "\n");
                         }

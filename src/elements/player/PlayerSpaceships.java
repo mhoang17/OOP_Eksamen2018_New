@@ -25,6 +25,12 @@ public class PlayerSpaceships{
         // Sort after combat value
         ownedSpaceships.sort(Comparator.comparing(Spaceship::getCombatValue));
 
-        // TODO: sort if equal
+        //Sort after resource cost
+        ownedSpaceships.sort((shipOne, shipTwo) -> shipTwo.cmpResourceCost(shipOne));
+    }
+
+    public List<Spaceship> getOwnedSpaceships() {
+
+        return ownedSpaceships;
     }
 }

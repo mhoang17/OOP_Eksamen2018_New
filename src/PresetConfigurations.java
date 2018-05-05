@@ -7,6 +7,7 @@ import elements.galaxy.VerifyGalaxy;
 import elements.gameplay.Combat;
 import elements.planet.Planet;
 import elements.player.Player;
+import elements.player.PlayerSpaceships;
 import elements.systems.Systems;
 import elements.spaceship.spaceshipsClasses.Carrier;
 import elements.spaceship.spaceshipsClasses.Cruiser;
@@ -88,6 +89,8 @@ public class PresetConfigurations {
         galaxy.addSystems(northWest);
 
         VerifyGalaxy verifyGalaxy = new VerifyGalaxy(galaxy);
+
+        PlayerSpaceships blueShips = new PlayerSpaceships(galaxy, playerBlue);
 
         Combat combat = new Combat(centerSystem, playerBlue, playerRed);
 

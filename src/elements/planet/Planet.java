@@ -49,7 +49,7 @@ public class Planet {
 
     public int hashCode(){
 
-        return Objects.hashCode(name);
+        return Objects.hash(name, resourceProduction);
     }
 
     // When made to string, it only returns the name

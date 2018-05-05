@@ -5,8 +5,6 @@ package elements.spaceship;
 
 import elements.player.Player;
 
-import java.util.Objects;
-
 public class Spaceship implements Unit{
 
     private String type;
@@ -71,5 +69,16 @@ public class Spaceship implements Unit{
         Spaceship spaceship = (Spaceship) o;
 
         return getOwner().equals(spaceship.getOwner()) && getType().equals(spaceship.getType());
+    }
+
+    // If combat value is equal, sort after resource cost
+    public int cmpResourceCost(Spaceship that) {
+
+        if(that.getCombatValue() == getCombatValue()){
+
+            return Integer.compare(that.getResourceCost(), getResourceCost());
+        }
+
+        return 0;
     }
 }
