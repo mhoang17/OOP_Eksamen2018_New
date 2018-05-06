@@ -23,8 +23,6 @@ public class WriteControlledPlanet {
 
         // Create file
         String outputName = "PlanetaryControl.txt";
-
-        //This method, the file will always be overwritten
         BufferedWriter writer = new BufferedWriter(new FileWriter(outputName));
 
         for(Player player : galaxy.getPlayers()){
@@ -39,6 +37,7 @@ public class WriteControlledPlanet {
                 // Check if there are ships in system
                 if(numOfShips > 0){
 
+                    //List of spaceship owners
                     List<Player> ownerList = new ArrayList<>();
 
                     for (Spaceship spaceship : system.getSpaceships()){
@@ -46,7 +45,7 @@ public class WriteControlledPlanet {
                         ownerList.add(spaceship.getOwner());
                     }
 
-                    // Check if player owns a ship
+                    // Check if current player owns a ship
                     int freq = Collections.frequency(ownerList, player);
 
                     // If all spaceships in system belongs to one player

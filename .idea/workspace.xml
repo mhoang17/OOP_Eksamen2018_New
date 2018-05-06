@@ -11,17 +11,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/OOP_Eksamen2018$VerifyGalaxyTest.coverage" NAME="VerifyGalaxyTest Coverage Results" MODIFIED="1525628703191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/OOP_Eksamen2018$VerifyGalaxyTest.coverage" NAME="VerifyGalaxyTest Coverage Results" MODIFIED="1525629681938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>elements.galaxy.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/OOP_Eksamen2018$CombatTest.coverage" NAME="CombatTest Coverage Results" MODIFIED="1525631082786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>elements.gameplay.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/OOP_Eksamen2018$PlayerTest_notEqual.coverage" NAME="PlayerTest.notEqual Coverage Results" MODIFIED="1525258523675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>elements.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/OOP_Eksamen2018$PlayerTest.coverage" NAME="PlayerTest Coverage Results" MODIFIED="1525548441061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/OOP_Eksamen2018$PlayerTest.coverage" NAME="PlayerTest Coverage Results" MODIFIED="1525629703191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>elements.player.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/OOP_Eksamen2018$Main.coverage" NAME="Main Coverage Results" MODIFIED="1525459829894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/OOP_Eksamen2018$PlanetTest.coverage" NAME="PlanetTest Coverage Results" MODIFIED="1525549426653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/OOP_Eksamen2018$PlanetTest.coverage" NAME="PlanetTest Coverage Results" MODIFIED="1525629716510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>elements.planet.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/OOP_Eksamen2018$PlayerSpaceshipsTest_ownedShipsTest.coverage" NAME="PlayerSpaceshipsTest.ownedShipsTest Coverage Results" MODIFIED="1525549714000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -30,147 +33,16 @@
     <SUITE FILE_PATH="coverage/OOP_Eksamen2018$SystemsTest.coverage" NAME="SystemsTest Coverage Results" MODIFIED="1525377086436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>elements.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/OOP_Eksamen2018$PresetConfigurationsTest.coverage" NAME="PresetConfigurationsTest Coverage Results" MODIFIED="1525548235664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/OOP_Eksamen2018$PlayerSpaceshipsTest.coverage" NAME="PlayerSpaceshipsTest Coverage Results" MODIFIED="1525629696094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>elements.player.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/OOP_Eksamen2018$PresetConfigurationsTest.coverage" NAME="PresetConfigurationsTest Coverage Results" MODIFIED="1525630342177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="OOP_Eksamen2018" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="WriteControlledPlanet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/elements/WriteControlledPlanet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="24" column="51" lean-forward="false" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#1946#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VerifyGalaxy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/elements/galaxy/VerifyGalaxy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1305">
-              <caret line="92" column="24" lean-forward="false" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VerifyGalaxyTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/elements/galaxy/VerifyGalaxyTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Galaxy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/elements/galaxy/Galaxy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="84" column="0" lean-forward="true" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-              <folding>
-                <element signature="e#604#605#0" expanded="true" />
-                <element signature="e#642#643#0" expanded="true" />
-                <element signature="method#getSystems#0;class#Galaxy#0" expanded="false" />
-                <element signature="method#getPlanets#0;class#Galaxy#0" expanded="false" />
-                <element signature="method#getSpaceship#0;class#Galaxy#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Systems.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/elements/systems/Systems.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="109" column="32" lean-forward="false" selection-start-line="109" selection-start-column="32" selection-end-line="109" selection-end-column="32" />
-              <folding>
-                <element signature="method#Systems#0;class#Systems#0" expanded="false" />
-                <element signature="method#Systems#1;class#Systems#0" expanded="false" />
-                <element signature="method#moveSpaceship#0;class#Systems#0" expanded="false" />
-                <element signature="method#setCoordinates#0;class#Systems#0" expanded="false" />
-                <element signature="method#getCoordinates#0;class#Systems#0" expanded="false" />
-                <element signature="method#equals#0;class#Systems#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="17" lean-forward="true" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Combat.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/elements/gameplay/Combat.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="53" column="47" lean-forward="false" selection-start-line="53" selection-start-column="47" selection-end-line="53" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#Combat#0;class#Combat#0" expanded="false" />
-                <element signature="method#storeShips#0;class#Combat#0" expanded="false" />
-                <element signature="method#detectCombat#0;class#Combat#0" expanded="false" />
-                <element signature="method#findWinner#0;class#Combat#0" expanded="false" />
-                <element signature="method#doCombat#0;class#Combat#0" expanded="false" />
-                <element signature="method#destroyShip#0;class#Combat#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PresetConfigurations.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/elements/galaxy/PresetConfigurations.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
-              <caret line="91" column="12" lean-forward="false" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="32" />
-              <folding>
-                <element signature="e#3237#3238#0" expanded="true" />
-                <element signature="e#3270#3271#0" expanded="true" />
-                <element signature="e#3306#3307#0" expanded="true" />
-                <element signature="e#3338#3339#0" expanded="true" />
-                <element signature="e#3378#3379#0" expanded="true" />
-                <element signature="e#3413#3414#0" expanded="true" />
-                <element signature="e#3446#3447#0" expanded="true" />
-                <element signature="e#3475#3476#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RandomGalaxy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/elements/galaxy/RandomGalaxy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="64" column="31" lean-forward="true" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
-              <folding>
-                <element signature="method#randomSystems#0;class#RandomGalaxy#0" expanded="false" />
-                <element signature="method#randomSpaceships#0;class#RandomGalaxy#0" expanded="false" />
-                <element signature="method#addMoreSpaceships#0;class#RandomGalaxy#0" expanded="false" />
-                <element signature="method#setSystemList#0;class#RandomGalaxy#0" expanded="false" />
-                <element signature="method#setSpaceshipTypes#0;class#RandomGalaxy#0" expanded="false" />
-                <element signature="method#setCompass#0;class#RandomGalaxy#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -197,7 +69,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/elements/WriteFile.java" />
         <option value="$PROJECT_DIR$/src/elements/PlayerSpaceships.java" />
         <option value="$PROJECT_DIR$/src/elements/Galaxy.java" />
         <option value="$PROJECT_DIR$/src/RandomGalaxy.java" />
@@ -217,7 +88,6 @@
         <option value="$PROJECT_DIR$/src/elements/IsCenterSystem.java" />
         <option value="$PROJECT_DIR$/src/elements/spaceship/Unit.java" />
         <option value="$PROJECT_DIR$/src/elements/player/Player.java" />
-        <option value="$PROJECT_DIR$/test/PresetConfigurationsTest.java" />
         <option value="$PROJECT_DIR$/src/elements/IllegalSystem.java" />
         <option value="$PROJECT_DIR$/src/Person.java" />
         <option value="$PROJECT_DIR$/src/elements/spaceship/CompareShips.java" />
@@ -225,9 +95,7 @@
         <option value="$PROJECT_DIR$/src/elements/player/PlayerSpaceships.java" />
         <option value="$PROJECT_DIR$/test/elements/player/PlayerSpaceshipsTest.java" />
         <option value="$PROJECT_DIR$/test/elements/player/PlayerTest.java" />
-        <option value="$PROJECT_DIR$/src/elements/gameplay/Combat.java" />
         <option value="$PROJECT_DIR$/src/elements/spaceship/Spaceship.java" />
-        <option value="$PROJECT_DIR$/src/elements/galaxy/Galaxy.java" />
         <option value="$PROJECT_DIR$/src/PresetConfigurations.java" />
         <option value="$PROJECT_DIR$/src/elements/galaxy/IllegalCenterPlanet.java" />
         <option value="$PROJECT_DIR$/src/elements/galaxy/IllegalPlanetOccurrence.java" />
@@ -240,14 +108,18 @@
         <option value="$PROJECT_DIR$/src/elements/spaceship/spaceshipsClasses/Cruiser.java" />
         <option value="$PROJECT_DIR$/src/elements/spaceship/spaceshipsClasses/Destroyer.java" />
         <option value="$PROJECT_DIR$/src/elements/spaceship/spaceshipsClasses/Dreadnought.java" />
-        <option value="$PROJECT_DIR$/src/elements/galaxy/PresetConfigurations.java" />
-        <option value="$PROJECT_DIR$/src/elements/WriteControlledPlanet.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/elements/galaxy/RandomGalaxy.java" />
-        <option value="$PROJECT_DIR$/src/elements/systems/Systems.java" />
         <option value="$PROJECT_DIR$/test/elements/planet/PlanetTest.java" />
         <option value="$PROJECT_DIR$/src/elements/galaxy/VerifyGalaxy.java" />
         <option value="$PROJECT_DIR$/test/elements/galaxy/VerifyGalaxyTest.java" />
+        <option value="$PROJECT_DIR$/src/elements/WriteControlledPlanet.java" />
+        <option value="$PROJECT_DIR$/src/elements/galaxy/PresetConfigurations.java" />
+        <option value="$PROJECT_DIR$/test/PresetConfigurationsTest.java" />
+        <option value="$PROJECT_DIR$/src/elements/galaxy/Galaxy.java" />
+        <option value="$PROJECT_DIR$/src/elements/systems/Systems.java" />
+        <option value="$PROJECT_DIR$/test/elements/gameplay/CombatTest.java" />
+        <option value="$PROJECT_DIR$/src/elements/galaxy/RandomGalaxy.java" />
+        <option value="$PROJECT_DIR$/src/elements/gameplay/Combat.java" />
       </list>
     </option>
   </component>
@@ -299,48 +171,6 @@
             <path>
               <item name="OOP_Eksamen2018" type="b2602c69:ProjectViewProjectNode" />
               <item name="OOP_Eksamen2018" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="elements" type="462c0819:PsiDirectoryNode" />
-              <item name="galaxy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OOP_Eksamen2018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OOP_Eksamen2018" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="elements" type="462c0819:PsiDirectoryNode" />
-              <item name="gameplay" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OOP_Eksamen2018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OOP_Eksamen2018" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="elements" type="462c0819:PsiDirectoryNode" />
-              <item name="planet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OOP_Eksamen2018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OOP_Eksamen2018" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="elements" type="462c0819:PsiDirectoryNode" />
-              <item name="player" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OOP_Eksamen2018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OOP_Eksamen2018" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="elements" type="462c0819:PsiDirectoryNode" />
-              <item name="spaceship" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OOP_Eksamen2018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OOP_Eksamen2018" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="elements" type="462c0819:PsiDirectoryNode" />
-              <item name="systems" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OOP_Eksamen2018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OOP_Eksamen2018" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -371,11 +201,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="elements.gameplay" />
       <recent name="elements.galaxy" />
       <recent name="elements.planet" />
       <recent name="elements.player" />
       <recent name="elements" />
-      <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="elements.planet" />
@@ -398,7 +228,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.VerifyGalaxyTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -434,43 +264,18 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration name="PlayerSpaceshipsTest.ownedShipsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CombatTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="elements.player.*" />
+          <option name="PATTERN" value="elements.gameplay.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="OOP_Eksamen2018" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="elements.player" />
-      <option name="MAIN_CLASS_NAME" value="elements.player.PlayerSpaceshipsTest" />
-      <option name="METHOD_NAME" value="ownedShipsTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="VerifyGalaxyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="elements.galaxy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="OOP_Eksamen2018" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="elements.galaxy" />
-      <option name="MAIN_CLASS_NAME" value="elements.galaxy.VerifyGalaxyTest" />
+      <option name="PACKAGE_NAME" value="elements.gameplay" />
+      <option name="MAIN_CLASS_NAME" value="elements.gameplay.CombatTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -484,20 +289,20 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="VerifyGalaxyTest.isNotNorthSouth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlanetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="elements.galaxy.*" />
+          <option name="PATTERN" value="elements.planet.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="OOP_Eksamen2018" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="elements.galaxy" />
-      <option name="MAIN_CLASS_NAME" value="elements.galaxy.VerifyGalaxyTest" />
-      <option name="METHOD_NAME" value="isNotNorthSouth" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="elements.planet" />
+      <option name="MAIN_CLASS_NAME" value="elements.planet.PlanetTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -509,20 +314,40 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="VerifyGalaxyTest.legalPlanetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="elements.galaxy.*" />
+          <option name="PATTERN" value="elements.player.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="OOP_Eksamen2018" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="elements.galaxy" />
-      <option name="MAIN_CLASS_NAME" value="elements.galaxy.VerifyGalaxyTest" />
-      <option name="METHOD_NAME" value="legalPlanetTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="elements.player" />
+      <option name="MAIN_CLASS_NAME" value="elements.player.PlayerTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="PresetConfigurationsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="OOP_Eksamen2018" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PresetConfigurationsTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -595,19 +420,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.PlayerSpaceshipsTest.ownedShipsTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.VerifyGalaxyTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.VerifyGalaxyTest.legalPlanetTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.VerifyGalaxyTest.isNotNorthSouth" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.PresetConfigurationsTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.PlayerTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.PlanetTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.CombatTest" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.VerifyGalaxyTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.VerifyGalaxyTest.isNotNorthSouth" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.VerifyGalaxyTest.legalPlanetTest" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.PlayerSpaceshipsTest.ownedShipsTest" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CombatTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.PresetConfigurationsTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.PlanetTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.PlayerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -635,44 +460,44 @@
       <workItem from="1525469164036" duration="400000" />
       <workItem from="1525502733198" duration="17733000" />
       <workItem from="1525554064615" duration="87000" />
-      <workItem from="1525596201288" duration="19663000" />
+      <workItem from="1525596201288" duration="22942000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="VerifyGalaxyTest - 2018.05.06 at 19h 28m 17s.xml">
-      <configuration name="VerifyGalaxyTest" configurationId="JUnit" />
+    <history-entry file="CombatTest - 2018.05.06 at 20h 23m 19s.xml">
+      <configuration name="CombatTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VerifyGalaxyTest - 2018.05.06 at 19h 29m 15s.xml">
-      <configuration name="VerifyGalaxyTest" configurationId="JUnit" />
+    <history-entry file="CombatTest - 2018.05.06 at 20h 24m 39s.xml">
+      <configuration name="CombatTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VerifyGalaxyTest - 2018.05.06 at 19h 30m 02s.xml">
-      <configuration name="VerifyGalaxyTest" configurationId="JUnit" />
+    <history-entry file="CombatTest - 2018.05.06 at 20h 24m 44s.xml">
+      <configuration name="CombatTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VerifyGalaxyTest - 2018.05.06 at 19h 38m 34s.xml">
-      <configuration name="VerifyGalaxyTest" configurationId="JUnit" />
+    <history-entry file="CombatTest - 2018.05.06 at 20h 31m 13s.xml">
+      <configuration name="CombatTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VerifyGalaxyTest - 2018.05.06 at 19h 39m 29s.xml">
-      <configuration name="VerifyGalaxyTest" configurationId="JUnit" />
+    <history-entry file="PlanetTest - 2018.05.06 at 20h 01m 57s.xml">
+      <configuration name="PlanetTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VerifyGalaxyTest - 2018.05.06 at 19h 44m 17s.xml">
-      <configuration name="VerifyGalaxyTest" configurationId="JUnit" />
+    <history-entry file="PresetConfigurationsTest - 2018.05.06 at 20h 10m 45s.xml">
+      <configuration name="PresetConfigurationsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VerifyGalaxyTest - 2018.05.06 at 19h 44m 53s.xml">
-      <configuration name="VerifyGalaxyTest" configurationId="JUnit" />
+    <history-entry file="PresetConfigurationsTest - 2018.05.06 at 20h 11m 25s.xml">
+      <configuration name="PresetConfigurationsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VerifyGalaxyTest - 2018.05.06 at 19h 45m 04s.xml">
-      <configuration name="VerifyGalaxyTest" configurationId="JUnit" />
+    <history-entry file="PresetConfigurationsTest - 2018.05.06 at 20h 11m 49s.xml">
+      <configuration name="PresetConfigurationsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VerifyGalaxyTest_isNotNorthSouth - 2018.05.06 at 19h 41m 57s.xml">
-      <configuration name="VerifyGalaxyTest.isNotNorthSouth" configurationId="JUnit" />
+    <history-entry file="PresetConfigurationsTest - 2018.05.06 at 20h 11m 55s.xml">
+      <configuration name="PresetConfigurationsTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VerifyGalaxyTest_isNotNorthSouth - 2018.05.06 at 19h 42m 30s.xml">
-      <configuration name="VerifyGalaxyTest.isNotNorthSouth" configurationId="JUnit" />
+    <history-entry file="PresetConfigurationsTest - 2018.05.06 at 20h 12m 23s.xml">
+      <configuration name="PresetConfigurationsTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141072000" />
+    <option name="totallyTimeSpent" value="144351000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -685,7 +510,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -695,7 +519,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -725,37 +549,30 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="16" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/elements/spaceship/spaceshipsClasses/Dreadnought.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/elements/spaceship/Spaceship.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
           <folding>
-            <element signature="e#707#708#0" expanded="true" />
-            <element signature="e#734#735#0" expanded="true" />
-            <element signature="e#784#785#0" expanded="true" />
-            <element signature="e#824#825#0" expanded="true" />
-            <element signature="e#873#874#0" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#963#964#0" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
-            <element signature="e#1086#1087#0" expanded="true" />
-            <element signature="e#1132#1133#0" expanded="true" />
-            <element signature="e#1161#1162#0" expanded="true" />
-            <element signature="e#1207#1208#0" expanded="true" />
-            <element signature="e#1272#1273#0" expanded="true" />
+            <element signature="e#707#708#0" expanded="false" />
+            <element signature="e#734#735#0" expanded="false" />
+            <element signature="e#784#785#0" expanded="false" />
+            <element signature="e#824#825#0" expanded="false" />
+            <element signature="e#873#874#0" expanded="false" />
+            <element signature="e#912#913#0" expanded="false" />
+            <element signature="e#963#964#0" expanded="false" />
+            <element signature="e#1004#1005#0" expanded="false" />
+            <element signature="e#1050#1051#0" expanded="false" />
+            <element signature="e#1086#1087#0" expanded="false" />
+            <element signature="e#1132#1133#0" expanded="false" />
+            <element signature="e#1161#1162#0" expanded="false" />
+            <element signature="e#1207#1208#0" expanded="false" />
+            <element signature="e#1272#1273#0" expanded="false" />
             <element signature="method#equals#0;class#Spaceship#0" expanded="false" />
           </folding>
         </state>
@@ -831,22 +648,6 @@
     <entry file="file://$PROJECT_DIR$/src/Person.java" />
     <entry file="file://$PROJECT_DIR$/src/elements/spaceship/CompareShips.java" />
     <entry file="file://$PROJECT_DIR$/src/elements/spaceship/CompareSpaceships.java" />
-    <entry file="file://$PROJECT_DIR$/test/PresetConfigurationsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="27" column="50" lean-forward="true" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/elements/player/PlayerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/elements/player/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -855,35 +656,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/elements/player/PlayerSpaceshipsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="49" column="34" lean-forward="false" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
-          <folding>
-            <element signature="method#setUp#0;class#PlayerSpaceshipsTest#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/elements/spaceship/Spaceship.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="20" column="39" lean-forward="true" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
           <folding>
-            <element signature="e#707#708#0" expanded="true" />
-            <element signature="e#734#735#0" expanded="true" />
-            <element signature="e#784#785#0" expanded="true" />
-            <element signature="e#824#825#0" expanded="true" />
-            <element signature="e#873#874#0" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#963#964#0" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
-            <element signature="e#1086#1087#0" expanded="true" />
-            <element signature="e#1132#1133#0" expanded="true" />
-            <element signature="e#1161#1162#0" expanded="true" />
-            <element signature="e#1207#1208#0" expanded="true" />
-            <element signature="e#1272#1273#0" expanded="true" />
+            <element signature="e#707#708#0" expanded="false" />
+            <element signature="e#734#735#0" expanded="false" />
+            <element signature="e#784#785#0" expanded="false" />
+            <element signature="e#824#825#0" expanded="false" />
+            <element signature="e#873#874#0" expanded="false" />
+            <element signature="e#912#913#0" expanded="false" />
+            <element signature="e#963#964#0" expanded="false" />
+            <element signature="e#1004#1005#0" expanded="false" />
+            <element signature="e#1050#1051#0" expanded="false" />
+            <element signature="e#1086#1087#0" expanded="false" />
+            <element signature="e#1132#1133#0" expanded="false" />
+            <element signature="e#1161#1162#0" expanded="false" />
+            <element signature="e#1207#1208#0" expanded="false" />
+            <element signature="e#1272#1273#0" expanded="false" />
             <element signature="method#equals#0;class#Spaceship#0" expanded="false" />
           </folding>
         </state>
@@ -912,20 +703,6 @@
         <state relative-caret-position="60">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/elements/spaceship/spaceshipsClasses/Carrier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="38" column="5" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <element signature="method#getResourceCost#0;class#Carrier#0" expanded="false" />
-            <element signature="method#getCombatValue#0;class#Carrier#0" expanded="false" />
-            <element signature="method#getMovementSpeed#0;class#Carrier#0" expanded="false" />
-            <element signature="method#getCapacity#0;class#Carrier#0" expanded="false" />
-            <element signature="method#getOwner#0;class#Carrier#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1003,10 +780,130 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/galaxy/VerifyGalaxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="871">
+          <caret line="92" column="24" lean-forward="false" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/spaceship/spaceshipsClasses/Carrier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <element signature="method#getResourceCost#0;class#Carrier#0" expanded="false" />
+            <element signature="method#getCombatValue#0;class#Carrier#0" expanded="false" />
+            <element signature="method#getMovementSpeed#0;class#Carrier#0" expanded="false" />
+            <element signature="method#getCapacity#0;class#Carrier#0" expanded="false" />
+            <element signature="method#getOwner#0;class#Carrier#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/WriteControlledPlanet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="39" column="46" lean-forward="true" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#1941#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/elements/player/PlayerSpaceshipsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="49" column="34" lean-forward="false" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+          <folding>
+            <element signature="method#setUp#0;class#PlayerSpaceshipsTest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/elements/player/PlayerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/elements/planet/PlanetTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/PresetConfigurationsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/elements/gameplay/CombatTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-62">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/elements/galaxy/VerifyGalaxyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/galaxy/Galaxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="e#532#533#0" expanded="true" />
+            <element signature="e#570#571#0" expanded="true" />
+            <element signature="method#addPlayer#0;class#Galaxy#0" expanded="false" />
+            <element signature="method#getSpaceship#0;class#Galaxy#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements/gameplay/Combat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#storeShips#0;class#Combat#0" expanded="false" />
+            <element signature="method#detectCombat#0;class#Combat#0" expanded="false" />
+            <element signature="method#findWinner#0;class#Combat#0" expanded="false" />
+            <element signature="method#doCombat#0;class#Combat#0" expanded="false" />
+            <element signature="method#destroyShip#0;class#Combat#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/elements/galaxy/PresetConfigurations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="91" column="12" lean-forward="false" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="32" />
+        <state relative-caret-position="320">
+          <caret line="68" column="48" lean-forward="true" selection-start-line="68" selection-start-column="48" selection-end-line="68" selection-end-column="48" />
           <folding>
             <element signature="e#3237#3238#0" expanded="true" />
             <element signature="e#3270#3271#0" expanded="true" />
@@ -1020,91 +917,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/elements/galaxy/RandomGalaxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="64" column="31" lean-forward="true" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
-          <folding>
-            <element signature="method#randomSystems#0;class#RandomGalaxy#0" expanded="false" />
-            <element signature="method#randomSpaceships#0;class#RandomGalaxy#0" expanded="false" />
-            <element signature="method#addMoreSpaceships#0;class#RandomGalaxy#0" expanded="false" />
-            <element signature="method#setSystemList#0;class#RandomGalaxy#0" expanded="false" />
-            <element signature="method#setSpaceshipTypes#0;class#RandomGalaxy#0" expanded="false" />
-            <element signature="method#setCompass#0;class#RandomGalaxy#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/elements/planet/PlanetTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/elements/galaxy/VerifyGalaxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1305">
-          <caret line="92" column="24" lean-forward="false" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/elements/galaxy/VerifyGalaxyTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/elements/galaxy/Galaxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="84" column="0" lean-forward="true" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding>
-            <element signature="e#604#605#0" expanded="true" />
-            <element signature="e#642#643#0" expanded="true" />
-            <element signature="method#getSystems#0;class#Galaxy#0" expanded="false" />
-            <element signature="method#getPlanets#0;class#Galaxy#0" expanded="false" />
-            <element signature="method#getSpaceship#0;class#Galaxy#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/elements/gameplay/Combat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="53" column="47" lean-forward="false" selection-start-line="53" selection-start-column="47" selection-end-line="53" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Combat#0;class#Combat#0" expanded="false" />
-            <element signature="method#storeShips#0;class#Combat#0" expanded="false" />
-            <element signature="method#detectCombat#0;class#Combat#0" expanded="false" />
-            <element signature="method#findWinner#0;class#Combat#0" expanded="false" />
-            <element signature="method#doCombat#0;class#Combat#0" expanded="false" />
-            <element signature="method#destroyShip#0;class#Combat#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/elements/WriteControlledPlanet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="24" column="51" lean-forward="false" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#1946#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/elements/systems/Systems.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="109" column="32" lean-forward="false" selection-start-line="109" selection-start-column="32" selection-end-line="109" selection-end-column="32" />
+        <state relative-caret-position="28">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
             <element signature="method#Systems#0;class#Systems#0" expanded="false" />
             <element signature="method#Systems#1;class#Systems#0" expanded="false" />
@@ -1116,12 +932,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/elements/galaxy/RandomGalaxy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="17" lean-forward="true" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        <state relative-caret-position="510">
+          <caret line="111" column="35" lean-forward="false" selection-start-line="111" selection-start-column="35" selection-end-line="111" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#RandomGalaxy#0;class#RandomGalaxy#0" expanded="false" />
+            <element signature="method#randomSystems#0;class#RandomGalaxy#0" expanded="false" />
+            <element signature="method#randomSpaceships#0;class#RandomGalaxy#0" expanded="false" />
+            <element signature="method#addMoreSpaceships#0;class#RandomGalaxy#0" expanded="false" />
+            <element signature="method#setSystemList#0;class#RandomGalaxy#0" expanded="false" />
+            <element signature="method#setSpaceshipTypes#0;class#RandomGalaxy#0" expanded="false" />
+            <element signature="method#setCompass#0;class#RandomGalaxy#0" expanded="false" />
           </folding>
         </state>
       </provider>

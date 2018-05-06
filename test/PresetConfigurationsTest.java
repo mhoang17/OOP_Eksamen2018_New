@@ -2,6 +2,9 @@ import elements.galaxy.PresetConfigurations;
 import elements.planet.Planet;
 import elements.player.Player;
 import elements.spaceship.Spaceship;
+import elements.spaceship.spaceshipsClasses.Carrier;
+import elements.spaceship.spaceshipsClasses.Cruiser;
+import elements.spaceship.spaceshipsClasses.Destroyer;
 import elements.spaceship.spaceshipsClasses.Dreadnought;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,16 +20,22 @@ class PresetConfigurationsTest {
 
     private PresetConfigurations test;
     private Player playerTest;
-    private List<Planet> mecRex = new ArrayList<>();
-    private Spaceship dreadnought;
+    private Player playerTestTwo;
+    private List<Spaceship> spaceshipsList = new ArrayList<>();
 
     @BeforeEach
     void setUp(){
 
         test = new PresetConfigurations();
         playerTest = new Player("Crassus", "The Emirates of Hacan", "Blue");
-        mecRex.add(new Planet("Mecatol Rex", 3));
-        dreadnought = new Dreadnought(playerTest);
+        playerTestTwo = new Player("Pompey", "Federation of Sol", "Red");
+
+        spaceshipsList.add(new Dreadnought(playerTest));
+        spaceshipsList.add(new Dreadnought(playerTest));
+        spaceshipsList.add(new Destroyer(playerTest));
+        spaceshipsList.add(new Cruiser(playerTestTwo));
+        spaceshipsList.add(new Cruiser(playerTestTwo));
+        spaceshipsList.add(new Carrier(playerTestTwo));
     }
 
    @Test
@@ -47,6 +56,8 @@ class PresetConfigurationsTest {
     // Test if correct planet is in system
     void planetTest(){
 
+        List<Planet> mecRex = new ArrayList<>();
+        mecRex.add(new Planet("Mecatol Rex", 3));
         assertEquals(test.getCenterSystem().getPlanets(), mecRex);
     }
 
@@ -61,7 +72,13 @@ class PresetConfigurationsTest {
     // Test if spaceships have been added
     void insertSpaceship(){
 
-        assertEquals(test.getCenterSystem().getSpaceships().get(0), dreadnought);
+        assertEquals(test.getCenterSystem().getSpaceships().get(0), spaceshipsList.get(0));
+    }
+
+    @Test
+    void getSpaceship(){
+
+        assertEquals(test.getGalaxy().getSpaceship(), spaceshipsList);
     }
 
 }

@@ -18,8 +18,6 @@ public class Galaxy {
     private List<Systems> systems = new ArrayList<>();
     private List<Player> players = new ArrayList<>();
 
-    private HashMap<String, Systems> hashMapSystems = new HashMap<>();
-
     // Constructor
     public Galaxy() {}
 
@@ -79,11 +77,6 @@ public class Galaxy {
         }
 
         return spaceships;
-    }
-
-    public HashMap<String, Systems> getHashMapSystems() {
-
-        return hashMapSystems;
     }
 
 }

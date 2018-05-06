@@ -62,7 +62,7 @@ public class RandomGalaxy {
 
         VerifyGalaxy verifyGalaxy = new VerifyGalaxy(galaxy);
 
-        /*for (Player player : players){
+        for (Player player : players){
 
             galaxy.addPlayer(player);
         }
@@ -75,7 +75,7 @@ public class RandomGalaxy {
 
                 System.out.println("Winner: " + doCombat.findWinner().getName());
             }
-        }*/
+        }
     }
 
     private void randomSystems(){

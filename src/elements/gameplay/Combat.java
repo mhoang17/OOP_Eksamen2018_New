@@ -28,8 +28,6 @@ public class Combat {
         this.playerRed = playerRed;
 
         storeShips();
-
-        findWinner();
     }
 
     public void storeShips(){
@@ -51,7 +49,8 @@ public class Combat {
         redShips.sort(Comparator.comparing(Spaceship::getResourceCost));
     }
 
-    public boolean detectCombat(Systems system){
+    //public boolean detectCombat(Systems system)
+    public boolean detectCombat(){
 
         boolean combat = false;
 
@@ -79,47 +78,45 @@ public class Combat {
     public Player findWinner() {
 
         // Combat system begins
-        boolean createCombat = detectCombat(system);
+        //boolean createCombat = detectCombat(system);
+        boolean createCombat = detectCombat();
 
-        if(createCombat) {
+        while(createCombat){
 
-            while(createCombat){
+            //Create spaceship war!
+            int playerBlueHit = doCombat(blueShips);
+            int playerRedHit = doCombat(redShips);
 
-                //Create spaceship war!
-                int playerBlueHit = doCombat(blueShips);
-                int playerRedHit = doCombat(redShips);
+            destroyShip(redShips, playerBlueHit);
+            destroyShip(blueShips, playerRedHit);
 
-                destroyShip(redShips, playerBlueHit);
-                destroyShip(blueShips, playerRedHit);
+            if(blueShips.size() == 0 && redShips.size() == 0){
 
-                if(blueShips.size() == 0 && redShips.size() == 0){
+                createCombat = false;
+            }
+            // If all blue ships are destroyed
+            else if(blueShips.size() == 0){
 
-                    createCombat = false;
-                }
-                // If all blue ships are destroyed
-                else if(blueShips.size() == 0){
+                winner = playerRed;
+                createCombat = false;
+            }
+            // If all red ships are destroyed
+            else if(redShips.size() == 0){
 
-                    winner = playerRed;
-                    createCombat = false;
-                }
-                // If all red ships are destroyed
-                else if(redShips.size() == 0){
-
-                    winner = playerBlue;
-                    createCombat = false;
-                }
+                winner = playerBlue;
+                createCombat = false;
             }
         }
 
         return winner;
     }
 
-    public int doCombat(List<Spaceship> spaceshipsOne){
+    public int doCombat(List<Spaceship> attackingShips){
 
         Random rand = new Random();
         int hit = 0;
 
-        for(Spaceship spaceship : spaceshipsOne){
+        for(Spaceship spaceship : attackingShips){
 
             int dice = rand.nextInt((MAX_DICE_VAL - MIN_DICE_VAL + 1) + MIN_DICE_VAL);
 
@@ -139,6 +136,7 @@ public class Combat {
         while(shipIter.hasNext()){
 
             // If player blue didn't hit or has used all their hits
+            // Prevents that it tries to use remove an item from an empty list
             if(enemyHit == NO_HITS){
 
                 break;
