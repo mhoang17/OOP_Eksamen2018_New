@@ -9,6 +9,7 @@ import elements.systems.Systems;
 import elements.spaceship.Spaceship;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Galaxy {
@@ -16,7 +17,8 @@ public class Galaxy {
     // Field
     private List<Systems> systems = new ArrayList<>();
     private List<Player> players = new ArrayList<>();
-    private List<Integer> hashCodeList = new ArrayList<>();
+
+    private HashMap<String, Systems> hashMapSystems = new HashMap<>();
 
     // Constructor
     public Galaxy() {}
@@ -77,6 +79,11 @@ public class Galaxy {
         }
 
         return spaceships;
+    }
+
+    public HashMap<String, Systems> getHashMapSystems() {
+
+        return hashMapSystems;
     }
 
 }

@@ -3,8 +3,6 @@
 
 package elements.planet;
 
-import elements.IllegalResourceProductionValue;
-
 import java.util.Objects;
 
 public class Planet {
@@ -56,5 +54,8 @@ public class Planet {
     @Override
     public String toString() {
         return this.name;
+    }
+
+    public static class IllegalResourceProductionValue extends RuntimeException {
     }
 }

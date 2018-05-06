@@ -1,4 +1,4 @@
-// Maria-Theresa Oanh Hoang
+package elements.galaxy;// Maria-Theresa Oanh Hoang
 // AAU mail: mhoang17@student.aau.dk
 
 import elements.WriteControlledPlanet;
@@ -59,7 +59,7 @@ public class PresetConfigurations {
         Systems northSystem = new Systems("North", vegaSystem);
         Systems northEastSystem = new Systems("North-East");
         Systems southEast = new Systems("South-East", indus);
-        Systems south = new Systems("South", rigelSystem);
+        Systems southSystem = new Systems("South", rigelSystem);
         Systems southWest = new Systems("South-West");
         Systems northWest = new Systems("North-West", mirage);
 
@@ -82,19 +82,15 @@ public class PresetConfigurations {
         galaxy.addSystems(northSystem);
         galaxy.addSystems(northEastSystem);
         galaxy.addSystems(southEast);
-        galaxy.addSystems(south);
+        galaxy.addSystems(southSystem);
         galaxy.addSystems(southWest);
         galaxy.addSystems(northWest);
-
-        /*VerifyGalaxy verifyGalaxy = new VerifyGalaxy(galaxy);
-
-        Combat combat = new Combat(centerSystem, playerBlue, playerRed);
 
         try {
             WriteControlledPlanet write = new WriteControlledPlanet(galaxy);
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
     }
 
     // Getters for testing

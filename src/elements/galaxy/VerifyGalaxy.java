@@ -46,7 +46,7 @@ public class VerifyGalaxy {
                 // If center system has more than one planet or if the planet is not Mecatol Rex
                 if(system.getPlanets().size() != MAX_CENTER_SIZE || !system.getPlanets().get(0).equals(mecRex)){
 
-                    throw new IllegalSystem("Center system doesn't contain Mecatol Rex as the only planet.");
+                    throw new IllegalCenterSystem();
                 }
             }
         }
@@ -61,7 +61,7 @@ public class VerifyGalaxy {
             // If freq is over 1, then a planet occurs more than once in galaxy
             if(freq > LEGAL_OCCURRENCE){
 
-                throw new IllegalSystem(planet.getName() + " occurs more than once.");
+                throw new IllegalPlanetOccurrence(planet.getName() + " occurs more than once.");
             }
         }
     }
@@ -73,46 +73,23 @@ public class VerifyGalaxy {
             // Check if size is more than 3
             if(system.getPlanets().size() > MAX_SYSTEM_SIZE){
 
-                throw new IllegalSystem(system.toString() + " has more than three planets.");
+                throw new IllegalSystemSize(system.toString() + " has more than three planets.");
             }
         }
     }
 
-    // TODO: reexamine method later
-    public String compass(Systems system){
+    public Boolean verifyPosition(Systems systemOne, Systems systemTwo){
 
-        List<String> compass = new ArrayList();
-        int southSystemIndx = 0;
+        Boolean verified = false;
 
-        compass.add("North");
-        compass.add("North-West");
-        compass.add("South-West");
-        compass.add("South");
-        compass.add("South-East");
-        compass.add("North-East");
+        if(systemOne.getX() + systemTwo.getX() != 0 || systemOne.getY() + systemTwo.getY() != 0){
 
-        // Only systems other than center has a south
-        if(!system.getPosition().equals("Center")){
-
-            for(int i = 0; i < compass.size(); i++){
-
-                //Uppercase in case a typo has happened
-                if(system.getPosition().toUpperCase().equals(compass.get(i).toUpperCase())){
-
-                    southSystemIndx = i + 3;
-                }
-            }
+            throw new IllegalPosition();
+        }
+        else{
+            verified = true;
         }
 
-        // If index exceeds size of compass list
-        if (southSystemIndx > compass.size()){
-
-            southSystemIndx -= compass.size();
-        }
-
-        // Finds the south position
-        String southSystem = compass.get(southSystemIndx);
-
-        return southSystem;
+        return verified;
     }
 }

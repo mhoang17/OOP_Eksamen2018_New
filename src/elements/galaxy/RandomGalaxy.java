@@ -14,6 +14,7 @@ import elements.spaceship.spaceshipsClasses.Dreadnought;
 import elements.systems.Systems;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -61,7 +62,7 @@ public class RandomGalaxy {
 
         VerifyGalaxy verifyGalaxy = new VerifyGalaxy(galaxy);
 
-        for (Player player : players){
+        /*for (Player player : players){
 
             galaxy.addPlayer(player);
         }
@@ -74,28 +75,7 @@ public class RandomGalaxy {
 
                 System.out.println("Winner: " + doCombat.findWinner().getName());
             }
-        }
-    }
-
-    private void addMoreSpaceships(){
-
-        int count = 0;
-
-        for(Systems system : systemList){
-
-            // If system contains at least one spaceship
-            if(system.getSpaceships().size() > 0){
-
-                count++;
-            }
-        }
-
-        // If count is less than one
-        // then there's only spaceships in one system or none in galaxy
-        if(count <= 1){
-
-            randomSpaceships();
-        }
+        }*/
     }
 
     private void randomSystems(){
@@ -106,23 +86,24 @@ public class RandomGalaxy {
         systemList.add(centerSystem);
 
         // Create one layer of systems
-        for(String direction : compass){
+        for(String position : compass){
 
             int maxIntSize = collectedPlanetList.size() - 1;
 
             Random rand = new Random();
-            int randInt = rand.nextInt(maxIntSize + 1);
+            int randIndx = rand.nextInt(maxIntSize + 1);
 
             // If system should contain a planet
-            if(collectedPlanetList.get(randInt) != null){
+            if(collectedPlanetList.get(randIndx) != null){
 
-                Systems system = new Systems(direction, collectedPlanetList.get(randInt));
+                //Insert planet index points at into system
+                Systems system = new Systems(position, collectedPlanetList.get(randIndx));
                 systemList.add(system);
-                collectedPlanetList.remove(randInt);
+                collectedPlanetList.remove(randIndx);
             }
             // If system should be empty
             else{
-                Systems system = new Systems(direction);
+                Systems system = new Systems(position);
                 systemList.add(system);
             }
         }
@@ -132,13 +113,14 @@ public class RandomGalaxy {
 
         for(Systems system : systemList){
 
-            boolean insertShip = true;
+            boolean stopShipInsert = false;
 
-            while(insertShip){
+            while(!stopShipInsert){
 
                 Random rand = new Random();
                 int addShip = rand.nextInt((ADD_SPACESHIP - NO_SPACESHIP + 1) + NO_SPACESHIP);
 
+                // If random chooses addSpaceship
                 if(addShip == ADD_SPACESHIP){
 
                     int maxIntSize = spaceshipTypes.size() - 1;
@@ -153,13 +135,60 @@ public class RandomGalaxy {
                 // Stop while-loop if no more spaceships should be added to system
                 else {
 
-                    insertShip = false;
+                    stopShipInsert = true;
                 }
 
             }
 
         }
 
+    }
+
+    private void addMoreSpaceships(){
+
+        int differentShipOwner = 0;
+
+        while (differentShipOwner < 2){
+
+            for (Systems system : systemList){
+
+                int count = 0;
+
+                List<Player> ownerList = new ArrayList<>();
+
+                for (Spaceship spaceship : system.getSpaceships()){
+
+                    ownerList.add(spaceship.getOwner());
+                }
+
+                for (Player player : players){
+
+                    int freq = Collections.frequency(ownerList, player);
+
+                    // Current player owns at least one spaceship in system
+                    if(freq > 0){
+
+                        count++;
+                    }
+                }
+
+                // If count is equal or higher than two
+                // system contains spaceships from at least two different players
+                if(count >= 2){
+
+                    differentShipOwner++;
+                }
+            }
+
+            // If differentShipOwner is less than two,
+            // then less than two systems contains ships from two different players,
+            // and should continue to add random ships
+            if(differentShipOwner < 2){
+
+                differentShipOwner = 0;
+                randomSpaceships();
+            }
+        }
     }
 
     private void setSystemList(){

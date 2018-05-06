@@ -12,4 +12,29 @@ public class Dreadnought extends Spaceship{
     public Dreadnought(Player player) {
         super("Dreadnought", player,5,5,1,0);
     }
+
+    public int getResourceCost(){
+
+        return super.getResourceCost();
+    }
+
+    public int getCombatValue(){
+
+        return super.getCombatValue();
+    }
+
+    public int getMovementSpeed(){
+
+        return  super.getMovementSpeed();
+    }
+
+    public int getCapacity(){
+
+        return super.getCapacity();
+    }
+
+    public Player getOwner(){
+
+        return super.getOwner();
+    }
 }
