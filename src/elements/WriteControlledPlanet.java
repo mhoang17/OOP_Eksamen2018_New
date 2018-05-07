@@ -37,19 +37,18 @@ public class WriteControlledPlanet {
                 // Check if there are ships in system
                 if(numOfShips > 0){
 
-                    //List of spaceship owners
-                    List<Player> ownerList = new ArrayList<>();
+                    Boolean notOwner = false;
 
                     for (Spaceship spaceship : system.getSpaceships()){
 
-                        ownerList.add(spaceship.getOwner());
+                        if(!spaceship.getOwner().equals(player)){
+
+                            notOwner = true;
+                        }
                     }
 
-                    // Check if current player owns a ship
-                    int freq = Collections.frequency(ownerList, player);
-
                     // If all spaceships in system belongs to one player
-                    if(freq == numOfShips){
+                    if(!notOwner){
 
                         for(Planet planet : system.getPlanets()){
 

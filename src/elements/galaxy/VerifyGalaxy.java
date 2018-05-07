@@ -3,7 +3,10 @@
 
 package elements.galaxy;
 
-import elements.*;
+import elements.galaxy.exceptions.IllegalCenterSystem;
+import elements.galaxy.exceptions.IllegalPlanetOccurrence;
+import elements.galaxy.exceptions.IllegalPosition;
+import elements.galaxy.exceptions.IllegalSystemSize;
 import elements.planet.Planet;
 import elements.systems.Systems;
 

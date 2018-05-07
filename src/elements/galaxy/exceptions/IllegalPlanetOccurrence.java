@@ -1,4 +1,4 @@
-package elements.galaxy;
+package elements.galaxy.exceptions;
 
 public class IllegalPlanetOccurrence extends RuntimeException{
 

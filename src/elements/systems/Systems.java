@@ -15,28 +15,23 @@ public class Systems {
     private String position;
     private List<Planet> planets = new ArrayList<>();
     private List<Spaceship> spaceships = new ArrayList<>();
-    private List<Player> owners = new ArrayList<>();
 
     private List<Integer> coordinates = new ArrayList();
     private int x;
     private int y;
 
-    // Constructor for empty system
     public Systems(String position, List<Planet> planets) {
         this.position = position;
         this.planets = planets;
 
         getCoordinates();
-
     }
 
-    // Constructor for system with planet(s)
     public Systems(String position) {
         this.position = position;
 
         getCoordinates();
     }
-
 
     //Getters
     public String getPosition() {
@@ -96,6 +91,7 @@ public class Systems {
         return compass;
     }
 
+    //Only works for one layer of systems
     public void getCoordinates(){
 
         // Make coordinates
@@ -129,7 +125,6 @@ public class Systems {
         return y;
     }
 
-
     public void addPlanet(Planet planet){
 
         planets.add(planet);
@@ -149,7 +144,10 @@ public class Systems {
         spaceships.remove(spaceship);
     }
 
-    //Only works for one layer of systems
+    public String toString() {
+
+        return this.position + ": " + this.planets;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -163,10 +161,5 @@ public class Systems {
         Systems system = (Systems) o;
 
         return getPlanets().equals(system.getPlanets());
-    }
-
-    @Override
-    public String toString() {
-        return this.position + ": " + this.planets;
     }
 }

@@ -46,25 +46,10 @@ public class RandomGalaxy {
         addSpaceships();
 
         VerifyGalaxy verifyGalaxy = new VerifyGalaxy(galaxy);
+    }
 
-        /*for (Player player : players){
-
-            galaxy.addPlayer(player);
-        }
-
-        for(Systems system : galaxy.getSystems()){
-
-            System.out.println(system.getPosition());
-            System.out.println(system.getSpaceships());
-
-            Combat doCombat = new Combat(system, galaxy.getPlayers().get(0), galaxy.getPlayers().get(1));
-
-            if(doCombat.findWinner() != null){
-
-                System.out.println("Winner: " + doCombat.findWinner().getName());
-            }
-            System.out.println("\n");
-        }*/
+    public Galaxy getGalaxy() {
+        return galaxy;
     }
 
     private void setSystemList(){

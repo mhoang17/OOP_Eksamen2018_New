@@ -1,4 +1,5 @@
-import elements.galaxy.PresetConfigurations;
+package elements.galaxy;
+
 import elements.planet.Planet;
 import elements.player.Player;
 import elements.spaceship.Spaceship;
@@ -58,7 +59,7 @@ class PresetConfigurationsTest {
 
         List<Planet> mecRex = new ArrayList<>();
         mecRex.add(new Planet("Mecatol Rex", 0));
-        assertEquals(test.getCenterSystem().getPlanets(), mecRex);
+        assertEquals(test.getCenter().getPlanets(), mecRex);
     }
 
     @Test
@@ -72,7 +73,7 @@ class PresetConfigurationsTest {
     // Test if spaceships have been added
     void insertSpaceship(){
 
-        assertEquals(test.getCenterSystem().getSpaceships().get(0), spaceshipsList.get(0));
+        assertEquals(test.getCenter().getSpaceships().get(0), spaceshipsList.get(0));
     }
 
     @Test

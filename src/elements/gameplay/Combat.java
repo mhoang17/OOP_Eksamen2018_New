@@ -75,6 +75,42 @@ public class Combat {
         return combat;
     }
 
+    public int doCombat(List<Spaceship> attackingShips){
+
+        Random rand = new Random();
+        int hit = 0;
+
+        for(Spaceship spaceship : attackingShips){
+
+            int dice = rand.nextInt((MAX_DICE_VAL - MIN_DICE_VAL + 1) + MIN_DICE_VAL);
+
+            if(dice >= spaceship.getCombatValue()){
+
+                hit++;
+            }
+        }
+
+        return hit;
+    }
+
+    public void destroyShip(List<Spaceship> spaceships, int enemyHit){
+
+        Iterator shipIter = spaceships.iterator();
+
+        while(shipIter.hasNext()){
+
+            // If player blue didn't hit or has used all their hits
+            // Prevents that it tries to use remove an item from an empty list
+            if(enemyHit == NO_HITS){
+
+                break;
+            }
+
+            spaceships.remove(0);
+            enemyHit--;
+        }
+    }
+
     public Player findWinner() {
 
         Player winner = null;
@@ -111,41 +147,5 @@ public class Combat {
         }
 
         return winner;
-    }
-
-    public int doCombat(List<Spaceship> attackingShips){
-
-        Random rand = new Random();
-        int hit = 0;
-
-        for(Spaceship spaceship : attackingShips){
-
-            int dice = rand.nextInt((MAX_DICE_VAL - MIN_DICE_VAL + 1) + MIN_DICE_VAL);
-
-            if(dice >= spaceship.getCombatValue()){
-
-                hit++;
-            }
-        }
-
-        return hit;
-    }
-
-    public void destroyShip(List<Spaceship> spaceships, int enemyHit){
-
-        Iterator shipIter = spaceships.iterator();
-
-        while(shipIter.hasNext()){
-
-            // If player blue didn't hit or has used all their hits
-            // Prevents that it tries to use remove an item from an empty list
-            if(enemyHit == NO_HITS){
-
-                break;
-            }
-
-            spaceships.remove(0);
-            enemyHit--;
-        }
     }
 }

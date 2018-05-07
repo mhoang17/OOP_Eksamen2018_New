@@ -1,5 +1,9 @@
 package elements.galaxy;
 
+import elements.galaxy.exceptions.IllegalCenterSystem;
+import elements.galaxy.exceptions.IllegalPlanetOccurrence;
+import elements.galaxy.exceptions.IllegalPosition;
+import elements.galaxy.exceptions.IllegalSystemSize;
 import elements.planet.Planet;
 import elements.systems.Systems;
 import org.junit.jupiter.api.BeforeEach;
@@ -27,6 +31,7 @@ class VerifyGalaxyTest {
     void legalCenterPlanetTest(){
 
         systemListTest.add(new Systems("Center", planetListTest));
+
         Galaxy galaxyTest = new Galaxy(systemListTest);
 
         assertThrows(IllegalCenterSystem.class, () -> new VerifyGalaxy(galaxyTest));
