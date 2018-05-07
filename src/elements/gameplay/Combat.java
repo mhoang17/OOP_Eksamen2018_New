@@ -18,7 +18,6 @@ public class Combat {
     private Systems system;
     private Player playerBlue;
     private Player playerRed;
-    private Player winner;
     private List<Spaceship> blueShips = new ArrayList();
     private List<Spaceship> redShips = new ArrayList();
 
@@ -54,17 +53,18 @@ public class Combat {
 
         boolean combat = false;
 
-        List<Player> ownerList = new ArrayList<>();
         int numOfShips = system.getSpaceships().size();
 
-        for (Spaceship spaceship : system.getSpaceships()){
+        List<Player> owners = new ArrayList<>();
 
-            ownerList.add(spaceship.getOwner());
+        for(Spaceship spaceship : system.getSpaceships()){
+
+            owners.add(spaceship.getOwner());
         }
 
         // Check if player owns a ship
-        int freqBlue = Collections.frequency(ownerList, playerBlue);
-        int freqRed = Collections.frequency(ownerList, playerRed);
+        int freqBlue = Collections.frequency(owners, playerBlue);
+        int freqRed = Collections.frequency(owners, playerRed);
 
         // If all spaceships in system doesn't belong to one player
         if(freqBlue != numOfShips && freqRed != numOfShips){
@@ -77,18 +77,20 @@ public class Combat {
 
     public Player findWinner() {
 
-        // Combat system begins
-        //boolean createCombat = detectCombat(system);
+        Player winner = null;
+
         boolean createCombat = detectCombat();
+        int playerBlueHit;
+        int playerRedHit;
 
         while(createCombat){
 
             //Create spaceship war!
-            int playerBlueHit = doCombat(blueShips);
-            int playerRedHit = doCombat(redShips);
+            playerBlueHit = doCombat(blueShips);
+            playerRedHit = doCombat(redShips);
 
-            destroyShip(redShips, playerBlueHit);
             destroyShip(blueShips, playerRedHit);
+            destroyShip(redShips, playerBlueHit);
 
             if(blueShips.size() == 0 && redShips.size() == 0){
 

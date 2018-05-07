@@ -57,7 +57,7 @@ class PresetConfigurationsTest {
     void planetTest(){
 
         List<Planet> mecRex = new ArrayList<>();
-        mecRex.add(new Planet("Mecatol Rex", 3));
+        mecRex.add(new Planet("Mecatol Rex", 0));
         assertEquals(test.getCenterSystem().getPlanets(), mecRex);
     }
 

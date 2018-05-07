@@ -36,7 +36,7 @@ public class VerifyGalaxy {
     private void legalCenterPlanet(){
 
         // Make Mecatol Rex planet
-        Planet mecRex = new Planet("Mecatol Rex", 3);
+        Planet mecRex = new Planet("Mecatol Rex", 0);
 
         for(Systems system : galaxy.getSystems()){
 

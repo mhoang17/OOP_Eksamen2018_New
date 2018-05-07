@@ -4,6 +4,7 @@
 package elements.systems;
 
 import elements.planet.Planet;
+import elements.player.Player;
 import elements.spaceship.Spaceship;
 
 import java.util.*;
@@ -14,6 +15,7 @@ public class Systems {
     private String position;
     private List<Planet> planets = new ArrayList<>();
     private List<Spaceship> spaceships = new ArrayList<>();
+    private List<Player> owners = new ArrayList<>();
 
     private List<Integer> coordinates = new ArrayList();
     private int x;
@@ -35,6 +37,8 @@ public class Systems {
         getCoordinates();
     }
 
+
+    //Getters
     public String getPosition() {
         return position;
     }
@@ -47,21 +51,6 @@ public class Systems {
         return spaceships;
     }
 
-    // Add new spaceship to system
-    public void newSpaceship(Spaceship spaceship) {
-        spaceships.add(spaceship);
-    }
-
-    public void removeSpaceship(Spaceship spaceship) {
-        spaceships.remove(spaceship);
-    }
-
-    public void moveSpaceship(Spaceship spaceship, Systems newSystem) {
-        newSystem.spaceships.add(spaceship);
-        spaceships.remove(spaceship);
-    }
-
-    //Only works for one layer of systems
     public HashMap<String, List<Integer>> setCoordinates(){
 
         HashMap<String, List<Integer>> compass = new HashMap<>();
@@ -139,6 +128,28 @@ public class Systems {
     public int getY() {
         return y;
     }
+
+
+    public void addPlanet(Planet planet){
+
+        planets.add(planet);
+    }
+
+    // Add new spaceship to system
+    public void newSpaceship(Spaceship spaceship) {
+        spaceships.add(spaceship);
+    }
+
+    public void removeSpaceship(Spaceship spaceship) {
+        spaceships.remove(spaceship);
+    }
+
+    public void moveSpaceship(Spaceship spaceship, Systems newSystem) {
+        newSystem.spaceships.add(spaceship);
+        spaceships.remove(spaceship);
+    }
+
+    //Only works for one layer of systems
 
     @Override
     public boolean equals(Object o) {

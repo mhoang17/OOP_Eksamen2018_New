@@ -32,45 +32,32 @@ public class PresetConfigurations {
 
     public PresetConfigurations() {
 
-        // Mecatol Rex
-        List<Planet> mecRex = new ArrayList();
-        mecRex.add(new Planet("Mecatol Rex", 3));
-
-        // Vaga planets
-        List<Planet> vegaSystem = new ArrayList<>();
-        vegaSystem.add(new Planet("Vega Minor", 3));
-        vegaSystem.add(new Planet("Vega Major", 6));
-
-        // Industrex
-        List<Planet> indus = new ArrayList<>();
-        indus.add(new Planet("Industrex", 6));
-
-        // Rigel planets
-        List<Planet> rigelSystem = new ArrayList<>();
-        rigelSystem.add(new Planet("Rigel I", 1));
-        rigelSystem.add(new Planet("Rigel II", 4));
-
-        //Mirage
-        List<Planet> mirage = new ArrayList<>();
-        mirage.add(new Planet("Mirage", 2));
-
         // Systems
-        centerSystem = new Systems("Center", mecRex);
-        Systems northSystem = new Systems("North", vegaSystem);
-        Systems northEastSystem = new Systems("North-East");
-        Systems southEast = new Systems("South-East", indus);
-        Systems southSystem = new Systems("South", rigelSystem);
+        centerSystem = new Systems("Center");
+        Systems north = new Systems("North");
+        Systems northEast = new Systems("North-East");
+        Systems southEast = new Systems("South-East");
+        Systems south = new Systems("South");
         Systems southWest = new Systems("South-West");
-        Systems northWest = new Systems("North-West", mirage);
+        Systems northWest = new Systems("North-West");
+
+        //Add planets to systems
+        centerSystem.addPlanet(new Planet("Mecatol Rex", 0));
+        north.addPlanet(new Planet("Vega Minor", 3));
+        north.addPlanet(new Planet("Vega Major", 6));
+        southEast.addPlanet(new Planet("Industrex", 6));
+        south.addPlanet(new Planet("Rigel I", 1));
+        south.addPlanet(new Planet("Rigel II", 4));
+        northWest.addPlanet(new Planet("Mirage", 2));
 
         // Insert ships into systems
         centerSystem.newSpaceship(new Dreadnought(playerBlue));
         centerSystem.newSpaceship(new Dreadnought(playerBlue));
         centerSystem.newSpaceship(new Destroyer(playerBlue));
 
-        northSystem.newSpaceship(new Cruiser(playerRed));
-        northSystem.newSpaceship(new Cruiser(playerRed));
-        northSystem.newSpaceship(new Carrier(playerRed));
+        north.newSpaceship(new Cruiser(playerRed));
+        north.newSpaceship(new Cruiser(playerRed));
+        north.newSpaceship(new Carrier(playerRed));
 
         // Insert systems to galaxy
         galaxy = new Galaxy();
@@ -79,10 +66,10 @@ public class PresetConfigurations {
         galaxy.addPlayer(playerRed);
 
         galaxy.addSystems(centerSystem);
-        galaxy.addSystems(northSystem);
-        galaxy.addSystems(northEastSystem);
+        galaxy.addSystems(north);
+        galaxy.addSystems(northEast);
         galaxy.addSystems(southEast);
-        galaxy.addSystems(southSystem);
+        galaxy.addSystems(south);
         galaxy.addSystems(southWest);
         galaxy.addSystems(northWest);
 

@@ -18,56 +18,44 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-//Design choice: like the board game some planets will always be in the same system eg. the Vega system
-
 public class RandomGalaxy {
 
     // Constants
-    private final static int ADD_SPACESHIP = 2;
-    private final static int NO_SPACESHIP = 1;
+    private final static int ADD_SPACESHIP = 1;
+    private final static int NO_SPACESHIP = 0;
+    private final static int MAX_PLANETS = 3;
+    private final static int MAX_RESOURCE = 6;
 
-    //Planets
-    private List<Planet> mecRex = new ArrayList();
-    private List<Planet> vegaSystem = new ArrayList<>();
-    private List<Planet> rigelSystem = new ArrayList<>();
-    private List<Planet> indus = new ArrayList<>();
-    private List<Planet> mirage = new ArrayList<>();
 
-    //List of planets
-    private List<List<Planet>> collectedPlanetList = new ArrayList<>();
+    private Random rand = new Random();
 
-    //Lists
-    private List<Systems> systemList = new ArrayList<>();
-    private List<String> compass = new ArrayList<>();
-    private List<Spaceship> spaceshipTypes = new ArrayList<>();
+    private Galaxy galaxy;
+
     private List<Player> players;
+    private List<String> planetNames = new ArrayList<>();
+    private List<Spaceship> playerShipsList = new ArrayList<>();
+
 
     public RandomGalaxy(List<Player> players) {
 
         this.players = players;
-
-        // Set lists
-        setSystemList();
-        setCompass();
-        setSpaceshipTypes();
+        galaxy = new Galaxy();
 
         // Create random galaxy
         randomSystems();
-        randomSpaceships();
-
-        // If only spaceships occurs in one system
-        addMoreSpaceships();
-
-        Galaxy galaxy = new Galaxy(systemList);
+        addSpaceships();
 
         VerifyGalaxy verifyGalaxy = new VerifyGalaxy(galaxy);
 
-        for (Player player : players){
+        /*for (Player player : players){
 
             galaxy.addPlayer(player);
         }
 
         for(Systems system : galaxy.getSystems()){
+
+            System.out.println(system.getPosition());
+            System.out.println(system.getSpaceships());
 
             Combat doCombat = new Combat(system, galaxy.getPlayers().get(0), galaxy.getPlayers().get(1));
 
@@ -75,62 +63,110 @@ public class RandomGalaxy {
 
                 System.out.println("Winner: " + doCombat.findWinner().getName());
             }
+            System.out.println("\n");
+        }*/
+    }
+
+    private void setSystemList(){
+
+        galaxy.addSystems(new Systems("North"));
+        galaxy.addSystems(new Systems("North-West"));
+        galaxy.addSystems(new Systems("South-West"));
+        galaxy.addSystems(new Systems("South"));
+        galaxy.addSystems(new Systems("South-East"));
+        galaxy.addSystems(new Systems("North-East"));
+
+    }
+
+    private void setPlanetList(){
+
+        planetNames.add("Vega Minor");
+        planetNames.add("Vega Major");
+        planetNames.add("Industrex");
+        planetNames.add("Rigel I");
+        planetNames.add("Rigel II");
+        planetNames.add("Mirage");
+        planetNames.add("Velnor");
+        planetNames.add("Perimeter");
+        planetNames.add("Hope's end");
+        planetNames.add(null);
+    }
+
+    private void setPlayerShips() {
+
+        for(Player player : players){
+
+            playerShipsList.add(new Carrier(player));
+            playerShipsList.add(new Cruiser(player));
+            playerShipsList.add(new Destroyer(player));
+            playerShipsList.add(new Dreadnought(player));
         }
     }
 
     private void randomSystems(){
 
-        // Create Center system with Mecatol Rex
-        mecRex.add(new Planet("Mecatol Rex", 3));
-        Systems centerSystem = new Systems("Center", mecRex);
-        systemList.add(centerSystem);
+        //Set lists
+        setPlanetList();
+        setSystemList();
 
-        // Create one layer of systems
-        for(String position : compass){
+        //Random ints
+        int numPlanets;
+        int resourceProduction;
+        int planetName;
 
-            int maxIntSize = collectedPlanetList.size() - 1;
+        for (Systems system : galaxy.getSystems()){
 
-            Random rand = new Random();
-            int randIndx = rand.nextInt(maxIntSize + 1);
+            numPlanets = rand.nextInt(MAX_PLANETS + 1);
 
-            // If system should contain a planet
-            if(collectedPlanetList.get(randIndx) != null){
+            for(int i = 0; i < numPlanets; i++){
 
-                //Insert planet index points at into system
-                Systems system = new Systems(position, collectedPlanetList.get(randIndx));
-                systemList.add(system);
-                collectedPlanetList.remove(randIndx);
-            }
-            // If system should be empty
-            else{
-                Systems system = new Systems(position);
-                systemList.add(system);
+                planetName = rand.nextInt(planetNames.size());
+                resourceProduction = rand.nextInt(MAX_RESOURCE + 1);
+
+                if(planetNames.get(planetName) != null){
+
+                    system.addPlanet(new Planet(planetNames.get(planetName), resourceProduction));
+
+                    //Remove planet name, so it doesn't risk getting it again
+                    planetNames.remove(planetName);
+                }
             }
         }
+
+        // Create Center system with Mecatol Rex
+        Systems centerSystem = new Systems("Center");
+        centerSystem.addPlanet(new Planet("Mecatol Rex", 0));
+        galaxy.addSystems(centerSystem);
+
     }
 
     private void randomSpaceships(){
 
-        for(Systems system : systemList){
+        setPlayerShips();
 
-            boolean stopShipInsert = false;
+        boolean stopShipInsert;
+
+        int addShip;
+        int bound  = playerShipsList.size();
+
+        int shipIndx;
+
+        for(Systems system : galaxy.getSystems()){
+
+            stopShipInsert = false;
 
             while(!stopShipInsert){
 
-                Random rand = new Random();
-                int addShip = rand.nextInt((ADD_SPACESHIP - NO_SPACESHIP + 1) + NO_SPACESHIP);
+                addShip = rand.nextInt((ADD_SPACESHIP - NO_SPACESHIP + 1) + NO_SPACESHIP);
 
                 // If random chooses addSpaceship
                 if(addShip == ADD_SPACESHIP){
 
-                    int maxIntSize = spaceshipTypes.size() - 1;
-
                     // Get random spaceship index
-                    int randShipIndx = rand.nextInt(maxIntSize + 1);
-                    Spaceship spaceship = spaceshipTypes.get(randShipIndx);
+                    shipIndx = rand.nextInt(bound);
 
                     // Add spaceship to current system
-                    system.newSpaceship(spaceship);
+                    system.newSpaceship(playerShipsList.get(shipIndx));
                 }
                 // Stop while-loop if no more spaceships should be added to system
                 else {
@@ -144,26 +180,26 @@ public class RandomGalaxy {
 
     }
 
-    private void addMoreSpaceships(){
+    private void addSpaceships(){
 
         int differentShipOwner = 0;
 
         while (differentShipOwner < 2){
 
-            for (Systems system : systemList){
+            for (Systems system : galaxy.getSystems()){
 
                 int count = 0;
 
-                List<Player> ownerList = new ArrayList<>();
+                List<Player> owners = new ArrayList<>();
 
-                for (Spaceship spaceship : system.getSpaceships()){
+                for(Spaceship spaceship : system.getSpaceships()){
 
-                    ownerList.add(spaceship.getOwner());
+                    owners.add(spaceship.getOwner());
                 }
 
                 for (Player player : players){
 
-                    int freq = Collections.frequency(ownerList, player);
+                    int freq = Collections.frequency(owners, player);
 
                     // Current player owns at least one spaceship in system
                     if(freq > 0){
@@ -189,49 +225,5 @@ public class RandomGalaxy {
                 randomSpaceships();
             }
         }
-    }
-
-    private void setSystemList(){
-
-        // Vaga planets
-        vegaSystem.add(new Planet("Vega Minor", 3));
-        vegaSystem.add(new Planet("Vega Major", 6));
-
-        // Industrex
-        indus.add(new Planet("Industrex", 6));
-
-        // Rigel planets
-        rigelSystem.add(new Planet("Rigel I", 1));
-        rigelSystem.add(new Planet("Rigel II", 4));
-
-        //Mirage
-        mirage.add(new Planet("Mirage", 2));
-
-        collectedPlanetList.add(vegaSystem);
-        collectedPlanetList.add(rigelSystem);
-        collectedPlanetList.add(indus);
-        collectedPlanetList.add(mirage);
-        collectedPlanetList.add(null);
-    }
-
-    private void setSpaceshipTypes() {
-
-        for(Player player : players){
-
-            spaceshipTypes.add(new Carrier(player));
-            spaceshipTypes.add(new Cruiser(player));
-            spaceshipTypes.add(new Destroyer(player));
-            spaceshipTypes.add(new Dreadnought(player));
-        }
-    }
-
-    private void setCompass(){
-
-        compass.add("North");
-        compass.add("North-West");
-        compass.add("South-West");
-        compass.add("South");
-        compass.add("South-East");
-        compass.add("North-East");
     }
 }
