@@ -128,12 +128,8 @@ public class Combat {
             destroyShip(blueShips, playerRedHit);
             destroyShip(redShips, playerBlueHit);
 
-            if(blueShips.size() == 0 && redShips.size() == 0){
-
-                createCombat = false;
-            }
             // If all blue ships are destroyed
-            else if(blueShips.size() == 0){
+            if(blueShips.size() == 0){
 
                 winner = playerRed;
                 createCombat = false;

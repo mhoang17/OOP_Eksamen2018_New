@@ -18,6 +18,7 @@ class PlanetTest {
     @Test
     void exceptionThrownTest(){
 
+        //Too high value of a resource production
         assertThrows(Planet.IllegalResourceProductionValue.class, () -> new Planet("Mecatol Rex", 7));
     }
 

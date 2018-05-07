@@ -32,10 +32,7 @@ class RandomGalaxyTest {
     }
 
     @Test
-    void galaxyTest(){
-    }
-
-    @Test
+    //Test that the last system in random galaxy is Mecatol Rex
     void centerSystem(){
 
         Systems centerSystem = new Systems("Center");

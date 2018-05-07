@@ -22,11 +22,16 @@ class CombatTest {
     @BeforeEach
     void setUp(){
 
+        //Use PresetConfigurations class to quickly make a galaxy for testing
+        //No need to make a galaxy form the bottom
         testGalaxy = new PresetConfigurations();
+
+        //Only looking at the center system
         combatTest = new Combat(testGalaxy.getCenter(), testGalaxy.getPlayerBlue(), testGalaxy.getPlayerRed());
     }
 
     @Test
+    // No combat occurs because only blue ships in system
     void noCombatTest(){
 
         assertFalse(combatTest.detectCombat());
@@ -35,6 +40,7 @@ class CombatTest {
     @Test
     void doCombatTest(){
 
+        //Add red ship to system to make a combat
         testGalaxy.getCenter().newSpaceship(new Dreadnought(testGalaxy.getPlayerRed()));
 
         assertTrue(combatTest.detectCombat());
@@ -43,10 +49,13 @@ class CombatTest {
     @Test
     void destroyShipTest(){
 
+        // List containing one ship
         List<Spaceship> spaceshipList = new ArrayList<>();
         spaceshipList.add(new Carrier(testGalaxy.getPlayerBlue()));
+
         combatTest.destroyShip(spaceshipList, 5);
 
+        //All spaceships are removed
         assertEquals(0, spaceshipList.size());
     }
 
@@ -61,6 +70,7 @@ class CombatTest {
     @Test
     void redWinner(){
 
+        // New system
         Systems systemTest = new Systems("North");
         systemTest.newSpaceship(new Dreadnought(testGalaxy.getPlayerRed()));
         systemTest.newSpaceship(new Dreadnought(testGalaxy.getPlayerRed()));

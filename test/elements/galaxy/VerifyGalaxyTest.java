@@ -31,10 +31,11 @@ class VerifyGalaxyTest {
     void legalCenterPlanetTest(){
 
         systemListTest.add(new Systems("Center", planetListTest));
-
         Galaxy galaxyTest = new Galaxy(systemListTest);
 
+        // Throws exception when this command is made
         assertThrows(IllegalCenterSystem.class, () -> new VerifyGalaxy(galaxyTest));
+
     }
 
     @Test
@@ -66,6 +67,7 @@ class VerifyGalaxyTest {
     }
 
     @Test
+    //Test that north is north of south
     void northAndSouthTest(){
 
         systemListTest.add(new Systems("North", planetListTest));
@@ -79,6 +81,7 @@ class VerifyGalaxyTest {
     }
 
     @Test
+    //Test that south is south of north
     void southAndNorthTest(){
 
         systemListTest.add(new Systems("North", planetListTest));
@@ -92,6 +95,7 @@ class VerifyGalaxyTest {
     }
 
     @Test
+    // Test that if they aren't north and south for each other
     void isNotNorthSouth(){
 
         systemListTest.add(new Systems("North", planetListTest));

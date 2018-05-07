@@ -19,40 +19,36 @@ class SpaceshipTest {
     void setUp(){
 
         playerTest = new Player("Name", "Race", "Colour");
+        spaceshipTest = new Carrier(playerTest);
     }
 
     @Test
     void toStringTest(){
 
-        spaceshipTest = new Carrier(playerTest);
         assertEquals("Colour: Carrier", spaceshipTest.toString());
     }
 
     @Test
     void equalsSame(){
 
-        spaceshipTest = new Carrier(playerTest);
         assertTrue(spaceshipTest.equals(spaceshipTest));
     }
 
     @Test
     void equalsFalse(){
 
-        spaceshipTest = new Carrier(playerTest);
         assertFalse(spaceshipTest.equals(playerTest));
     }
 
     @Test
     void carrierMovementSpeedTest(){
 
-        spaceshipTest = new Carrier(playerTest);
         assertEquals(1, spaceshipTest.getMovementSpeed());
     }
 
     @Test
     void carrierCapacityTest(){
 
-        spaceshipTest = new Carrier(playerTest);
         assertEquals(6, spaceshipTest.getCapacity());
     }
 

@@ -66,12 +66,6 @@ public class PresetConfigurations {
         galaxy.addSystems(south);
         galaxy.addSystems(southWest);
         galaxy.addSystems(northWest);
-
-        try {
-            WriteControlledPlanet write = new WriteControlledPlanet(galaxy);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     // Getters for testing

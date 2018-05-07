@@ -54,6 +54,14 @@ class PresetConfigurationsTest {
     }
 
     @Test
+    // Test that player is added
+    void getPlayersTest(){
+
+        assertEquals(playerTest, test.getGalaxy().getPlayers().get(0));
+
+    }
+
+    @Test
     // Test if correct planet is in system
     void planetTest(){
 
@@ -77,6 +85,7 @@ class PresetConfigurationsTest {
     }
 
     @Test
+    //Test that the correct spaceships have been added
     void getSpaceship(){
 
         assertEquals(test.getGalaxy().getSpaceship(), spaceshipsList);
