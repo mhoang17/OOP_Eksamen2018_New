@@ -29,6 +29,7 @@ class RandomGalaxyTest {
         playerList.add(playerRed);
 
         test = new RandomGalaxy(playerList);
+        test.randomSystems();
     }
 
     @Test

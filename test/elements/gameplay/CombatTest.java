@@ -28,9 +28,11 @@ class CombatTest {
         /* Use PresetConfigurations class to quickly make a galaxy for testing */
         /* No need to make a galaxy from the bottom */
         testGalaxy = new PresetConfigurations();
+        testGalaxy.setPresetConfigurations();
 
         /* Only looking at the center system */
         combatTest = new Combat(testGalaxy.getCenter(), testGalaxy.getPlayerBlue(), testGalaxy.getPlayerRed());
+        combatTest.storeShips();
     }
 
     @Test

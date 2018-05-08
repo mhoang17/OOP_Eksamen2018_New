@@ -21,6 +21,9 @@ public class PresetConfigurations {
     public PresetConfigurations() {
 
         galaxy = new Galaxy();
+    }
+
+    public void setPresetConfigurations(){
 
         /* Systems */
         center = new Systems("Center");
@@ -61,6 +64,7 @@ public class PresetConfigurations {
         galaxy.addSystems(south);
         galaxy.addSystems(southWest);
         galaxy.addSystems(northWest);
+
     }
 
     /** Getters for testing **/

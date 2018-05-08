@@ -35,9 +35,10 @@ class VerifyGalaxyTest {
 
         systemListTest.add(new Systems("Center", planetListTest));
         Galaxy galaxyTest = new Galaxy(systemListTest);
+        VerifyGalaxy test = new VerifyGalaxy(galaxyTest);
 
         /* Not correct planet in center */
-        assertThrows(IllegalCenterSystem.class, () -> new VerifyGalaxy(galaxyTest));
+        assertThrows(IllegalCenterSystem.class, () -> test.legalCenterPlanet());
 
     }
 
@@ -48,9 +49,10 @@ class VerifyGalaxyTest {
         planetListTest.add(new Planet("Test", 1));
         systemListTest.add(new Systems("North", planetListTest));
         Galaxy galaxyTest = new Galaxy(systemListTest);
+        VerifyGalaxy test = new VerifyGalaxy(galaxyTest);
 
         /* Same planet occurs in galaxy twice */
-        assertThrows(IllegalPlanetOccurrence.class, () -> new VerifyGalaxy(galaxyTest));
+        assertThrows(IllegalPlanetOccurrence.class, () -> test.legalPlanet());
     }
 
     @Test
@@ -62,8 +64,9 @@ class VerifyGalaxyTest {
         planetListTest.add(new Planet("TestThree", 1));
         systemListTest.add(new Systems("North", planetListTest));
         Galaxy galaxyTest = new Galaxy(systemListTest);
+        VerifyGalaxy test = new VerifyGalaxy(galaxyTest);
 
-        assertThrows(IllegalSystemSize.class, () -> new VerifyGalaxy(galaxyTest));
+        assertThrows(IllegalSystemSize.class, () -> test.legalSystemSize());
 
     }
 

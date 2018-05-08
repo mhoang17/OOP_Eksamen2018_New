@@ -25,18 +25,10 @@ public class VerifyGalaxy {
     public VerifyGalaxy(Galaxy galaxy) {
 
         this.galaxy = galaxy;
-
-        /* If center system doesn't contain the right planet or contains more planets */
-        legalCenterPlanet();
-
-        /* If planet occurs in more than one system */
-        legalPlanet();
-
-        /* If system has more than 3 planets */
-        legalSystemSize();
     }
 
-    private void legalCenterPlanet(){
+    /** If center system doesn't contain the right planet or contains more planets **/
+    public void legalCenterPlanet(){
 
         /* Make Mecatol Rex planet */
         Planet mecRex = new Planet("Mecatol Rex", 0);
@@ -55,11 +47,14 @@ public class VerifyGalaxy {
         }
     }
 
-    private void legalPlanet(){
+    /** If planet occurs in more than one system **/
+    public void legalPlanet(){
+
+        int freq;
 
         for (Planet planet : galaxy.getPlanets()){
 
-            int freq = Collections.frequency(galaxy.getPlanets(), planet);
+            freq = Collections.frequency(galaxy.getPlanets(), planet);
 
             /* If freq is over 1, then a planet occurs more than once in galaxy */
             if(freq > LEGAL_OCCURRENCE){
@@ -69,7 +64,8 @@ public class VerifyGalaxy {
         }
     }
 
-    private void legalSystemSize(){
+    /** If system has more than 3 planets **/
+    public void legalSystemSize(){
 
         for (Systems system : galaxy.getSystems()){
 

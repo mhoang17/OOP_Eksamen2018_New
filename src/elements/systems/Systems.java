@@ -27,7 +27,6 @@ public class Systems {
 
     public Systems(String position) {
         this.position = position;
-        getCoordinates();
     }
 
     public String getPosition() {

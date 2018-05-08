@@ -25,6 +25,7 @@ class WriteControlledPlanetTest {
     void setUp() throws IOException {
 
         PresetConfigurations testGalaxy = new PresetConfigurations();
+        testGalaxy.setPresetConfigurations();
         WriteControlledPlanet writeTest = new WriteControlledPlanet(testGalaxy.getGalaxy());
     }
 

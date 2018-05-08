@@ -38,10 +38,6 @@ public class RandomGalaxy {
 
         this.players = players;
         galaxy = new Galaxy();
-
-        randomSystems();
-
-        VerifyGalaxy verifyGalaxy = new VerifyGalaxy(galaxy);
     }
 
     public Galaxy getGalaxy() {
@@ -169,12 +165,12 @@ public class RandomGalaxy {
     public void addSpaceships(){
 
         int differentShipOwner = 0;
+        int count = 0;
+        int freq;
 
         while (differentShipOwner < 2){
 
             for (Systems system : galaxy.getSystems()){
-
-                int count = 0;
 
                 /* List of spaceship owners */
                 List<Player> owners = new ArrayList<>();
@@ -186,7 +182,7 @@ public class RandomGalaxy {
 
                 for (Player player : players){
 
-                    int freq = Collections.frequency(owners, player);
+                    freq = Collections.frequency(owners, player);
 
                     // Current player owns at least one spaceship in system
                     if(freq > 0){

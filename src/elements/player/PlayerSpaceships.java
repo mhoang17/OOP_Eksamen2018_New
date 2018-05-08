@@ -9,9 +9,16 @@ import java.util.*;
 
 public class PlayerSpaceships{
 
+    private List<Spaceship> spaceships;
+    private Player player;
     private List<Spaceship> ownedSpaceships = new ArrayList<>();
 
     public PlayerSpaceships(List<Spaceship> spaceships, Player player){
+        this.spaceships = spaceships;
+        this.player = player;
+    }
+
+    public List<Spaceship> getOwnedSpaceships() {
 
         /* List of ship owners */
         for(Spaceship spaceship : spaceships){
@@ -27,9 +34,6 @@ public class PlayerSpaceships{
 
         /* Sort after resource cost */
         ownedSpaceships.sort((shipOne, shipTwo) -> shipTwo.cmpResourceCost(shipOne));
-    }
-
-    public List<Spaceship> getOwnedSpaceships() {
 
         return ownedSpaceships;
     }

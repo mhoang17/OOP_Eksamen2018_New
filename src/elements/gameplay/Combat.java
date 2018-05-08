@@ -25,8 +25,6 @@ public class Combat {
         this.system = system;
         this.playerBlue = playerBlue;
         this.playerRed = playerRed;
-
-        storeShips();
     }
 
     public void storeShips(){
@@ -77,11 +75,12 @@ public class Combat {
     public int hitSpaceship(List<Spaceship> attackingShips){
 
         Random rand = new Random();
+        int dice;
         int hit = 0;
 
         for(Spaceship spaceship : attackingShips){
 
-            int dice = rand.nextInt((MAX_DICE_VAL - MIN_DICE_VAL + 1) + MIN_DICE_VAL);
+            dice = rand.nextInt((MAX_DICE_VAL - MIN_DICE_VAL + 1) + MIN_DICE_VAL);
 
             if(dice >= spaceship.getCombatValue()){
 

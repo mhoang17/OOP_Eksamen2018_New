@@ -25,6 +25,7 @@ class SystemsTest {
         playerTest = new Player("Name", "Race", "Colour");
         spaceshipTest = new Carrier(playerTest);
         system.newSpaceship(spaceshipTest);
+        system.getCoordinates();
     }
 
     @Test

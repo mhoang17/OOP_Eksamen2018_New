@@ -30,6 +30,7 @@ class PresetConfigurationsTest {
     void setUp(){
 
         test = new PresetConfigurations();
+        test.setPresetConfigurations();
         playerTest = new Player("Crassus", "The Emirates of Hacan", "Blue");
         Player playerTestTwo = new Player("Pompey", "Federation of Sol", "Red");
 
