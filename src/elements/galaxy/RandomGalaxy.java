@@ -165,12 +165,14 @@ public class RandomGalaxy {
     public void addSpaceships(){
 
         int differentShipOwner = 0;
-        int count = 0;
+        int count;
         int freq;
 
         while (differentShipOwner < 2){
 
             for (Systems system : galaxy.getSystems()){
+
+                count = 0;
 
                 /* List of spaceship owners */
                 List<Player> owners = new ArrayList<>();
@@ -197,6 +199,7 @@ public class RandomGalaxy {
 
                     differentShipOwner++;
                 }
+
             }
 
             /* If differentShipOwner is less than two, */

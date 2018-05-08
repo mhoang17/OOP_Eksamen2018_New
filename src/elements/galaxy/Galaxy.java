@@ -20,10 +20,6 @@ public class Galaxy {
     public Galaxy() {
     }
 
-    public Galaxy(List<Systems> systems) {
-        this.systems = systems;
-    }
-
     public void addSystems(Systems system) {
 
         systems.add(system);

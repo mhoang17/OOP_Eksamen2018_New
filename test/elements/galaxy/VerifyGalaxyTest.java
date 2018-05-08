@@ -19,54 +19,51 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class VerifyGalaxyTest {
 
-    private List<Planet> planetListTest = new ArrayList();
-    private List posPlanetTest = new ArrayList();
-    private List<Systems> systemListTest = new ArrayList();
-
-    @BeforeEach
-    void setUp(){
-
-        planetListTest.add(new Planet("Test", 1));
-        posPlanetTest.add(new Planet("TestTwo", 1));
-    }
-
     @Test
     void legalCenterPlanetTest(){
 
-        systemListTest.add(new Systems("Center", planetListTest));
-        Galaxy galaxyTest = new Galaxy(systemListTest);
+        Systems systemTest = new Systems("Center");
+        systemTest.addPlanet(new Planet("Test", 0));
+
+        Galaxy galaxyTest = new Galaxy();
+        galaxyTest.addSystems(systemTest);
         VerifyGalaxy test = new VerifyGalaxy(galaxyTest);
 
         /* Not correct planet in center */
-        assertThrows(IllegalCenterSystem.class, () -> test.legalCenterPlanet());
+        assertThrows(IllegalCenterSystem.class, test::legalCenterPlanet);
 
     }
 
     @Test
     void legalPlanetTest(){
 
-        /* Add the same planet into planetList */
-        planetListTest.add(new Planet("Test", 1));
-        systemListTest.add(new Systems("North", planetListTest));
-        Galaxy galaxyTest = new Galaxy(systemListTest);
+        Systems systemTest = new Systems("North");
+        systemTest.addPlanet(new Planet("Test", 0));
+        systemTest.addPlanet(new Planet("Test", 0));
+
+        Galaxy galaxyTest = new Galaxy();
+        galaxyTest.addSystems(systemTest);
         VerifyGalaxy test = new VerifyGalaxy(galaxyTest);
 
         /* Same planet occurs in galaxy twice */
-        assertThrows(IllegalPlanetOccurrence.class, () -> test.legalPlanet());
+        assertThrows(IllegalPlanetOccurrence.class, test::legalPlanet);
     }
 
     @Test
     void legalSystemSizeTest(){
 
         /* Add three more planets so planetList size is 4 */
-        planetListTest.add(new Planet("TestOne", 1));
-        planetListTest.add(new Planet("TestTwo", 1));
-        planetListTest.add(new Planet("TestThree", 1));
-        systemListTest.add(new Systems("North", planetListTest));
-        Galaxy galaxyTest = new Galaxy(systemListTest);
+        Systems systemTest = new Systems("North");
+        systemTest.addPlanet(new Planet("TestOne", 1));
+        systemTest.addPlanet(new Planet("TestTwo", 1));
+        systemTest.addPlanet(new Planet("TestThree", 1));
+        systemTest.addPlanet(new Planet("TestFour", 1));
+
+        Galaxy galaxyTest = new Galaxy();
+        galaxyTest.addSystems(systemTest);
         VerifyGalaxy test = new VerifyGalaxy(galaxyTest);
 
-        assertThrows(IllegalSystemSize.class, () -> test.legalSystemSize());
+        assertThrows(IllegalSystemSize.class, test::legalSystemSize);
 
     }
 
@@ -74,9 +71,14 @@ class VerifyGalaxyTest {
     /* Test that north is north of south */
     void northAndSouthTest(){
 
-        systemListTest.add(new Systems("North", planetListTest));
-        systemListTest.add(new Systems("South", posPlanetTest));
-        Galaxy galaxyTest = new Galaxy(systemListTest);
+        Systems systemOne = new Systems("North");
+        Systems systemTwo = new Systems("South");
+        systemOne.getCoordinates();
+        systemTwo.getCoordinates();
+
+        Galaxy galaxyTest = new Galaxy();
+        galaxyTest.addSystems(systemOne);
+        galaxyTest.addSystems(systemTwo);
         VerifyGalaxy test = new VerifyGalaxy(galaxyTest);
 
         assertTrue(test.verifyPosition(galaxyTest.getSystems().get(0), galaxyTest.getSystems().get(1)));
@@ -86,10 +88,14 @@ class VerifyGalaxyTest {
     /* Test that south is south of north */
     void southAndNorthTest(){
 
-        systemListTest.add(new Systems("North", planetListTest));
-        systemListTest.add(new Systems("South", posPlanetTest));
+        Systems systemOne = new Systems("North");
+        Systems systemTwo = new Systems("South");
+        systemOne.getCoordinates();
+        systemTwo.getCoordinates();
 
-        Galaxy galaxyTest = new Galaxy(systemListTest);
+        Galaxy galaxyTest = new Galaxy();
+        galaxyTest.addSystems(systemOne);
+        galaxyTest.addSystems(systemTwo);
         VerifyGalaxy test = new VerifyGalaxy(galaxyTest);
 
         assertTrue(test.verifyPosition(galaxyTest.getSystems().get(1), galaxyTest.getSystems().get(0)));
@@ -99,10 +105,14 @@ class VerifyGalaxyTest {
     /* Test that if they aren't north and south for each other */
     void isNotNorthSouth(){
 
-        systemListTest.add(new Systems("North", planetListTest));
-        systemListTest.add(new Systems("North-East", posPlanetTest));
+        Systems systemOne = new Systems("North");
+        Systems systemTwo = new Systems("North-East");
+        systemOne.getCoordinates();
+        systemTwo.getCoordinates();
 
-        Galaxy galaxyTest = new Galaxy(systemListTest);
+        Galaxy galaxyTest = new Galaxy();
+        galaxyTest.addSystems(systemOne);
+        galaxyTest.addSystems(systemTwo);
         VerifyGalaxy test = new VerifyGalaxy(galaxyTest);
 
         assertThrows(IllegalPosition.class,
