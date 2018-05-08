@@ -16,22 +16,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CombatTest {
 
-    PresetConfigurations testGalaxy;
-    Combat combatTest;
+    private PresetConfigurations testGalaxy;
+    private Combat combatTest;
 
     @BeforeEach
     void setUp(){
 
-        //Use PresetConfigurations class to quickly make a galaxy for testing
-        //No need to make a galaxy form the bottom
+        /* Use PresetConfigurations class to quickly make a galaxy for testing */
+        /* No need to make a galaxy from the bottom */
         testGalaxy = new PresetConfigurations();
 
-        //Only looking at the center system
+        /* Only looking at the center system */
         combatTest = new Combat(testGalaxy.getCenter(), testGalaxy.getPlayerBlue(), testGalaxy.getPlayerRed());
     }
 
     @Test
-    // No combat occurs because only blue ships in system
+    /* No combat occurs because only blue ships in system */
     void noCombatTest(){
 
         assertFalse(combatTest.detectCombat());
@@ -40,7 +40,7 @@ class CombatTest {
     @Test
     void doCombatTest(){
 
-        //Add red ship to system to make a combat
+        /* Add red ship to system to make a combat */
         testGalaxy.getCenter().newSpaceship(new Dreadnought(testGalaxy.getPlayerRed()));
 
         assertTrue(combatTest.detectCombat());
@@ -49,13 +49,13 @@ class CombatTest {
     @Test
     void destroyShipTest(){
 
-        // List containing one ship
+        /* List containing one ship */
         List<Spaceship> spaceshipList = new ArrayList<>();
         spaceshipList.add(new Carrier(testGalaxy.getPlayerBlue()));
 
         combatTest.destroyShip(spaceshipList, 5);
 
-        //All spaceships are removed
+        /* All spaceships are removed */
         assertEquals(0, spaceshipList.size());
     }
 
@@ -63,14 +63,14 @@ class CombatTest {
     void blueWinner(){
 
         testGalaxy.getCenter().newSpaceship(new Destroyer(testGalaxy.getPlayerRed()));
-        //Low risk of test failing
+        /* Low risk of test failing */
         assertEquals(testGalaxy.getPlayerBlue(), combatTest.findWinner());
     }
 
     @Test
     void redWinner(){
 
-        // New system
+        /* New system */
         Systems systemTest = new Systems("North");
         systemTest.newSpaceship(new Dreadnought(testGalaxy.getPlayerRed()));
         systemTest.newSpaceship(new Dreadnought(testGalaxy.getPlayerRed()));
@@ -79,9 +79,7 @@ class CombatTest {
 
         Combat combat = new Combat(systemTest, testGalaxy.getPlayerBlue(), testGalaxy.getPlayerRed());
 
-        //Low risk of test failing
+        /* Low risk of test failing */
         assertEquals(testGalaxy.getPlayerRed(), combat.findWinner());
     }
-
-
 }

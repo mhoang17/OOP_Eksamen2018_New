@@ -7,18 +7,18 @@ import java.util.Objects;
 
 public class Planet {
 
-    // Fields
+    /** Fields **/
     private String name;
     private int resourceProduction;
 
-    // Constructor
+    /** Constructor **/
     public Planet(String name, int resourceProduction) {
         this.name = name;
         this.resourceProduction = resourceProduction;
 
-        // If resource value isn't valid
+        /* If resource value isn't valid */
         if(resourceProduction < 0 || resourceProduction > 6){
-            throw new IllegalResourceProductionValue();
+            throw new IllegalResourceProduction();
         }
     }
 
@@ -30,7 +30,6 @@ public class Planet {
         return resourceProduction;
     }
 
-    // Compares the names, but not the resource points
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -50,12 +49,8 @@ public class Planet {
         return Objects.hash(name, resourceProduction);
     }
 
-    // When made to string, it only returns the name
     @Override
     public String toString() {
         return this.name;
-    }
-
-    public static class IllegalResourceProductionValue extends RuntimeException {
     }
 }

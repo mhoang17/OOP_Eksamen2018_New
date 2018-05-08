@@ -14,31 +14,31 @@ import java.util.*;
 
 public class VerifyGalaxy {
 
-    // Constants
+    /** Constants **/
     private final static int MAX_CENTER_SIZE = 1;
     private final static int MAX_SYSTEM_SIZE = 3;
     private final static int LEGAL_OCCURRENCE = 1;
 
-    // Field
+    /** Field **/
     private Galaxy galaxy;
 
     public VerifyGalaxy(Galaxy galaxy) {
 
         this.galaxy = galaxy;
 
-        // If center system doesn't contain the right planet or contains more planets
+        /* If center system doesn't contain the right planet or contains more planets */
         legalCenterPlanet();
 
-        // If planet occurs in more than one system
+        /* If planet occurs in more than one system */
         legalPlanet();
 
-        // If system has more than 3 planets
+        /* If system has more than 3 planets */
         legalSystemSize();
     }
 
     private void legalCenterPlanet(){
 
-        // Make Mecatol Rex planet
+        /* Make Mecatol Rex planet */
         Planet mecRex = new Planet("Mecatol Rex", 0);
 
         for(Systems system : galaxy.getSystems()){
@@ -61,7 +61,7 @@ public class VerifyGalaxy {
 
             int freq = Collections.frequency(galaxy.getPlanets(), planet);
 
-            // If freq is over 1, then a planet occurs more than once in galaxy
+            /* If freq is over 1, then a planet occurs more than once in galaxy */
             if(freq > LEGAL_OCCURRENCE){
 
                 throw new IllegalPlanetOccurrence(planet.getName() + " occurs more than once.");
@@ -73,7 +73,7 @@ public class VerifyGalaxy {
 
         for (Systems system : galaxy.getSystems()){
 
-            // Check if size is more than 3
+            /* Check if size is more than 3 */
             if(system.getPlanets().size() > MAX_SYSTEM_SIZE){
 
                 throw new IllegalSystemSize(system.toString() + " has more than three planets.");

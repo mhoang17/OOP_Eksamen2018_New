@@ -18,8 +18,8 @@ public class Combat {
     private Systems system;
     private Player playerBlue;
     private Player playerRed;
-    private List<Spaceship> blueShips = new ArrayList();
-    private List<Spaceship> redShips = new ArrayList();
+    private List<Spaceship> blueShips = new ArrayList<>();
+    private List<Spaceship> redShips = new ArrayList<>();
 
     public Combat(Systems system, Player playerBlue, Player playerRed) {
         this.system = system;
@@ -31,7 +31,7 @@ public class Combat {
 
     public void storeShips(){
 
-        // Store owned ships in system for each player
+        /* Store owned ships in system for each player */
         for (Spaceship spaceship : system.getSpaceships()) {
 
             if(spaceship.getOwner().equals(playerBlue)){
@@ -43,12 +43,11 @@ public class Combat {
             }
         }
 
-        // Sort list so the ship with lowest resource cost is first
+        /* Sort list so the ship with lowest resource cost is first */
         blueShips.sort(Comparator.comparing(Spaceship::getResourceCost));
         redShips.sort(Comparator.comparing(Spaceship::getResourceCost));
     }
 
-    //public boolean detectCombat(Systems system)
     public boolean detectCombat(){
 
         boolean combat = false;
@@ -62,11 +61,11 @@ public class Combat {
             owners.add(spaceship.getOwner());
         }
 
-        // Check if player owns a ship
+        /* Check if player owns a ship */
         int freqBlue = Collections.frequency(owners, playerBlue);
         int freqRed = Collections.frequency(owners, playerRed);
 
-        // If all spaceships in system doesn't belong to one player
+        /* If all spaceships in system doesn't belong to one player */
         if(freqBlue != numOfShips && freqRed != numOfShips){
 
             combat = true;
@@ -99,8 +98,8 @@ public class Combat {
 
         while(shipIter.hasNext()){
 
-            // If player blue didn't hit or has used all their hits
-            // Prevents that it tries to use remove an item from an empty list
+            /* If player blue didn't hit or has used all their hits */
+            /* Prevents that it tries to use remove an item from an empty list */
             if(enemyHit == NO_HITS){
 
                 break;
@@ -121,20 +120,20 @@ public class Combat {
 
         while(createCombat){
 
-            //Create spaceship war!
+            /* Create spaceship war! */
             playerBlueHit = doCombat(blueShips);
             playerRedHit = doCombat(redShips);
 
             destroyShip(blueShips, playerRedHit);
             destroyShip(redShips, playerBlueHit);
 
-            // If all blue ships are destroyed
+            /* If all blue ships are destroyed */
             if(blueShips.size() == 0){
 
                 winner = playerRed;
                 createCombat = false;
             }
-            // If all red ships are destroyed
+            /* If all red ships are destroyed */
             else if(redShips.size() == 0){
 
                 winner = playerBlue;

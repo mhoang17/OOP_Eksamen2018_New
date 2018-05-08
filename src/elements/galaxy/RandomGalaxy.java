@@ -3,7 +3,6 @@
 
 package elements.galaxy;
 
-import elements.gameplay.Combat;
 import elements.planet.Planet;
 import elements.player.Player;
 import elements.spaceship.Spaceship;
@@ -20,7 +19,7 @@ import java.util.Random;
 
 public class RandomGalaxy {
 
-    // Constants
+    /** Constants **/
     private final static int ADD_SPACESHIP = 1;
     private final static int NO_SPACESHIP = 0;
     private final static int MAX_PLANETS = 3;
@@ -41,7 +40,6 @@ public class RandomGalaxy {
         this.players = players;
         galaxy = new Galaxy();
 
-        // Create random galaxy
         randomSystems();
         addSpaceships();
 
@@ -90,11 +88,11 @@ public class RandomGalaxy {
 
     private void randomSystems(){
 
-        //Set lists
+        /* Set lists */
         setPlanetList();
         setSystemList();
 
-        //Random ints
+        /* Random ints */
         int numPlanets;
         int resourceProduction;
         int planetName;
@@ -112,13 +110,13 @@ public class RandomGalaxy {
 
                     system.addPlanet(new Planet(planetNames.get(planetName), resourceProduction));
 
-                    //Remove planet name, so it doesn't risk getting it again
+                    /* Remove planet name, so it doesn't risk getting it again */
                     planetNames.remove(planetName);
                 }
             }
         }
 
-        // Create Center system with Mecatol Rex
+        /* Create Center system with Mecatol Rex */
         Systems centerSystem = new Systems("Center");
         centerSystem.addPlanet(new Planet("Mecatol Rex", 0));
         galaxy.addSystems(centerSystem);
@@ -144,16 +142,16 @@ public class RandomGalaxy {
 
                 addShip = rand.nextInt((ADD_SPACESHIP - NO_SPACESHIP + 1) + NO_SPACESHIP);
 
-                // If random chooses addSpaceship
+                /* If random chooses addSpaceship */
                 if(addShip == ADD_SPACESHIP){
 
-                    // Get random spaceship index
+                    /* Get random spaceship index */
                     shipIndx = rand.nextInt(bound);
 
-                    // Add spaceship to current system
+                    /* Add spaceship to current system */
                     system.newSpaceship(playerShipsList.get(shipIndx));
                 }
-                // Stop while-loop if no more spaceships should be added to system
+                /* Stop while-loop if no more spaceships should be added to system */
                 else {
 
                     stopShipInsert = true;
@@ -193,17 +191,17 @@ public class RandomGalaxy {
                     }
                 }
 
-                // If count is equal or higher than two
-                // system contains spaceships from at least two different players
+                /* If count is equal or higher than two */
+                /* system contains spaceships from at least two different players */
                 if(count >= 2){
 
                     differentShipOwner++;
                 }
             }
 
-            // If differentShipOwner is less than two,
-            // then less than two systems contains ships from two different players,
-            // and should continue to add random ships
+            /* If differentShipOwner is less than two, */
+            /* then less than two systems contains ships from two different players, */
+            /* and should continue to add random ships */
             if(differentShipOwner < 2){
 
                 differentShipOwner = 0;

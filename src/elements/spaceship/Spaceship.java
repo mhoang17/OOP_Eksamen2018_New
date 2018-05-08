@@ -71,7 +71,7 @@ public class Spaceship implements Unit{
         return getOwner().equals(spaceship.getOwner()) && getType().equals(spaceship.getType());
     }
 
-    // If combat value is equal, sort after resource cost
+    /** If combat value is equal, sort after resource cost **/
     public int cmpResourceCost(Spaceship that) {
 
         if(that.getCombatValue() == getCombatValue()){

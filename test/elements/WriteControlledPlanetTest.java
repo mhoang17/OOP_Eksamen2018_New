@@ -1,3 +1,6 @@
+// Maria-Theresa Oanh Hoang
+// AAU mail: mhoang17@student.aau.dk
+
 package elements;
 
 import elements.galaxy.PresetConfigurations;
@@ -16,14 +19,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class WriteControlledPlanetTest {
 
-    private PresetConfigurations testGalaxy;
-    private WriteControlledPlanet writeTest;
+    private static int SECOND_LINE = 1;
 
     @BeforeEach
     void setUp() throws IOException {
 
-        testGalaxy = new PresetConfigurations();
-        writeTest = new WriteControlledPlanet(testGalaxy.getGalaxy());
+        PresetConfigurations testGalaxy = new PresetConfigurations();
+        WriteControlledPlanet writeTest = new WriteControlledPlanet(testGalaxy.getGalaxy());
     }
 
     @Test
@@ -33,6 +35,8 @@ class WriteControlledPlanetTest {
         BufferedReader reader = Files.newBufferedReader(existingFile);
 
         String line;
+
+        /* Save each line of file into an arraylist */
         List<String> textFile = new ArrayList<>();
 
         while ((line = reader.readLine()) != null) {
@@ -40,7 +44,7 @@ class WriteControlledPlanetTest {
             textFile.add(line);
         }
 
-        assertEquals("Mecatol Rex", textFile.get(1));
+        assertEquals("Mecatol Rex", textFile.get(SECOND_LINE));
     }
 
 }

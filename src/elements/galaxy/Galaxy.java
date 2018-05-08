@@ -14,41 +14,41 @@ import java.util.List;
 
 public class Galaxy {
 
-    // Field
+    /** Field **/
     private List<Systems> systems = new ArrayList<>();
     private List<Player> players = new ArrayList<>();
 
-    // Constructor
+    /** Constructor **/
     public Galaxy() {}
 
     public Galaxy(List<Systems> systems){
         this.systems = systems;
     }
 
-    // Add system
+    /** Add system **/
     public void addSystems(Systems system){
 
         systems.add(system);
     }
 
-    // Add players
+    /** Add players **/
     public void addPlayer(Player player){
 
         players.add(player);
     }
 
-    // Get players
+    /** Get players **/
     public List<Player> getPlayers() {
         return players;
     }
 
-    // Get systems
+    /** Get systems **/
     public List<Systems> getSystems() {
 
         return systems;
     }
 
-    // Get planets
+    /** Get planets **/
     public List<Planet> getPlanets(){
 
         List planets = new ArrayList();
@@ -63,7 +63,7 @@ public class Galaxy {
         return planets;
     }
 
-    // Get spaceships
+    /** Get spaceships **/
     public List<Spaceship> getSpaceship(){
 
         List spaceships = new ArrayList();

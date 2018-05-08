@@ -1,3 +1,5 @@
+
+
 package elements.galaxy;
 
 import elements.planet.Planet;
@@ -17,11 +19,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PresetConfigurationsTest {
 
-    final static int NUMBER_OF_SYSTEMS = 7;
+    private final static int NUMBER_OF_SYSTEMS = 7;
 
     private PresetConfigurations test;
     private Player playerTest;
-    private Player playerTestTwo;
     private List<Spaceship> spaceshipsList = new ArrayList<>();
 
     @BeforeEach
@@ -29,7 +30,7 @@ class PresetConfigurationsTest {
 
         test = new PresetConfigurations();
         playerTest = new Player("Crassus", "The Emirates of Hacan", "Blue");
-        playerTestTwo = new Player("Pompey", "Federation of Sol", "Red");
+        Player playerTestTwo = new Player("Pompey", "Federation of Sol", "Red");
 
         spaceshipsList.add(new Dreadnought(playerTest));
         spaceshipsList.add(new Dreadnought(playerTest));
@@ -40,21 +41,19 @@ class PresetConfigurationsTest {
     }
 
    @Test
-    // Test if the player is correctly initialised
+    /* Test if the player is correctly initialised */
     void playerTest(){
 
         assertEquals(test.getPlayerBlue(), playerTest);
     }
 
     @Test
-    // Test that the players aren't the same
     void playerTestFalse(){
 
         assertFalse(test.getPlayerBlue().hashCode() == test.getPlayerRed().hashCode());
     }
 
     @Test
-    // Test that player is added
     void getPlayersTest(){
 
         assertEquals(playerTest, test.getGalaxy().getPlayers().get(0));
@@ -62,7 +61,7 @@ class PresetConfigurationsTest {
     }
 
     @Test
-    // Test if correct planet is in system
+    /* Test if correct planet is in system */
     void planetTest(){
 
         List<Planet> mecRex = new ArrayList<>();
@@ -71,21 +70,21 @@ class PresetConfigurationsTest {
     }
 
     @Test
-    // Test that all system inserted are in the galaxy
+    /* Test that all system inserted are in the galaxy */
     void galaxySize(){
 
         assertEquals(test.getGalaxy().getSystems().size(), NUMBER_OF_SYSTEMS);
     }
 
     @Test
-    // Test if spaceships have been added
+    /* Test if spaceships have been added */
     void insertSpaceship(){
 
         assertEquals(test.getCenter().getSpaceships().get(0), spaceshipsList.get(0));
     }
 
     @Test
-    //Test that the correct spaceships have been added
+    /* Test that the correct spaceships have been added */
     void getSpaceship(){
 
         assertEquals(test.getGalaxy().getSpaceship(), spaceshipsList);

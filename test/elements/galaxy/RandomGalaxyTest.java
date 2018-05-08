@@ -14,17 +14,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class RandomGalaxyTest {
 
     private RandomGalaxy test;
-    private Player playerBlue;
-    private Player playerRed;
-    private List<Player> playerList;
 
     @BeforeEach
     void setUp(){
 
-        playerBlue = new Player("NameOne", "RaceOne", "Blue");
-        playerRed = new Player("NameTwo", "RaceTwo", "Red");
+        Player playerBlue = new Player("NameOne", "RaceOne", "Blue");
+        Player playerRed = new Player("NameTwo", "RaceTwo", "Red");
 
-        playerList = new ArrayList<>();
+        List<Player> playerList = new ArrayList<>();
         playerList.add(playerBlue);
         playerList.add(playerRed);
 
@@ -32,7 +29,7 @@ class RandomGalaxyTest {
     }
 
     @Test
-    //Test that the last system in random galaxy is Mecatol Rex
+    /* Test that the last system in random galaxy is Mecatol Rex */
     void centerSystem(){
 
         Systems centerSystem = new Systems("Center");

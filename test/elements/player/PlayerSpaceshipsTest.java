@@ -1,3 +1,6 @@
+// Maria-Theresa Oanh Hoang
+// AAU mail: mhoang17@student.aau.dk
+
 package elements.player;
 
 import elements.spaceship.Spaceship;
@@ -23,7 +26,7 @@ class PlayerSpaceshipsTest {
     @BeforeEach
     void setUp(){
 
-        // Expected sorted list
+        /* Expected sorted list */
         expectedList.add(new Dreadnought(player));
         expectedList.add(new Dreadnought(player));
         expectedList.add(new Cruiser(player));
@@ -31,7 +34,7 @@ class PlayerSpaceshipsTest {
         expectedList.add(new Destroyer(player));
         expectedList.add(new Carrier(player));
 
-        // List in random order
+        /* List in random order */
         testList.add(new Dreadnought(player));
         testList.add(new Destroyer(player));
         testList.add(new Cruiser(player));
@@ -39,12 +42,11 @@ class PlayerSpaceshipsTest {
         testList.add(new Destroyer(player));
         testList.add(new Dreadnought(player));
 
-        // Method call
         test = new PlayerSpaceships(testList, player);
     }
 
    @Test
-   // Test that the list is sorted correctly
+   /* Test that the list is sorted correctly */
    void ownedShipsTest(){
 
        assertEquals(expectedList, test.getOwnedSpaceships());

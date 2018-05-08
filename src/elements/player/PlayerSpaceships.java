@@ -3,15 +3,13 @@
 
 package elements.player;
 
-import elements.galaxy.Galaxy;
 import elements.spaceship.Spaceship;
-import elements.systems.Systems;
 
 import java.util.*;
 
 public class PlayerSpaceships{
 
-    private List<Spaceship> ownedSpaceships = new ArrayList();
+    private List<Spaceship> ownedSpaceships = new ArrayList<>();
 
     public PlayerSpaceships(List<Spaceship> spaceships, Player player){
 
@@ -23,10 +21,10 @@ public class PlayerSpaceships{
             }
         }
 
-        // Sort after combat value
+        /* Sort after combat value */
         ownedSpaceships.sort(Comparator.comparing(Spaceship::getCombatValue));
 
-        //Sort after resource cost
+        /* Sort after resource cost */
         ownedSpaceships.sort((shipOne, shipTwo) -> shipTwo.cmpResourceCost(shipOne));
     }
 

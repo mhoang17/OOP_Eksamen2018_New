@@ -11,29 +11,27 @@ import java.util.*;
 
 public class Systems {
 
-    // Fields
+    /** Fields **/
     private String position;
     private List<Planet> planets = new ArrayList<>();
     private List<Spaceship> spaceships = new ArrayList<>();
 
-    private List<Integer> coordinates = new ArrayList();
+    private List<Integer> coordinates = new ArrayList<>();
     private int x;
     private int y;
 
     public Systems(String position, List<Planet> planets) {
         this.position = position;
         this.planets = planets;
-
         getCoordinates();
     }
 
     public Systems(String position) {
         this.position = position;
-
         getCoordinates();
     }
 
-    //Getters
+    /** Getters **/
     public String getPosition() {
         return position;
     }
@@ -50,7 +48,7 @@ public class Systems {
 
         HashMap<String, List<Integer>> compass = new HashMap<>();
 
-        // Set coordinates for one layer
+        /* Set coordinates for one layer */
         List<Integer> center = new ArrayList();
         List<Integer> north = new ArrayList();
         List<Integer> northEast = new ArrayList();
@@ -91,19 +89,19 @@ public class Systems {
         return compass;
     }
 
-    //Only works for one layer of systems
+    /** Only works for one layer of systems **/
     public void getCoordinates(){
 
-        // Make coordinates
+        /* Make coordinates */
         setCoordinates();
 
-        // Set view of mappings in map
+        /* Set view of mappings in map */
         Set set = setCoordinates().entrySet();
         Iterator iter = set.iterator();
 
         while(iter.hasNext()){
 
-            // See what map entry is in current iteration
+            /* See what map entry is in current iteration */
             Map.Entry posEntry = (Map.Entry) iter.next();
 
             if(posEntry.getKey().equals(position)){
@@ -130,7 +128,7 @@ public class Systems {
         planets.add(planet);
     }
 
-    // Add new spaceship to system
+    /** Add new spaceship to system **/
     public void newSpaceship(Spaceship spaceship) {
         spaceships.add(spaceship);
     }

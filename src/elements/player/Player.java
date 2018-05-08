@@ -31,7 +31,7 @@ public class Player {
         return colour;
     }
 
-    // Check if player is existing
+    /** Check if player is existing **/
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -48,12 +48,10 @@ public class Player {
                 getColour().equals(player.getColour());
     }
 
-    // Hashcode for colour
     public int hashCode() {
         return Objects.hash(name, race, colour);
     }
 
-    // String
     @Override
     public String toString() {
         return "Player: " + this.name + ", " + this.race + ", " + this.colour;

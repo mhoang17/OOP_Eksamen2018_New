@@ -1,7 +1,8 @@
-package elements.galaxy;// Maria-Theresa Oanh Hoang
+// Maria-Theresa Oanh Hoang
 // AAU mail: mhoang17@student.aau.dk
 
-import elements.WriteControlledPlanet;
+package elements.galaxy;
+
 import elements.planet.Planet;
 import elements.player.Player;
 import elements.systems.Systems;
@@ -10,23 +11,21 @@ import elements.spaceship.spaceshipsClasses.Cruiser;
 import elements.spaceship.spaceshipsClasses.Destroyer;
 import elements.spaceship.spaceshipsClasses.Dreadnought;
 
-import java.io.IOException;
-
 public class PresetConfigurations {
 
-    //Players
+    /* Players */
     private Player playerBlue = new Player("Crassus", "The Emirates of Hacan", "Blue");
     private Player playerRed = new Player("Pompey", "Federation of Sol", "Red");
 
-    //Systems
+    /* Systems */
     private Systems center;
 
-    //Galaxy
+    /* Galaxy */
     private Galaxy galaxy;
 
     public PresetConfigurations() {
 
-        // Systems
+        /* Systems */
         center = new Systems("Center");
         Systems north = new Systems("North");
         Systems northEast = new Systems("North-East");
@@ -35,7 +34,7 @@ public class PresetConfigurations {
         Systems southWest = new Systems("South-West");
         Systems northWest = new Systems("North-West");
 
-        //Add planets to systems
+        /* Add planets to systems */
         center.addPlanet(new Planet("Mecatol Rex", 0));
         north.addPlanet(new Planet("Vega Minor", 3));
         north.addPlanet(new Planet("Vega Major", 6));
@@ -44,7 +43,7 @@ public class PresetConfigurations {
         south.addPlanet(new Planet("Rigel II", 4));
         northWest.addPlanet(new Planet("Mirage", 2));
 
-        // Insert ships into systems
+        /* Insert ships into systems */
         center.newSpaceship(new Dreadnought(playerBlue));
         center.newSpaceship(new Dreadnought(playerBlue));
         center.newSpaceship(new Destroyer(playerBlue));
@@ -53,7 +52,7 @@ public class PresetConfigurations {
         north.newSpaceship(new Cruiser(playerRed));
         north.newSpaceship(new Carrier(playerRed));
 
-        // Insert systems to galaxy
+        /* Insert systems to galaxy */
         galaxy = new Galaxy();
 
         galaxy.addPlayer(playerBlue);
@@ -68,7 +67,7 @@ public class PresetConfigurations {
         galaxy.addSystems(northWest);
     }
 
-    // Getters for testing
+    /** Getters for testing **/
     public Player getPlayerBlue() {
         return playerBlue;
     }

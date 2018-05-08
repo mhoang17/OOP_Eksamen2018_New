@@ -28,7 +28,7 @@ class SystemsTest {
     }
 
     @Test
-    //Test for constructor which takes both position and planets
+    /* Test for constructor which takes both position and planets */
     void systemConstructor(){
 
         List<Planet> planetList = new ArrayList<>();
@@ -39,21 +39,20 @@ class SystemsTest {
     }
 
     @Test
-    // Test that x coordinate for North is correct
+    /* Test that x coordinate for North is correct */
     void xCoordinate(){
 
         assertEquals(0, system.getX());
     }
 
     @Test
-    // Test that y coordinate for North is correct
+    /* Test that y coordinate for North is correct */
     void yCoordinate(){
 
         assertEquals(1, system.getY());
     }
 
     @Test
-    //Test that method adds planet into list
     void addPlanetTest(){
 
         Planet planetTest = new Planet("Name", 0);
@@ -62,7 +61,6 @@ class SystemsTest {
     }
 
     @Test
-    // Test that
     void removeSpaceshipTest(){
 
         system.removeSpaceship(spaceshipTest);

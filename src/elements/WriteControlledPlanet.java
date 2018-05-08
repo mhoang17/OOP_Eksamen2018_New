@@ -21,20 +21,20 @@ public class WriteControlledPlanet {
 
     public WriteControlledPlanet(Galaxy galaxy) throws IOException{
 
-        // Create file
+        /* Create file */
         String outputName = "PlanetaryControl.txt";
         BufferedWriter writer = new BufferedWriter(new FileWriter(outputName));
 
         for(Player player : galaxy.getPlayers()){
 
-            //Write player to file
+            /* Write player to file */
             writer.write(player.toString() + "\n");
 
             for(Systems system : galaxy.getSystems()){
 
                 int numOfShips = system.getSpaceships().size();
 
-                // Check if there are ships in system
+                /* Check if there are ships in system */
                 if(numOfShips > 0){
 
                     Boolean notOwner = false;
@@ -47,7 +47,7 @@ public class WriteControlledPlanet {
                         }
                     }
 
-                    // If all spaceships in system belongs to one player
+                    /* If all spaceships in system belongs to one player */
                     if(!notOwner){
 
                         for(Planet planet : system.getPlanets()){
@@ -58,11 +58,10 @@ public class WriteControlledPlanet {
                 }
             }
 
-            // New line separates the players
             writer.write("\n");
         }
 
-        // Stop writing to file
+        /* Stop writing to file */
         writer.close();
     }
 }
