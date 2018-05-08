@@ -85,6 +85,7 @@ public class VerifyGalaxy {
 
         Boolean verified = false;
 
+        /* If the system positions isn't north and south of each other */
         if(systemOne.getX() + systemTwo.getX() != 0 || systemOne.getY() + systemTwo.getY() != 0){
 
             throw new IllegalPosition();

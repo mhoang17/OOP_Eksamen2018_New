@@ -53,6 +53,7 @@ class SystemsTest {
     }
 
     @Test
+    /* Test that planet is added to system */
     void addPlanetTest(){
 
         Planet planetTest = new Planet("Name", 0);
@@ -68,6 +69,8 @@ class SystemsTest {
     }
 
     @Test
+    /* Test that when ship is moved, then it is added
+    to the new system's planet list */
     void moveSpaceshipAddTest(){
 
         Systems systemMove = new Systems("North-East");
@@ -77,6 +80,8 @@ class SystemsTest {
     }
 
     @Test
+    /* Test that when ship is moved to another system, that is doesn't
+    belong to the current system anymore */
     void moveSpaceshipRemoveTest(){
 
         Systems systemMove = new Systems("North-East");

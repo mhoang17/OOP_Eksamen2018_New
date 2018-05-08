@@ -1,4 +1,5 @@
-
+// Maria-Theresa Oanh Hoang
+// AAU mail: mhoang17@student.aau.dk
 
 package elements.galaxy;
 
@@ -44,7 +45,7 @@ class PresetConfigurationsTest {
     /* Test if the player is correctly initialised */
     void playerTest(){
 
-        assertEquals(test.getPlayerBlue(), playerTest);
+        assertEquals(playerTest, test.getPlayerBlue());
     }
 
     @Test
@@ -66,28 +67,28 @@ class PresetConfigurationsTest {
 
         List<Planet> mecRex = new ArrayList<>();
         mecRex.add(new Planet("Mecatol Rex", 0));
-        assertEquals(test.getCenter().getPlanets(), mecRex);
+        assertEquals(mecRex, test.getCenter().getPlanets());
     }
 
     @Test
     /* Test that all system inserted are in the galaxy */
     void galaxySize(){
 
-        assertEquals(test.getGalaxy().getSystems().size(), NUMBER_OF_SYSTEMS);
+        assertEquals(NUMBER_OF_SYSTEMS, test.getGalaxy().getSystems().size());
     }
 
     @Test
     /* Test if spaceships have been added */
     void insertSpaceship(){
 
-        assertEquals(test.getCenter().getSpaceships().get(0), spaceshipsList.get(0));
+        assertEquals(spaceshipsList.get(0), test.getCenter().getSpaceships().get(0));
     }
 
     @Test
     /* Test that the correct spaceships have been added */
     void getSpaceship(){
 
-        assertEquals(test.getGalaxy().getSpaceship(), spaceshipsList);
+        assertEquals(spaceshipsList, test.getGalaxy().getSpaceship());
     }
 
 }

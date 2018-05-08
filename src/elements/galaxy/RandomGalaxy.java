@@ -34,14 +34,12 @@ public class RandomGalaxy {
     private List<String> planetNames = new ArrayList<>();
     private List<Spaceship> playerShipsList = new ArrayList<>();
 
-
     public RandomGalaxy(List<Player> players) {
 
         this.players = players;
         galaxy = new Galaxy();
 
         randomSystems();
-        addSpaceships();
 
         VerifyGalaxy verifyGalaxy = new VerifyGalaxy(galaxy);
     }
@@ -50,7 +48,8 @@ public class RandomGalaxy {
         return galaxy;
     }
 
-    private void setSystemList(){
+    /** Set empty systems with positions **/
+    public void setSystemList(){
 
         galaxy.addSystems(new Systems("North"));
         galaxy.addSystems(new Systems("North-West"));
@@ -61,7 +60,8 @@ public class RandomGalaxy {
 
     }
 
-    private void setPlanetList(){
+    /** Set a list of planet names **/
+    public void setPlanetList(){
 
         planetNames.add("Vega Minor");
         planetNames.add("Vega Major");
@@ -75,7 +75,8 @@ public class RandomGalaxy {
         planetNames.add(null);
     }
 
-    private void setPlayerShips() {
+    /** Method to save all possible spaceships belonging to each player to a list */
+    public void setPlayerShips() {
 
         for(Player player : players){
 
@@ -86,7 +87,7 @@ public class RandomGalaxy {
         }
     }
 
-    private void randomSystems(){
+    public void randomSystems(){
 
         /* Set lists */
         setPlanetList();
@@ -99,13 +100,16 @@ public class RandomGalaxy {
 
         for (Systems system : galaxy.getSystems()){
 
+            /* Random number of planets */
             numPlanets = rand.nextInt(MAX_PLANETS + 1);
 
             for(int i = 0; i < numPlanets; i++){
 
+                /* Random planet from list of planet names */
                 planetName = rand.nextInt(planetNames.size());
                 resourceProduction = rand.nextInt(MAX_RESOURCE + 1);
 
+                /* If planetName is null, no planets should be added */
                 if(planetNames.get(planetName) != null){
 
                     system.addPlanet(new Planet(planetNames.get(planetName), resourceProduction));
@@ -123,7 +127,7 @@ public class RandomGalaxy {
 
     }
 
-    private void randomSpaceships(){
+    public void randomSpaceships(){
 
         setPlayerShips();
 
@@ -131,7 +135,6 @@ public class RandomGalaxy {
 
         int addShip;
         int bound  = playerShipsList.size();
-
         int shipIndx;
 
         for(Systems system : galaxy.getSystems()){
@@ -163,7 +166,7 @@ public class RandomGalaxy {
 
     }
 
-    private void addSpaceships(){
+    public void addSpaceships(){
 
         int differentShipOwner = 0;
 
@@ -173,6 +176,7 @@ public class RandomGalaxy {
 
                 int count = 0;
 
+                /* List of spaceship owners */
                 List<Player> owners = new ArrayList<>();
 
                 for(Spaceship spaceship : system.getSpaceships()){

@@ -61,7 +61,7 @@ public class Combat {
             owners.add(spaceship.getOwner());
         }
 
-        /* Check if player owns a ship */
+        /* Check if players owns a ship */
         int freqBlue = Collections.frequency(owners, playerBlue);
         int freqRed = Collections.frequency(owners, playerRed);
 
@@ -74,7 +74,7 @@ public class Combat {
         return combat;
     }
 
-    public int doCombat(List<Spaceship> attackingShips){
+    public int hitSpaceship(List<Spaceship> attackingShips){
 
         Random rand = new Random();
         int hit = 0;
@@ -121,8 +121,8 @@ public class Combat {
         while(createCombat){
 
             /* Create spaceship war! */
-            playerBlueHit = doCombat(blueShips);
-            playerRedHit = doCombat(redShips);
+            playerBlueHit = hitSpaceship(blueShips);
+            playerRedHit = hitSpaceship(redShips);
 
             destroyShip(blueShips, playerRedHit);
             destroyShip(redShips, playerBlueHit);

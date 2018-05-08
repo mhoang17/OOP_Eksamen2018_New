@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class WriteControlledPlanetTest {
 
@@ -44,6 +44,8 @@ class WriteControlledPlanetTest {
             textFile.add(line);
         }
 
+        /* Picked second line, but any line could be chosen, as long
+        as the correct expected string is known */
         assertEquals("Mecatol Rex", textFile.get(SECOND_LINE));
     }
 

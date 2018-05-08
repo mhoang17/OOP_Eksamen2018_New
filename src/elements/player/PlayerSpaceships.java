@@ -13,6 +13,7 @@ public class PlayerSpaceships{
 
     public PlayerSpaceships(List<Spaceship> spaceships, Player player){
 
+        /* List of ship owners */
         for(Spaceship spaceship : spaceships){
 
             if(spaceship.getOwner().equals(player)){

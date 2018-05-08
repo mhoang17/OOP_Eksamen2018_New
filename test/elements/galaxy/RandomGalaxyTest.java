@@ -1,3 +1,6 @@
+// Maria-Theresa Oanh Hoang
+// AAU mail: mhoang17@student.aau.dk
+
 package elements.galaxy;
 
 import elements.planet.Planet;
@@ -36,6 +39,18 @@ class RandomGalaxyTest {
         centerSystem.addPlanet(new Planet("Mecatol Rex", 0));
 
         assertEquals(centerSystem, test.getGalaxy().getSystems().get(6));
+    }
+
+    @Test
+    /* Test that at least 4 spaceships are in galaxy.
+    This means that there is the possibility that at least two systems,
+    has spaceships from two players.
+     */
+    void addSpaceshipsTest(){
+
+        test.addSpaceships();
+
+        assertTrue(test.getGalaxy().getSpaceship().size() > 4);
     }
 
 }

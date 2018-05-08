@@ -11,7 +11,6 @@ import java.util.*;
 
 public class Systems {
 
-    /** Fields **/
     private String position;
     private List<Planet> planets = new ArrayList<>();
     private List<Spaceship> spaceships = new ArrayList<>();
@@ -31,7 +30,6 @@ public class Systems {
         getCoordinates();
     }
 
-    /** Getters **/
     public String getPosition() {
         return position;
     }
@@ -44,6 +42,7 @@ public class Systems {
         return spaceships;
     }
 
+    /** Only works for one layer of systems **/
     public HashMap<String, List<Integer>> setCoordinates(){
 
         HashMap<String, List<Integer>> compass = new HashMap<>();
@@ -89,7 +88,6 @@ public class Systems {
         return compass;
     }
 
-    /** Only works for one layer of systems **/
     public void getCoordinates(){
 
         /* Make coordinates */

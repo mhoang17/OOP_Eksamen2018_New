@@ -1,3 +1,6 @@
+// Maria-Theresa Oanh Hoang
+// AAU mail: mhoang17@student.aau.dk
+
 package elements.galaxy;
 
 import elements.galaxy.exceptions.IllegalCenterSystem;
@@ -32,6 +35,8 @@ class VerifyGalaxyTest {
 
         systemListTest.add(new Systems("Center", planetListTest));
         Galaxy galaxyTest = new Galaxy(systemListTest);
+
+        /* Not correct planet in center */
         assertThrows(IllegalCenterSystem.class, () -> new VerifyGalaxy(galaxyTest));
 
     }

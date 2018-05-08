@@ -7,17 +7,18 @@ import java.util.Objects;
 
 public class Planet {
 
-    /** Fields **/
+    private final static int MIN_RESOURCE = 0;
+    private final static int MAX_RESOURCE = 6;
+
     private String name;
     private int resourceProduction;
 
-    /** Constructor **/
     public Planet(String name, int resourceProduction) {
         this.name = name;
         this.resourceProduction = resourceProduction;
 
         /* If resource value isn't valid */
-        if(resourceProduction < 0 || resourceProduction > 6){
+        if(resourceProduction < MIN_RESOURCE || resourceProduction > MAX_RESOURCE){
             throw new IllegalResourceProduction();
         }
     }
