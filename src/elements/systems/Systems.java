@@ -11,14 +11,15 @@ import java.util.*;
 
 public class Systems {
 
+    /** Fields **/
     private String position;
     private List<Planet> planets = new ArrayList<>();
     private List<Spaceship> spaceships = new ArrayList<>();
-
     private List<Integer> coordinates = new ArrayList<>();
     private int x;
     private int y;
 
+    /** Constructors **/
     public Systems(String position, List<Planet> planets) {
         this.position = position;
         this.planets = planets;
@@ -39,6 +40,39 @@ public class Systems {
 
     public List<Spaceship> getSpaceships() {
         return spaceships;
+    }
+
+    public void getCoordinates(){
+
+        /* Make coordinates */
+        setCoordinates();
+
+        /* Set view of mappings in map */
+        Set set = setCoordinates().entrySet();
+        Iterator iter = set.iterator();
+
+        while(iter.hasNext()){
+
+            /* See what map entry is in current iteration */
+            Map.Entry posEntry = (Map.Entry) iter.next();
+
+            if(posEntry.getKey().equals(position)){
+
+                coordinates = (List) posEntry.getValue();
+            }
+        }
+
+        x = coordinates.get(0);
+        y = coordinates.get(1);
+
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
     }
 
     /** Only works for one layer of systems **/
@@ -85,39 +119,6 @@ public class Systems {
         compass.put("North-West", northWest);
 
         return compass;
-    }
-
-    public void getCoordinates(){
-
-        /* Make coordinates */
-        setCoordinates();
-
-        /* Set view of mappings in map */
-        Set set = setCoordinates().entrySet();
-        Iterator iter = set.iterator();
-
-        while(iter.hasNext()){
-
-            /* See what map entry is in current iteration */
-            Map.Entry posEntry = (Map.Entry) iter.next();
-
-            if(posEntry.getKey().equals(position)){
-
-                coordinates = (List) posEntry.getValue();
-            }
-        }
-
-        x = coordinates.get(0);
-        y = coordinates.get(1);
-
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
     }
 
     public void addPlanet(Planet planet){

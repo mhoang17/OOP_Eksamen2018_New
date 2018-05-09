@@ -13,17 +13,34 @@ import elements.spaceship.spaceshipsClasses.Dreadnought;
 
 public class PresetConfigurations {
 
+    /** Field **/
     private Player playerBlue = new Player("Crassus", "The Emirates of Hacan", "Blue");
     private Player playerRed = new Player("Pompey", "Federation of Sol", "Red");
     private Systems center;
-    private Galaxy galaxy;
+    private Galaxy galaxy = new Galaxy();
 
-    public PresetConfigurations() {
+    /** Constructor **/
+    public PresetConfigurations() {}
 
-        galaxy = new Galaxy();
+    /** Getters for testing **/
+    public Player getPlayerBlue() {
+        return playerBlue;
     }
 
-    public void setPresetConfigurations(){
+    public Player getPlayerRed() {
+        return playerRed;
+    }
+
+    public Systems getCenter() {
+        return center;
+    }
+
+    public Galaxy getGalaxy() {
+        return galaxy;
+    }
+
+    /** Sets the configurations and returns the galaxy **/
+    public Galaxy setPresetConfigurations(){
 
         /* Systems */
         center = new Systems("Center");
@@ -65,22 +82,6 @@ public class PresetConfigurations {
         galaxy.addSystems(southWest);
         galaxy.addSystems(northWest);
 
-    }
-
-    /** Getters for testing **/
-    public Player getPlayerBlue() {
-        return playerBlue;
-    }
-
-    public Player getPlayerRed() {
-        return playerRed;
-    }
-
-    public Systems getCenter() {
-        return center;
-    }
-
-    public Galaxy getGalaxy() {
         return galaxy;
     }
 

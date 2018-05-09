@@ -16,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RandomGalaxyTest {
 
+    /** Field **/
     private RandomGalaxy test;
 
     @BeforeEach
@@ -30,6 +31,12 @@ class RandomGalaxyTest {
 
         test = new RandomGalaxy(playerList);
         test.randomSystems();
+
+        /* Verify that the random galaxy made meets all requirements */
+        VerifyGalaxy verifyGalaxy = new VerifyGalaxy(test.getGalaxy());
+        verifyGalaxy.legalCenterPlanet();
+        verifyGalaxy.legalPlanet();
+        verifyGalaxy.legalSystemSize();
     }
 
     @Test
@@ -51,9 +58,9 @@ class RandomGalaxyTest {
 
         test.addSpaceships();
 
-        System.out.println(test.getGalaxy().getSpaceship().size());
+        System.out.println(test.getGalaxy().getSpaceships().size());
 
-        assertTrue(test.getGalaxy().getSpaceship().size() >= 4);
+        assertTrue(test.getGalaxy().getSpaceships().size() >= 4);
     }
 
 }

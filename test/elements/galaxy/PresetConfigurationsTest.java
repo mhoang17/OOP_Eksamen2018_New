@@ -20,8 +20,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PresetConfigurationsTest {
 
+    /** Constant **/
     private final static int NUMBER_OF_SYSTEMS = 7;
 
+    /** Fields **/
     private PresetConfigurations test;
     private Player playerTest;
     private List<Spaceship> spaceshipsList = new ArrayList<>();
@@ -89,7 +91,7 @@ class PresetConfigurationsTest {
     /* Test that the correct spaceships have been added */
     void getSpaceship(){
 
-        assertEquals(spaceshipsList, test.getGalaxy().getSpaceship());
+        assertEquals(spaceshipsList, test.getGalaxy().getSpaceships());
     }
 
 }

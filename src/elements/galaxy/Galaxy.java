@@ -17,17 +17,8 @@ public class Galaxy {
     private List<Systems> systems = new ArrayList<>();
     private List<Player> players = new ArrayList<>();
 
+    /** Constructor **/
     public Galaxy() {
-    }
-
-    public void addSystems(Systems system) {
-
-        systems.add(system);
-    }
-
-    public void addPlayer(Player player) {
-
-        players.add(player);
     }
 
     public List<Player> getPlayers() {
@@ -35,10 +26,10 @@ public class Galaxy {
     }
 
     public List<Systems> getSystems() {
-
         return systems;
     }
 
+    /** Planets in galaxy **/
     public List<Planet> getPlanets() {
 
         List planets = new ArrayList<>();
@@ -53,7 +44,8 @@ public class Galaxy {
         return planets;
     }
 
-    public List<Spaceship> getSpaceship() {
+    /** Spaceships in galaxy **/
+    public List<Spaceship> getSpaceships() {
 
         List spaceships = new ArrayList();
 
@@ -66,6 +58,16 @@ public class Galaxy {
         }
 
         return spaceships;
+    }
+
+    /** Add player to galaxy **/
+    public void addPlayer(Player player) {
+        players.add(player);
+    }
+
+    /** Add system to galaxy **/
+    public void addSystems(Systems system) {
+        systems.add(system);
     }
 
 }

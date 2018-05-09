@@ -22,6 +22,7 @@ public class VerifyGalaxy {
     /** Field **/
     private Galaxy galaxy;
 
+    /** Constructor **/
     public VerifyGalaxy(Galaxy galaxy) {
 
         this.galaxy = galaxy;
@@ -77,6 +78,7 @@ public class VerifyGalaxy {
         }
     }
 
+    /** Verify that it is north and south **/
     public Boolean verifyPosition(Systems systemOne, Systems systemTwo){
 
         Boolean verified = false;

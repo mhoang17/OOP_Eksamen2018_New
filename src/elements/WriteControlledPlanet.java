@@ -19,7 +19,14 @@ import java.util.List;
 
 public class WriteControlledPlanet {
 
-    public WriteControlledPlanet(Galaxy galaxy) throws IOException{
+    private Galaxy galaxy;
+
+    public WriteControlledPlanet(Galaxy galaxy){
+
+        this.galaxy = galaxy;
+    }
+
+    public void writePlanet() throws IOException{
 
         /* Create file */
         String outputName = "PlanetaryControl.txt";

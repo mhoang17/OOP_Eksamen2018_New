@@ -7,12 +7,15 @@ import java.util.Objects;
 
 public class Planet {
 
+    /** Constants **/
     private final static int MIN_RESOURCE = 0;
     private final static int MAX_RESOURCE = 6;
 
+    /** Fields **/
     private String name;
     private int resourceProduction;
 
+    /** Constructor **/
     public Planet(String name, int resourceProduction) {
         this.name = name;
         this.resourceProduction = resourceProduction;

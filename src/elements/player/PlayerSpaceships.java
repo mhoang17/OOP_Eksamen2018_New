@@ -9,10 +9,12 @@ import java.util.*;
 
 public class PlayerSpaceships{
 
+    /** Fields **/
     private List<Spaceship> spaceships;
     private Player player;
     private List<Spaceship> ownedSpaceships = new ArrayList<>();
 
+    /** Constructor **/
     public PlayerSpaceships(List<Spaceship> spaceships, Player player){
         this.spaceships = spaceships;
         this.player = player;

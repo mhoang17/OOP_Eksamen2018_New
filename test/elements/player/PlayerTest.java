@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
 
+    /** Field **/
     private Player player = new Player("Crassus", "The Emirates of Hacan", "Blue");
 
     @Test

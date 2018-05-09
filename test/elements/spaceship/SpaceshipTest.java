@@ -15,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SpaceshipTest {
 
+    /** Fields **/
     private Player playerTest;
     private Spaceship spaceshipTest;
 

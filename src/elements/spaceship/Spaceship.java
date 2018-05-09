@@ -7,6 +7,7 @@ import elements.player.Player;
 
 public class Spaceship implements Unit{
 
+    /** Fields **/
     private String type;
     private Player player;
     private int resourceCost;
@@ -14,6 +15,7 @@ public class Spaceship implements Unit{
     private int movementSpeed;
     private int capacity;
 
+    /** Constructor **/
     public Spaceship(String type, Player player, int resourceCost, int combatValue, int movementSpeed, int capacity) {
         this.type = type;
         this.player = player;

@@ -25,15 +25,14 @@ public class RandomGalaxy {
     private final static int MAX_PLANETS = 3;
     private final static int MAX_RESOURCE = 6;
 
-
+    /** Fields **/
     private Random rand = new Random();
-
     private Galaxy galaxy;
-
     private List<Player> players;
     private List<String> planetNames = new ArrayList<>();
     private List<Spaceship> playerShipsList = new ArrayList<>();
 
+    /** Constructor **/
     public RandomGalaxy(List<Player> players) {
 
         this.players = players;
@@ -83,6 +82,7 @@ public class RandomGalaxy {
         }
     }
 
+    /** Make random systems in galaxy **/
     public void randomSystems(){
 
         /* Set lists */
@@ -123,45 +123,7 @@ public class RandomGalaxy {
 
     }
 
-    public void randomSpaceships(){
-
-        setPlayerShips();
-
-        boolean stopShipInsert;
-
-        int addShip;
-        int bound  = playerShipsList.size();
-        int shipIndx;
-
-        for(Systems system : galaxy.getSystems()){
-
-            stopShipInsert = false;
-
-            while(!stopShipInsert){
-
-                addShip = rand.nextInt((ADD_SPACESHIP - NO_SPACESHIP + 1) + NO_SPACESHIP);
-
-                /* If random chooses addSpaceship */
-                if(addShip == ADD_SPACESHIP){
-
-                    /* Get random spaceship index */
-                    shipIndx = rand.nextInt(bound);
-
-                    /* Add spaceship to current system */
-                    system.newSpaceship(playerShipsList.get(shipIndx));
-                }
-                /* Stop while-loop if no more spaceships should be added to system */
-                else {
-
-                    stopShipInsert = true;
-                }
-
-            }
-
-        }
-
-    }
-
+    /** Adds spaceship to the different systems and ensure it meets the requirement **/
     public void addSpaceships(){
 
         int differentShipOwner = 0;
@@ -211,5 +173,45 @@ public class RandomGalaxy {
                 randomSpaceships();
             }
         }
+    }
+
+    /** Add spaceships method **/
+    public void randomSpaceships(){
+
+        setPlayerShips();
+
+        boolean stopShipInsert;
+
+        int addShip;
+        int bound  = playerShipsList.size();
+        int shipIndx;
+
+        for(Systems system : galaxy.getSystems()){
+
+            stopShipInsert = false;
+
+            while(!stopShipInsert){
+
+                addShip = rand.nextInt((ADD_SPACESHIP - NO_SPACESHIP + 1) + NO_SPACESHIP);
+
+                /* If random chooses addSpaceship */
+                if(addShip == ADD_SPACESHIP){
+
+                    /* Get random spaceship index */
+                    shipIndx = rand.nextInt(bound);
+
+                    /* Add spaceship to current system */
+                    system.newSpaceship(playerShipsList.get(shipIndx));
+                }
+                /* Stop while-loop if no more spaceships should be added to system */
+                else {
+
+                    stopShipInsert = true;
+                }
+
+            }
+
+        }
+
     }
 }

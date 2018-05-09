@@ -19,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class WriteControlledPlanetTest {
 
+    /** Constant **/
     private static int SECOND_LINE = 1;
 
     @BeforeEach
@@ -27,6 +28,7 @@ class WriteControlledPlanetTest {
         PresetConfigurations testGalaxy = new PresetConfigurations();
         testGalaxy.setPresetConfigurations();
         WriteControlledPlanet writeTest = new WriteControlledPlanet(testGalaxy.getGalaxy());
+        writeTest.writePlanet();
     }
 
     @Test

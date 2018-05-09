@@ -1,3 +1,6 @@
+// Maria-Theresa Oanh Hoang
+// AAU mail: mhoang17@student.aau.dk
+
 package elements.systems;
 
 import elements.planet.Planet;
@@ -14,6 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SystemsTest {
 
+    /** Fields **/
     private Systems system;
     private Player playerTest;
     private Spaceship spaceshipTest;

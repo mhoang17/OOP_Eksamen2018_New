@@ -18,6 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerSpaceshipsTest {
 
+    /** Fields **/
     private Player player = new Player("Crassus", "The Emirates of Hacan", "Blue");
     private List<Spaceship> expectedList = new ArrayList<>();
     private List<Spaceship> testList = new ArrayList<>();

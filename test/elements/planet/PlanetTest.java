@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PlanetTest {
 
+    /** Field **/
     private Planet planetTest;
 
     @BeforeEach

@@ -7,12 +7,12 @@ import java.util.Objects;
 
 public class Player {
 
-    // Fields
+    /** Fields **/
     private String name;
     private String race;
     private String colour;
 
-    // Constructor
+    /** Constructor **/
     public Player(String name, String race, String colour) {
         this.name = name;
         this.race = race;

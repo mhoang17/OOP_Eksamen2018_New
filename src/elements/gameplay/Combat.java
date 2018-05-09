@@ -11,32 +11,34 @@ import java.util.*;
 
 public class Combat {
 
+    /** Constants **/
     private final static int MIN_DICE_VAL = 0;
     private final static int MAX_DICE_VAL = 9;
     private final static int NO_HITS = 0;
 
+    /** Fields **/
     private Systems system;
     private Player playerBlue;
     private Player playerRed;
     private List<Spaceship> blueShips = new ArrayList<>();
     private List<Spaceship> redShips = new ArrayList<>();
 
+    /** Constructor **/
     public Combat(Systems system, Player playerBlue, Player playerRed) {
         this.system = system;
         this.playerBlue = playerBlue;
         this.playerRed = playerRed;
     }
 
+    /** Store ships for their respected owners **/
     public void storeShips(){
-
         /* Store owned ships in system for each player */
         for (Spaceship spaceship : system.getSpaceships()) {
 
             if(spaceship.getOwner().equals(playerBlue)){
-
                 blueShips.add(spaceship);
             }
-            else {
+            else{
                 redShips.add(spaceship);
             }
         }
@@ -46,6 +48,7 @@ public class Combat {
         redShips.sort(Comparator.comparing(Spaceship::getResourceCost));
     }
 
+    /** If two different players are in system, then combat should be made **/
     public boolean detectCombat(){
 
         boolean combat = false;
@@ -72,6 +75,7 @@ public class Combat {
         return combat;
     }
 
+    /** Get hits for a player **/
     public int hitSpaceship(List<Spaceship> attackingShips){
 
         Random rand = new Random();
@@ -109,6 +113,7 @@ public class Combat {
         }
     }
 
+    /** Find the winner of the system battle **/
     public Player findWinner() {
 
         Player winner = null;
